@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux';
 import Greeting from './greeting';
-import { logOut } from '../../actions/session_actions';
+import { logOut } from '../../../actions/session_actions';
 
 const msp = (state) => {
   let currentUserId = state.session.id
