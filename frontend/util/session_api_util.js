@@ -24,3 +24,14 @@ export const logOut = () => {
     url: `/api/session`,
   });
 };
+
+// check username
+export const chkUsername = (username) => {
+  return $.ajax({
+    // what type is this?
+    // type:
+    
+    // where is this heading to?
+    // url:
+  });
+};

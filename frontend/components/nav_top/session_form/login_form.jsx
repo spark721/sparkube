@@ -1,33 +1,65 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 class LogInForm extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       username: '',
       password: '',
+      email: '',
     };
+
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  };
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value,
+    });
   };
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(this.state.user);
   }
 
   render() {
+
+    // single form version
     return (
       <div>
-        <form action="">
+        <h1>Sign in</h1>
+        <p>to continue to SparKube</p>
 
-          <label>Username
-            <input 
-              type="text"
-              value={this.state.username} />
-          </label>
+        <form onSubmit={this.handleSubmit}>
 
+          <label htmlFor="username">Username</label>
+          <br />
+          <input 
+            id='username'
+            type="text"
+            value={this.state.username}
+            onChange={this.update('username')} />
+          <br /><br />
+
+          <label htmlFor="password">Password</label>
+          <br />
+          <input 
+            id='password'
+            type="password"
+            value={this.state.password}
+            onChange={this.update('password')} />
+          <br /><br />
+
+          <Link to='/signup'>Create account</Link>
+
+          <input 
+            type="submit"
+            value='Next' />
         </form>
       </div>
     );

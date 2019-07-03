@@ -1,5 +1,7 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -10,10 +12,11 @@ class SignUpForm extends React.Component {
       password: '',
     }
 
-    this.updateField = this.updateField.bind(this);
+    this.update = this.update.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  updateField(field) {
+  update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value,
     });
@@ -27,32 +30,43 @@ class SignUpForm extends React.Component {
   render() {
     return (
       <div>
+        <h1>Create your SparKube Account</h1>
+        <p>to continue to SparKube</p>
+
         <form onSubmit={this.handleSubmit}>
 
-          <label htmlFor="username"></label>
+          <label htmlFor="username">Username</label>
+          <br />
           <input 
             id='username'
             type="text"
             value={this.state.username}
-            onChange={this.updateField} />
+            onChange={this.update('username')} />
+          <br /><br />
 
-            <label htmlFor="email"></label>
-            <input 
-              id='email'
-              type="text"
-              value={this.state.email}
-              onChange={this.updateField} />
+          <label htmlFor="email">Your email address</label>
+          <br />
+          <input 
+            id='email'
+            type="text"
+            value={this.state.email}
+            onChange={this.update('email')} />
+          <br /><br />
 
-            <label htmlFor="password"></label>
-            <input 
-              id='password'
-              type="password"
-              value={this.state.password}
-              onChange={this.updateField} />
+          <label htmlFor="password">Password</label>
+          <br />
+          <input 
+            id='password'
+            type="password"
+            value={this.state.password}
+            onChange={this.update('password')} />
+          <br /><br />
 
-            <input 
-              type="submit"
-              value='Next' />
+          <Link to='/login'>Sign in instead</Link>
+
+          <input 
+            type="submit"
+            value='Next' />
         </form>
       </div>
     );

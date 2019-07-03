@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { logIn } from '../../../actions/session_actions';
 import LogInForm from './login_form';
 
-const msp = (state, myProp) => {
+const msp = (state) => {
   return {
     errors: state.errors.session,
     formType: 'login',
   };
 };
 
-const mdp = (dispatch, myProp) => {
+const mdp = (dispatch) => {
   return {
     processForm: (user) => dispatch(logIn(user)),
   };
