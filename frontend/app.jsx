@@ -2,9 +2,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 
+import * as SessionAPIUtil from './util/session_api_util';
+
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
 
+  window.signUp = SessionAPIUtil.signUp;
+  window.logIn = SessionAPIUtil.logIn;
+  window.logOut = SessionAPIUtil.logOut;
 
   ReactDOM.render(
     <div>
