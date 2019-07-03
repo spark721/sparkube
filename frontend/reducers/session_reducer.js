@@ -9,7 +9,6 @@ let defaultState = { id: null };
 
 const sessionReducer = (oldState = defaultState, action) => {
   Object.freeze(oldState);
-  let newState = Object.assign({}, oldState);
 
   switch (action.type) {
     case RECEIVE_CURRENT_USER:

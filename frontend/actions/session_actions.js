@@ -30,21 +30,27 @@ const receiveErrors = (errors) => {
 // thunk action creator
 export const signUp = (user) => {
   return (dispatch) => {
-    return SessionAPIUtil.signUp(user)
-    .then( user => dispatch(receiveCurrentUser(user)));
+    return SessionAPIUtil.signUp(user).then(
+      user => dispatch(receiveCurrentUser(user)),
+      err => dispatch(receiveErrors(err))
+    );
   };
 };
 
 export const logIn = (user) => {
   return (dispatch) => {
-    return SessionAPIUtil.logIn(user)
-    .then( user => dispatch(receiveCurrentUser(user)));
+    return SessionAPIUtil.logIn(user).then( 
+      user => dispatch(receiveCurrentUser(user)),
+      err => dispatch(receiveErrors(err))
+    );
   };
 };
 
 export const logOut = () => {
   return (dispatch) => {
-    return SessionAPIUtil.logOut()
-    .then( (res) => dispatch(logoutCurrentUser(res)));
+    return SessionAPIUtil.logOut().then( 
+      res => dispatch(logoutCurrentUser(res)),
+      err => dispatch(receiveErrors(err))
+    );
   };
 };

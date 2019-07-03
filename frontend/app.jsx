@@ -1,15 +1,22 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom'
+import configureStore from './store/store';
 
-import * as SessionAPIUtil from './util/session_api_util';
+import {
+  signUp, 
+  logIn, 
+  logOut } from './actions/session_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
+  const store = configureStore();
 
-  window.signUp = SessionAPIUtil.signUp;
-  window.logIn = SessionAPIUtil.logIn;
-  window.logOut = SessionAPIUtil.logOut;
+  window.signUp = signUp;
+  window.logIn = logIn;
+  window.logOut = logOut;
+  window.getState  = store.getState;
+  window.dispatch = store.dispatch;
 
   ReactDOM.render(
     <div>
