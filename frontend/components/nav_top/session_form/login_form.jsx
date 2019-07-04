@@ -71,29 +71,32 @@ class LogInForm extends React.Component {
 
             {this.renderError()}
             
-            <label htmlFor="username">Username</label>
-            <br />
-            <input 
-              id='username'
-              type="text"
-              value={this.state.username}
-              onChange={this.update('username')} />
-            <br /><br />
+            <div className="input-username">
+              <input
+                type="text"
+                value={this.state.username}
+                placeholder='username'
+                onChange={this.update('username')} />
+            </div>
 
-            <label htmlFor="password">Password</label>
-            <br />
-            <input 
-              id='password'
-              type="password"
-              value={this.state.password}
-              onChange={this.update('password')} />
-            <br /><br />
+            <div className="input-password">
+              <input
+                type="password"
+                value={this.state.password}
+                placeholder='password'
+                onChange={this.update('password')} />
+            </div>
 
-            <Link to='/signup'>Create account</Link>
+            <div className="link-and-button">
+              <Link to='/signup' className='link-text char-blue'>
+                <span >Create account</span>
+                </Link>
+              <input 
+                type="submit"
+                value='Next'
+                className="next-button" />
+            </div>
 
-            <input 
-              type="submit"
-              value='Next' />
           </form>
         </div>
       </div>
