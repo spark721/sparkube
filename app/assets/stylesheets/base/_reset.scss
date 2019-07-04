@@ -17,11 +17,16 @@ time, mark, audio, video {
     font-size:100%;
     vertical-align:baseline;
     background:transparent;
+    box-sizing: border-box;
+
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
     line-height:1;
-    box-sizing: border-box;
 }
 
 article,aside,details,figcaption,figure,
