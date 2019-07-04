@@ -33,7 +33,14 @@ class LogInForm extends React.Component {
     return (
       <ul>
         {this.props.errors.map((error, i) => {
-          return <li key={`error-${i}`}>{error}</li>
+          return (
+            <li 
+              key={`error-${i}`}
+              className="render-error" >
+              <i className="fas fa-exclamation-circle"></i>
+              {error}
+            </li>
+          );
         })}
       </ul>
     );
