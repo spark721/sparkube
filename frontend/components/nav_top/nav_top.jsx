@@ -4,9 +4,8 @@ import GreetingContainer from './greeting/greeting_container';
 
 const NavTop = () => {
   return (
-    <div>
+    <div className='nav-top'>
       <GreetingContainer />
-      <h3> - - - - - - - - - - - - - - - - - - - - - - </h3>
     </div>
   );
 };
