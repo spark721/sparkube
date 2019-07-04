@@ -1,16 +1,16 @@
-body {
-  /* DELETE THIS LATER */
-  background-color: #FAFAFA;  
-}
 
 .nav-top {
-  position: sticky;
-  height: 56px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0px 0px 5px #cccccc;
-  justify-content: flex-end;
-  padding: 0 16px;
+    position: fixed;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0px 0px 5px #cccccc;
+    justify-content: space-between;
+    padding: 0 16px;
+    background-color: #ffffff;
+    z-index: 999;
+    left: 0;
+    right: 0;
 }
 
 .nav-sign-in {

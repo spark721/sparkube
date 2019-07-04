@@ -17,8 +17,8 @@ const Greeting = (props) => {
       <div >
         <Link className='nav-sign-in' to='/login'>
           {/* <FontAwesomeIcon icon={faUserCircle} className='sign-in-icon' /> */}
-          <i class="fas fa-user-circle sign-in-icon"></i>
-          <p class="sign-in-text">SIGN IN</p>
+          <i className="fas fa-user-circle sign-in-icon"></i>
+          <p className="sign-in-text">SIGN IN</p>
         </Link>
       </div>
     );
