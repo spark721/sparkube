@@ -24,8 +24,20 @@ class SignUpForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state);
+    this.props.processForm(this.state).then(
+        () => this.props.history.push('/')
+    );
   }
+
+  renderError() {
+    return(
+      <ul>
+        {this.props.errors.map( (error, i) => {
+          return <li key={`error-${i}`}>{error}</li>
+        })}
+      </ul>
+    );
+  };
 
   render() {
     return (
@@ -34,7 +46,7 @@ class SignUpForm extends React.Component {
         <p>to continue to SparKube</p>
 
         <form onSubmit={this.handleSubmit}>
-
+          {this.renderError()}
           <label htmlFor="username">Username</label>
           <br />
           <input 

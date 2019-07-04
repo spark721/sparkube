@@ -25,13 +25,14 @@ export const logOut = () => {
   });
 };
 
+// comeback later and update this
 // check username
-export const chkUsername = (username) => {
-  return $.ajax({
+// export const chkUsername = (username) => {
+//   return $.ajax({
     // what type is this?
     // type:
     
     // where is this heading to?
     // url:
-  });
-};
+//   });
+// };

@@ -15,10 +15,19 @@ class User < ApplicationRecord
 
   def self.find_by_credentials(username, password)
     @user = User.find_by(username: username)
-
     return nil unless @user
     @user.is_password?(password) ? @user : nil
   end
+
+  # let's try some shit
+  # check username first
+  # if a user exist with the username, return true
+  # if no user exist with the username, return false
+
+  # def self.is_valid_username?(username)
+  #   @user = User.find_by(username: username)
+  #   return nil unless @user
+  # end
 
   def password=(password)
     @password = password
