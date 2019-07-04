@@ -33,7 +33,14 @@ class SignUpForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map( (error, i) => {
-          return <li key={`error-${i}`}>{error}</li>
+          return (
+            <li 
+              key={`error-${i}`}
+              className="render-error" >
+              <i className="fas fa-exclamation-circle"></i>
+              {error}
+            </li>
+          );
         })}
       </ul>
     );
@@ -41,45 +48,74 @@ class SignUpForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Create your SparKube Account</h1>
-        <p>to continue to SparKube</p>
+      <div className="signup-page-entire">
+        <div className="signup-page">
 
-        <form onSubmit={this.handleSubmit}>
-          {this.renderError()}
-          <label htmlFor="username">Username</label>
-          <br />
-          <input 
-            id='username'
-            type="text"
-            value={this.state.username}
-            onChange={this.update('username')} />
-          <br /><br />
+          <div className="logo-signup-div">
+            <span className="char-blue">S</span>
+            <span className="char-red">p</span>
+            <span className="char-yellow">a</span>
+            <span className="char-blue">r</span>
+            <span className="char-green">K</span>
+            <span className="char-yellow">u</span>
+            <span className="char-blue">b</span>
+            <span className="char-red">e</span>
+          </div>
+        
+          <h2 className="signup-signup-h2">
+            <span>Create your SparKube Account</span>
+          </h2>
 
-          <label htmlFor="email">Your email address</label>
-          <br />
-          <input 
-            id='email'
-            type="text"
-            value={this.state.email}
-            onChange={this.update('email')} />
-          <br /><br />
+          <h3 className="continue-signup-div">
+            <span>to continue to SparKube</span>
+          </h3>
 
-          <label htmlFor="password">Password</label>
-          <br />
-          <input 
-            id='password'
-            type="password"
-            value={this.state.password}
-            onChange={this.update('password')} />
-          <br /><br />
+          <form 
+            onSubmit={this.handleSubmit}
+            className="signup-form" >
 
-          <Link to='/login'>Sign in instead</Link>
+            {this.renderError()}
 
-          <input 
-            type="submit"
-            value='Next' />
-        </form>
+            <div className="input-username">
+              <input 
+                id='username'
+                type="text"
+                value={this.state.username}
+                placeholder='username'
+                onChange={this.update('username')} />
+            </div>
+
+            <div className="input-email">
+              <input 
+                id='email'
+                type="text"
+                value={this.state.email}
+                placeholder='Your email address'
+                onChange={this.update('email')} />
+            </div>
+            
+            <div className="input-password">
+              <input 
+                id='password'
+                type="password"
+                value={this.state.password}
+                placeholder='password'
+                onChange={this.update('password')} />
+            </div>
+
+            <div className="link-and-button">
+              <Link to='/login' className='link-text char-blue'>
+                <span>Sign in instead</span>
+              </Link>
+
+              <input 
+                type="submit"
+                value='Next'
+                className="next-button" />
+            </div>
+
+          </form>
+        </div>
       </div>
     );
   };

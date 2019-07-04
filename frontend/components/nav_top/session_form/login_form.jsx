@@ -53,7 +53,7 @@ class LogInForm extends React.Component {
       <div className="signin-page-entire">
         <div className="signin-page">
 
-          <div className="logo-text-div rainbow">
+          <div className="logo-signin-div">
             <span className="char-blue">S</span>
             <span className="char-red">p</span>
             <span className="char-yellow">a</span>
