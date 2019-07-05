@@ -1,2 +1,49 @@
 class Api::VideosController < ApplicationController
+
+
+  def create
+    @video = Video.new(video_params)
+
+    if @video.save
+      render :show
+    else
+      render json: @video.errors.full_messages, status: 422
+    end
+  end
+
+  def index
+    @videos = Video.all
+  end
+
+  def show
+    @video = Video.find(params[:id])
+  end
+
+  def update
+    @video = current_user.videos.find(params[:id])
+
+    if @video.update_attributes(video_params)
+      render :show
+    else
+      render json: @video.errors.full_messages, status: 422
+    end
+  end
+
+  def destroy
+    video = Video.find(params[:id])
+
+    if video.author_id == current_user.id
+      video.destroy
+      render json: {}
+    else
+      render json: ["Access Denied"], status: 401
+    end
+  end
+
+  private
+
+  def video_params
+    params.require(:video).permit(:title, :description, :author_id)
+  end
+
 end

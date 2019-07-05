@@ -9,7 +9,7 @@ class User < ApplicationRecord
 
   has_many :videos,
     foreign_key: :author_id,
-    class_name: 'Video',
+    class_name: 'Video'
   
   # s p i r e
 
@@ -22,11 +22,6 @@ class User < ApplicationRecord
     return nil unless @user
     @user.is_password?(password) ? @user : nil
   end
-
-  # let's try some shit
-  # check username first
-  # if a user exist with the username, return true
-  # if no user exist with the username, return false
 
   # def self.is_valid_username?(username)
   #   @user = User.find_by(username: username)
