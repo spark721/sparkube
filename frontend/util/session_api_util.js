@@ -30,9 +30,9 @@ export const logOut = () => {
 // export const chkUsername = (username) => {
 //   return $.ajax({
     // what type is this?
-    // type:
+    // type: 
     
     // where is this heading to?
-    // url:
+    // url:  // probabbly a custom route to a method in sessions_controller
 //   });
 // };

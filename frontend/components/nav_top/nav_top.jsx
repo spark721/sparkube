@@ -5,9 +5,20 @@ import GreetingContainer from './greeting/greeting_container';
 const NavTop = () => {
   return (
     <div className='nav-top'>
-      <i className="fas fa-bars"></i>
-      <i className="fab fa-youtube"></i>
-      <GreetingContainer />
+      <div className='nav-left'>
+        <div className='menu-bars'>
+          <i className="fas fa-bars"></i>
+        </div>
+
+        <div className='nav-logo'>
+          <i className="fab fa-youtube"></i>
+          <span className='nav-logo-text'>SparKube</span>
+        </div>
+      </div>
+
+      <div className='nav-right'>
+        <GreetingContainer />
+      </div>
     </div>
   );
 };

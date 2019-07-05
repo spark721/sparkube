@@ -96,3 +96,28 @@ form.signin-form {
   cursor: pointer;
   margin-right: 3px;
 }
+
+.nav-left {
+    display: inherit;
+}
+
+.menu-bars {
+    margin: 0px 15px 0 2px;
+    padding: 8px;
+}
+
+.nav-logo {
+    color: #ff0500;
+    transform: scale(1.5);
+    padding: 8px;
+    margin-left: 6px;
+}
+
+span.nav-logo-text {
+  color: #282828;
+  font-family: 'Oswald', sans-serif;
+  font-size: 13px;
+  padding-left: 1px;
+  letter-spacing: -0.5px;
+  font-weight: 900;
+}

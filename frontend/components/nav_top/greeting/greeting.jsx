@@ -9,9 +9,9 @@ const Greeting = (props) => {
     return (
       <div>
         <button 
-          className='nav-sign-in'
+          className='nav-sign-out'
           onClick={props.logout} >
-            Log Out
+          <span className='sign-out-text'>Log Out</span>
         </button>
       </div>
     );
@@ -19,7 +19,6 @@ const Greeting = (props) => {
     return (
       <div>
         <Link className='nav-sign-in' to='/login'>
-          {/* <FontAwesomeIcon icon={faUserCircle} className='sign-in-icon' /> */}
           <i className="fas fa-user-circle sign-in-icon"></i>
           <p className="sign-in-text">SIGN IN</p>
         </Link>

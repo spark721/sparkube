@@ -25,9 +25,10 @@ class Api::SessionsController < ApplicationController
     end
   end
 
-  # # grab username and check the db if it exist
-  # def is_valid_user(password)
-  #   # 
+  # grab username and check the db if it exist
+  # def check_user
+  # 
+  # 
   # end
 
   

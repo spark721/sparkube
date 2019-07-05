@@ -23,12 +23,28 @@
   align-items: center;
 }
 
+.nav-sign-out {
+  border: solid 1px #065fd4;
+  padding: 10px 15px;
+  display: flex;
+  text-decoration: none;
+  color: #065fd4;
+  border-radius: 2px;
+  align-items: center;
+  cursor: pointer;
+}
+
 .sign-in-icon {
   transform: scale(1.4);
   margin-right: 10px;
 }
 
 .sign-in-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+.sign-out-text {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
 }
