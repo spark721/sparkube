@@ -8,13 +8,16 @@ const Greeting = (props) => {
   if (props.currentUser) {
     return (
       <div>
-        <button onClick={props.logout}>Log Out</button>
+        <button 
+          className='nav-sign-in'
+          onClick={props.logout} >
+            Log Out
+        </button>
       </div>
     );
   } else {
     return (
-      <div >
-
+      <div>
         <Link className='nav-sign-in' to='/login'>
           {/* <FontAwesomeIcon icon={faUserCircle} className='sign-in-icon' /> */}
           <i className="fas fa-user-circle sign-in-icon"></i>
