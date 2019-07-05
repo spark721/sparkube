@@ -1,19 +1,11 @@
 class Video < ApplicationRecord
   has_one_attached :video
 
-  def create
-  end
+  validates :title, :description, :author_id, presence: true
+  validates :title, uniqueness: true
 
-  def index
-  end
+  belongs_to :user,
+    foreign_key: :author_id,
+    class_name: 'User',
 
-  def show
-  end
-
-  def update
-  end
-
-  def destroy
-  end
-  
 end

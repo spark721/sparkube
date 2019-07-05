@@ -7,6 +7,10 @@ class User < ApplicationRecord
   attr_reader :password
   before_validation :ensure_session_token
 
+  has_many :videos,
+    foreign_key: :author_id,
+    class_name: 'Video',
+  
   # s p i r e
 
   def self.generate_session_token
