@@ -30,11 +30,12 @@ class Api::VideosController < ApplicationController
   end
 
   def destroy
-    video = Video.find(params[:id])
+    debugger
+    @video = Video.find(params[:id])
 
-    if video.author_id == current_user.id
-      video.destroy
-      render json: {}
+    if @video.author_id == current_user.id
+      @video.destroy
+      render :show
     else
       render json: ["Access Denied"], status: 401
     end
