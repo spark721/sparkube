@@ -16,6 +16,10 @@ class SignUpForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value,
@@ -74,7 +78,6 @@ class SignUpForm extends React.Component {
             onSubmit={this.handleSubmit}
             className="signup-form" >
 
-            {this.renderError()}
 
             <div className="input-username">
               <input 
@@ -102,6 +105,8 @@ class SignUpForm extends React.Component {
                 placeholder='password'
                 onChange={this.update('password')} />
             </div>
+            
+            {this.renderError()}
 
             <div className="link-and-button">
               <Link to='/login' className='link-text char-blue'>

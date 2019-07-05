@@ -14,7 +14,12 @@ class LogInForm extends React.Component {
 
     this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginDemoUser = this.loginDemoUser.bind(this);
   };
+
+  componentDidMount() {
+    this.props.clearErrors();
+  }
 
   update(field) {
     return e => this.setState({
@@ -46,6 +51,19 @@ class LogInForm extends React.Component {
     );
   };
 
+  loginDemoUser(e) {
+    e.preventDefault();
+    this.state = {
+      username: 'Altoids',
+      password: 'peppermint',
+    };
+
+    const demoUser = Object.assign({}, this.state);
+    this.props.processForm(demoUser).then(
+      () => this.props.history.push('/')
+    );
+  }
+
   render() {
 
     // single form version
@@ -76,7 +94,6 @@ class LogInForm extends React.Component {
             onSubmit={this.handleSubmit}
             className="signin-form" >
 
-            {this.renderError()}
             
             <div className="input-username">
               <input
@@ -94,6 +111,8 @@ class LogInForm extends React.Component {
                 onChange={this.update('password')} />
             </div>
 
+            {this.renderError()}
+
             <div className="link-and-button">
               <Link to='/signup' className='link-text char-blue'>
                 <span >Create account</span>
@@ -102,6 +121,14 @@ class LogInForm extends React.Component {
                 type="submit"
                 value='Next'
                 className="next-button" />
+            </div>
+
+            <div className="demo-button-div">
+              <input 
+                type="submit"
+                value="Demo"
+                className="demo-button"
+                onClick={this.loginDemoUser} />
             </div>
 
           </form>

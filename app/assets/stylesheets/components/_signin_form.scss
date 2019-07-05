@@ -80,3 +80,19 @@ form.signin-form {
   font-size: 15px;
   cursor: pointer;
 }
+
+.demo-button-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 5px;
+}
+.demo-button {
+  width: 90px;
+  height: 40px;
+  background-color: #0e8b34;
+  color: white;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-right: 3px;
+}
