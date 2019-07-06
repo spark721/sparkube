@@ -9,16 +9,20 @@ import {
   ProtectedRoute 
   } from '../util/route_util';
 
+import VideoIndexContainer from './video/video_index_container';
+
 const App = () => {
   return (
     <div>
 
       <Switch>
-        <Route exact path='/' component={NavTop} />
         <AuthRoute exact path='/signup' component={SignUpFormContainer} />
         <AuthRoute exact path='/login' component={LogInFormContainer} />
+        <Route exact path='/' component={NavTop} />
         <Redirect to='/' component={NavTop} />
       </Switch>
+
+      <VideoIndexContainer />
     </div>
   );
 };
