@@ -5,7 +5,7 @@ import SignUpForm from './signup_form';
 
 const msp = (state) => {
   return {
-    errors: state.errors.session,
+    errors: state.errors.sessionErrors,
     formType: 'signup',
   };
 };

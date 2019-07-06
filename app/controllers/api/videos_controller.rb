@@ -13,6 +13,7 @@ class Api::VideosController < ApplicationController
 
   def index
     @videos = Video.all
+    render :index
   end
 
   def show
@@ -44,7 +45,7 @@ class Api::VideosController < ApplicationController
   private
 
   def video_params
-    params.require(:video).permit(:title, :description, :author_id)
+    params.require(:video).permit(:title, :description, :author_id, :video_url)
   end
 
 end

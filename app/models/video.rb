@@ -1,5 +1,6 @@
 class Video < ApplicationRecord
-  has_one_attached :video
+
+  has_one_attached :video_url
 
   validates :title, :description, :author_id, presence: true
   validates :title, uniqueness: true
