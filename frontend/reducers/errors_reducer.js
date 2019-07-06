@@ -4,8 +4,8 @@ import sessionErrorsReducer from './session_errors_reducer';
 import videoErrorReducer from './videos_errors_reducer';
 
 const errorsReducer = combineReducers({
-  session: sessionErrorsReducer,
-  videos: videoErrorReducer,
+  sessionErrors: sessionErrorsReducer,
+  videoErrors: videoErrorReducer,
 });
 
 export default errorsReducer;

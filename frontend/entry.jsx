@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  // TESTING BELOW
+  // - = * TESTING BELOW *  = -
   window.signUp = signUp;
   window.logIn = logIn;
   window.logOut = logOut;
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createVideo = createVideo;
   window.updateVideo = updateVideo;
   window.deleteVideo = deleteVideo;
-  // TESTING ABOVE
+  // - = * TESTING ABOVE * = -
 
   ReactDOM.render(<Root store={store} />, root);
 })
