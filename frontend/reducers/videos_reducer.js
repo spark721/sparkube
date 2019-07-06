@@ -2,7 +2,6 @@ import {
   RECEIVE_ALL_VIDEOS,
   RECEIVE_VIDEO,
   DELETE_VIDEO,
-  RECEIVE_VIDEO_ERRORS,
 } from '../actions/video_actions';
 
 const videoReducer = (oldState = {}, action) => {
