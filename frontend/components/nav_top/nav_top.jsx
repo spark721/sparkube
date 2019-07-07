@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const NavTop = () => {
   return (
     <div className='nav-top'>
-      <div className='nav-left'>
+      <div className='nav-top-left'>
         <div className='menu-bars'>
           <i className="fas fa-bars"></i>
         </div>
