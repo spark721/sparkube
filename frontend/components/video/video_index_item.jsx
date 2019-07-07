@@ -14,7 +14,7 @@ const VideoIndexItem = ({ video }) => {
               type="video/mp4" />
           </video>
           <div className='video-index-text-below'>
-            <p className='video-index-title-below'>{video.title}</p>
+            <span className='video-index-title-below'>{video.title}</span>
             <div className='video-index-bottom-container'>
               <p className='video-index-author-below'>author_id: {video.author_id}</p>
             </div>

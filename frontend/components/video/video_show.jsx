@@ -24,7 +24,12 @@ class VideoShow extends React.Component {
                 src={this.props.video.videoUrl}
                 type="video/mp4" />
             </video>
-            <h1>title: {this.props.video.title}</h1>
+            <div className='video-show-title-div'>
+              <span className='video-show-title-text'>{this.props.video.title}</span>
+              <div className='video-show-stats-div'>
+                <span className='video-show-views-text'>40,588,087 views</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

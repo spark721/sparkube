@@ -7,47 +7,69 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # - = - = - = - = - = - = - = - = - = -
-# 
-# video_local = Video.new(
-#   title: 'Mapo Tofu receipe',
-#   description: 'Description for Mapo Tofu receipe',
-#   author_id: 8
-#   )
-  
-#   video_local.save!
-#   v6 = Video.last
-#   file = File.open('app/assets/videos/mapo_tofu.mp4')
-#   v6.video_url.attach(io: file, filename: 'mapo_tofu.mp4')
-  
-# v1 = Video.new(
-#   title: 'test-video-1',
-#   description: 'test-video-1',
-#   author_id: 9
-#   )
-    
-#   v1.save!
-#   v6 = Video.last
-#   file = File.open('app/assets/videos/test_video_1.mp4')
-#   v6.video_url.attach(io: file, filename: 'test_video_1.mp4')
-  
 
 ActiveRecord::Base.transaction do
 
+  # User seeding
   User.delete_all
 
-  User.create(username: 'Altoids', password: 'peppermint', email: 'strong@mints')
-  User.create(username: 'test-author-1', password: 'author1', email: 'a1@email')
-  User.create(username: 'test-author-2', password: 'author2', email: 'a2@email')
-  User.create(username: 'test-author-3', password: 'author3', email: 'a3@email')
+  (1..6).each do |n|
+    User.create(username: "test-author-#{n}", password: "author#{n}", email: "a#{n}@email")
+  end
 
-  Video.delete_all
-  Video.destroy_all
-  Video.create(title: 'test_video_01_title', description: 'test_video_01_description', author_id: 1)
+  # demo user
+  User.create(username: 'Altoids', password: 'peppermint', email: 'strong@mints')
+
+  User.create(username: "BigBang OFFICIAL", password: "BigBang", email: "BigBang@email") # 8
+  User.create(username: "BlackPink OFFICIAL", password: "BlackPink", email: "BlackPink@email") # 9
+  User.create(username: "BTS OFFICIAL", password: "BTSpass", email: "BTS@email") # 10
+  User.create(username: "EXID OFFICIAL", password: "EXIDpass", email: "EXID@email") # 11
+  User.create(username: "IU OFFICIAL", password: "IUpass", email: "IU@email") # 12
+  User.create(username: "Iz*One OFFICIAL", password: "IzOnepass", email: "IzOne@email") # 13
+  User.create(username: "K/DA OFFICIAL", password: "K/DApass", email: "K/DA@email") # 14
   
-  file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/test_video/test_video_01.mp4")
-  video = Video.first
-  video.video_url.attach(io: file, filename: "test_video_01.mp4")
+
+
+  # Video seeding
+  Video.delete_all
+
+  (1..6).each do |n|
+    Video.create(title: "test_video_0#{n}_title", description: "test_video_0#{n}_description", author_id: n)
+    file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/test_video/test_video_0#{n}.mp4")
+    video = Video.last
+    video.video_url.attach(io: file, filename: "test_video_0#{n}")
+    video.save!
+  end
+
+  Video.create(title: "BIGBANG - LOSER M/V", description: "#빅뱅 #loser", author_id: 8)
+  file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/music/bigbang-loser.mp4")
+  video = Video.last
+  video.video_url.attach(io: file, filename: "bigbang-loser.mp4")
   video.save!
 
+  Video.create(title: "BLACKPINK - '붐바야'(BOOMBAYAH) M/V", description: "#블랙핑크 #붐바야", author_id: 8)
+  file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/music/blackpink-boombaya.mp4")
+  video = Video.last
+  video.video_url.attach(io: file, filename: "blackpink-boombaya.mp4")
+  video.save!
+
+  Video.create(title: "BTS (방탄소년단) 'IDOL' Official MV", description: "#bts #idol", author_id: 10)
+  file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/music/bts-idol.mp4")
+  video = Video.last
+  video.video_url.attach(io: file, filename: "bts-idol.mp4")
+  video.save!
+
+  Video.create(title: "[EXID] 덜덜덜(DDD) (Official Music Video)", description: "#exid #ddd", author_id: 11)
+  file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/music/exid-ddd.mp4")
+  video = Video.last
+  video.video_url.attach(io: file, filename: "exid-ddd.mp4")
+  video.save!
+
+  Video.create(title: "IZ*ONE (아이즈원) - 비올레타 (Violeta) MV", description: "#izone #violeta", author_id: 13)
+  file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/music/iz_one-violeta.mp4")
+  video = Video.last
+  video.video_url.attach(io: file, filename: "iz_one-violeta.mp4")
+  video.save!
+  
 end
 
