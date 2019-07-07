@@ -11,13 +11,15 @@ class VideoIndex extends React.Component {
   render() {
     let videos = this.props.videos.map( (video, i) => {
       return <VideoIndexItem 
-              video={video}
-              key={i} />;
+              key={i}
+              video={video} />;
     });
 
     return (
-      <div>
-        <ul>{videos}</ul>
+      <div className='video-index-splash-whole'>
+        <div className='video-index-splash'>
+          <ul className='video-index-splash-ul'>{videos}</ul>
+        </div>
       </div>
     );
   };
