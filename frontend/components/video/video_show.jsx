@@ -1,7 +1,7 @@
 
 import React from 'react';
 import NavTop from '../nav_top/nav_top';
-import VideoIndexContainer from './video_index_container';
+import SideIndexContainer from './side_index_container';
 
 class VideoShow extends React.Component {
 
@@ -47,7 +47,7 @@ class VideoShow extends React.Component {
           </div>
 
           <div className='video-show-index'>
-            <VideoIndexContainer />
+            <SideIndexContainer />
           </div>
         </div>
       </div>
