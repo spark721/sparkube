@@ -31,19 +31,23 @@
 #   v6.video_url.attach(io: file, filename: 'test_video_1.mp4')
   
 
-# ActiveRecord::Base.transaction do
+ActiveRecord::Base.transaction do
 
-#   User.delete_all
+  User.delete_all
 
-#   demo = User.new(
-#     username: 'Altoids',
-#     password: 'peppermint',
-#     email: 'strong@mints'
-#   )
+  User.create(username: 'Altoids', password: 'peppermint', email: 'strong@mints')
+  User.create(username: 'test-author-1', password: 'author1', email: 'a1@email')
+  User.create(username: 'test-author-2', password: 'author2', email: 'a2@email')
+  User.create(username: 'test-author-3', password: 'author3', email: 'a3@email')
 
-#   demo.save!
+  Video.delete_all
+  Video.destroy_all
+  Video.create(title: 'test_video_01_title', description: 'test_video_01_description', author_id: 1)
+  
+  file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/test_video/test_video_01.mp4")
+  video = Video.first
+  video.video_url.attach(io: file, filename: "test_video_01.mp4")
+  video.save!
 
-#   Video.delete_all
-
-# end
+end
 

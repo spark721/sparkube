@@ -8,7 +8,7 @@ export const RECEIVE_VIDEO_ERRORS = 'RECEIVE_VIDEO_ERRORS';
 
 const receiveErrors = (errors) => {
   return {
-    type: RECEIVE_SESSION_ERRORS,
+    type: RECEIVE_VIDEO_ERRORS,
     errors: errors,
   };
 };
