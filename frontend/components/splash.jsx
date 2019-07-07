@@ -8,10 +8,10 @@ import VideoIndexContainer from './video/video_index_container';
 const Splash = () => {
   return (
     <div>
-      <div>
+      {/* <div> */}
         <NavTop />
         <VideoIndexContainer />
-      </div>
+      {/* </div> */}
     </div>
   );
 };

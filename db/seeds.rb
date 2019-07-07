@@ -43,7 +43,7 @@
 
 #   demo.save!
 
-#   # Video.delete_all
+#   Video.delete_all
 
 # end
 
