@@ -1,6 +1,7 @@
 
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
+import { Link } from 'react-router-dom';
 
 const NavTop = () => {
   return (
@@ -11,8 +12,10 @@ const NavTop = () => {
         </div>
 
         <div className='nav-logo'>
-          <i className="fab fa-youtube"></i>
-          <span className='nav-logo-text'>SparKube</span>
+          <Link to='/' className='main-logo-text-link'>
+            <i className="fab fa-youtube"></i>
+            <span className='nav-logo-text'>SparKube</span>
+          </Link>
         </div>
       </div>
 
