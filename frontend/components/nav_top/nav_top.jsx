@@ -23,7 +23,7 @@ const NavTop = () => {
 
       <div className='nav-right'>
           <div className="upload-icon">
-        <Link>
+        <Link to='/upload' >
             <i className="fas fa-video"></i>
         </Link>
           </div>
