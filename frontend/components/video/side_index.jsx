@@ -15,10 +15,18 @@ class SideIndex extends React.Component {
         video={video} />;
     });
 
+    function shuffle(a) {
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
     return (
       <div className='side-index-splash-whole'>
         <div className='side-index-splash'>
-          <ul className='side-index-splash-ul'>{videos}</ul>
+          <ul className='side-index-splash-ul'>{shuffle(videos)}</ul>
         </div>
       </div>
     );

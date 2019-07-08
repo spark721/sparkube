@@ -8,6 +8,7 @@
 #   end
 # end
 
+
 @videos.each do |cur_video|
   json.set! cur_video.id do
     json.extract! cur_video, :id, :title, :description, :author_id
