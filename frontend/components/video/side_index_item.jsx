@@ -7,11 +7,12 @@ const SideIndexItem = ({ video }) => {
     <li className='side-index-splash-li'>
       <Link to={`/watch/${video.id}`}>
         <div className='side-index-item-splash'>
-          <video width="168" height="94" poster={video.poster} preload="metadata">
+          {/* <video width="168" height="94" poster={video.poster} preload="metadata">
             <source
               src={video.videoUrl}
               type="video/mp4" />
-          </video>
+          </video> */}
+          <img src={video.poster} alt="" width="168" />
         </div>
       </Link>
 
@@ -20,7 +21,7 @@ const SideIndexItem = ({ video }) => {
           <span className='side-index-title'>{video.title}</span>
           <br/>
           <div>
-            <span className='side-index-author'>author_id: {video.author_id}</span>
+            <span className='side-index-author'>{video.username}</span>
           </div>
           <div>
             <span className='side-index-views'>588,087 views</span>

@@ -36,7 +36,7 @@ class VideoShow extends React.Component {
 
             <div className='author-description-div'>
               <div className='author-div'>
-                <span className='author-text'>author_id: {this.props.video.author_id}</span>
+                <span className='author-text'>{this.props.video.username}</span>
                 <br />
                 <span className='date-text'>Published on Jul 7, 2019</span>
               </div>
