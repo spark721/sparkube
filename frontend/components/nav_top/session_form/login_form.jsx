@@ -36,7 +36,7 @@ class LogInForm extends React.Component {
 
   renderError() {
     return (
-      <ul>
+      <ul className='auth-errors'>
         {this.props.errors.map((error, i) => {
           return (
             <li 
@@ -99,7 +99,7 @@ class LogInForm extends React.Component {
               <input
                 type="text"
                 value={this.state.username}
-                placeholder='username'
+                placeholder='Username'
                 onChange={this.update('username')} />
             </div>
 
@@ -107,7 +107,7 @@ class LogInForm extends React.Component {
               <input
                 type="password"
                 value={this.state.password}
-                placeholder='password'
+                placeholder='Password'
                 onChange={this.update('password')} />
             </div>
 

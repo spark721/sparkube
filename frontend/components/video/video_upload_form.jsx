@@ -6,6 +6,12 @@ import NavTop from '../nav_top/nav_top';
 class VideoUploadForm extends React.Component {
 
   render() {
+    // let inputVideo = document.getElementById('input')
+    // inputVideo.addEventListener('change', updateImageDisplay);
+    // function updateImageDisplay() {
+
+    // }
+
     return(
       <div>
         <NavTop />
@@ -19,7 +25,7 @@ class VideoUploadForm extends React.Component {
                 </label>
                 <input type="file"
                        id="upload-mp4"
-                       accept=".mp4" />
+                       accept="video/mp4" />
                        
               </div>
 
@@ -31,7 +37,7 @@ class VideoUploadForm extends React.Component {
                 </label>
                 <input type="file"
                        id="upload-img"
-                       accept=".png,.jpg" />
+                       accept="image/png, image/jpeg" />
               </div>
 
               

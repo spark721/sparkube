@@ -1,8 +1,12 @@
 .render-error {
   color: red;
   list-style: none;
+  padding: 2px 0;
+  .fas {
+    margin-right: 10px;
+  }
 }
 
-.fas {
-  margin-right: 10px;
+.auth-errors {
+  margin-top: 15px;
 }
