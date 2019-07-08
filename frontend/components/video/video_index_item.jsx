@@ -7,7 +7,7 @@ const VideoIndexItem = ({ video }) => {
     <li className='video-index-splash-li'>
       <Link to={`/watch/${video.id}`}>
         <div className='video-index-item-splash'>
-          <video width="210" height="118">
+          <video width="210" height="118" poster={video.poster} preload="metadata">
             {/* 210 * 118 */}
             <source
               src={video.videoUrl}

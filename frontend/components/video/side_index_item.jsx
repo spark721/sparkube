@@ -7,7 +7,7 @@ const SideIndexItem = ({ video }) => {
     <li className='side-index-splash-li'>
       <Link to={`/watch/${video.id}`}>
         <div className='side-index-item-splash'>
-          <video width="168" height="94" poster={video.poster}>
+          <video width="168" height="94" poster={video.poster} preload="metadata">
             <source
               src={video.videoUrl}
               type="video/mp4" />

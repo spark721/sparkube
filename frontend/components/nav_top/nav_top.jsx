@@ -8,7 +8,9 @@ const NavTop = () => {
     <div className='nav-top'>
       <div className='nav-top-left'>
         <div className='menu-bars'>
-          <i className="fas fa-bars"></i>
+          <Link>
+            <i className="fas fa-bars"></i>
+          </Link>
         </div>
 
         <div className='nav-logo'>
@@ -20,6 +22,11 @@ const NavTop = () => {
       </div>
 
       <div className='nav-right'>
+          <div className="upload-icon">
+        <Link>
+            <i className="fas fa-video"></i>
+        </Link>
+          </div>
         <GreetingContainer />
       </div>
     </div>

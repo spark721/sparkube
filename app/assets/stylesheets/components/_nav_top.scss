@@ -55,3 +55,22 @@
     text-decoration: none;
     color: #ff0500;
 }
+
+.nav-right {
+  display: flex;
+}
+
+.upload-icon {
+  display: flex;
+  align-items: center;
+  margin: 0 15px;
+  i {
+    color: #606060;
+  }
+}
+
+.menu-bars {
+  i {
+    color: #606060;
+  }
+}
