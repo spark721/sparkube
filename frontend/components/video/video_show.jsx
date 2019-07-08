@@ -8,6 +8,15 @@ class VideoShow extends React.Component {
   componentDidMount() {
     this.props.getVideo(this.props.match.params.videoId);
   };
+  
+  componentDidUpdate(prevProps) {
+    // debugger;
+    if (prevProps.video) {
+      if (this.props.video.videoUrl !== prevProps.video.videoUrl) {
+        window.location.reload();
+      };
+    };
+  };
 
   render() {
     if (!this.props.video) {
