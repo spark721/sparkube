@@ -16,9 +16,9 @@ class SideIndex extends React.Component {
     });
 
     return (
-      <div className='video-index-splash-whole'>
-        <div className='video-index-splash'>
-          <ul className='video-index-splash-ul'>{videos}</ul>
+      <div className='side-index-splash-whole'>
+        <div className='side-index-splash'>
+          <ul className='side-index-splash-ul'>{videos}</ul>
         </div>
       </div>
     );
