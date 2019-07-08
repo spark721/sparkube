@@ -1,12 +1,17 @@
 
 import React from 'react';
+import NavTop from '../nav_top/nav_top';
+
 
 class VideoUploadForm extends React.Component {
 
   render() {
     return(
       <div>
-        <h1>This is VideoUploadForm</h1>
+        <NavTop />
+        <div className='upload-form-page'>
+          <h1>This is VideoUploadForm</h1>
+        </div>
       </div>
     );
   };

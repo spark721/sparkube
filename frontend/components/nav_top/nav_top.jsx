@@ -8,9 +8,9 @@ const NavTop = () => {
     <div className='nav-top'>
       <div className='nav-top-left'>
         <div className='menu-bars'>
-          <Link>
+          {/* <Link> */}
             <i className="fas fa-bars"></i>
-          </Link>
+          {/* </Link> */}
         </div>
 
         <div className='nav-logo'>
@@ -22,11 +22,11 @@ const NavTop = () => {
       </div>
 
       <div className='nav-right'>
-          <div className="upload-icon">
-        <Link to='/upload' >
-            <i className="fas fa-video"></i>
-        </Link>
-          </div>
+        <div className="upload-icon">
+          <Link to='/upload' >
+              <i className="fas fa-video"></i>
+          </Link>
+        </div>
         <GreetingContainer />
       </div>
     </div>

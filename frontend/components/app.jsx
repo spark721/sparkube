@@ -18,7 +18,7 @@ const App = () => {
         <AuthRoute exact path='/signup' component={SignUpFormContainer} />
         <AuthRoute exact path='/login' component={LogInFormContainer} />
         <Route path="/watch/:videoId" component={VideoShowContainer} />
-        <Route path="/upload" component={VideoUploadContainer} />
+        <ProtectedRoute path="/upload" component={VideoUploadContainer} />
         <Route exact path='/' component={Splash} />
         <Redirect to='/' component={Splash} />
       </Switch>
