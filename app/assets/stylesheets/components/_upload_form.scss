@@ -1,5 +1,31 @@
 
 .upload-form-page {
-  position: relative;
-  top: 56px;
+    position: relative;
+    top: 56px;
+    padding-top: 50px;
+}
+
+.upload-form-div {
+    width: 50%;
+    margin: auto;
+    padding: 15px;
+}
+
+.upload-form {
+  display: flex;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  i {
+    transform: scale(3);
+    color: #b8b8b8;
+  }
+}
+
+input[type="file"] {
+  // display: none;
+}
+
+.upload-mp4-div {
+  width: 40%;
 }
