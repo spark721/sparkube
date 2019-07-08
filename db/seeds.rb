@@ -20,6 +20,28 @@ ActiveRecord::Base.transaction do
   # demo user
   User.create(username: 'Altoids', password: 'peppermint', email: 'strong@mints')
 
+  
+  
+  # Video seeding
+  Video.delete_all
+  
+  (1..6).each do |n|
+    Video.create(title: "test_video_0#{n}_title", description: "test_video_0#{n}_description", author_id: n)
+    video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/test_video/test_video_0#{n}.mp4")
+    poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/test_video_0#{n}.png")
+    video_obj = Video.last
+    video_obj.video_url.attach(io: video, filename: "test_video_0#{n}.mp4")
+    video_obj.poster.attach(io: poster, filename: "test_video_0#{n}.png")
+    video_obj.save!
+  end
+
+end
+
+
+
+
+
+  
   # User.create(username: "BigBang OFFICIAL", password: "BigBang", email: "BigBang@email") # 8
   # User.create(username: "BlackPink OFFICIAL", password: "BlackPink", email: "BlackPink@email") # 9
   # User.create(username: "BTS OFFICIAL", password: "BTSpass", email: "BTS@email") # 10
@@ -28,19 +50,6 @@ ActiveRecord::Base.transaction do
   # User.create(username: "Iz*One OFFICIAL", password: "IzOnepass", email: "IzOne@email") # 13
   # User.create(username: "K/DA OFFICIAL", password: "K/DApass", email: "K/DA@email") # 14
   
-
-
-  # Video seeding
-  Video.delete_all
-
-  (1..6).each do |n|
-    Video.create(title: "test_video_0#{n}_title", description: "test_video_0#{n}_description", author_id: n)
-    file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/test_video/test_video_0#{n}.mp4")
-    video = Video.last
-    video.video_url.attach(io: file, filename: "test_video_0#{n}")
-    video.save!
-  end
-
   # Video.create(title: "BIGBANG - LOSER M/V", description: "#빅뱅 #loser", author_id: 8)
   # file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/music/bigbang-loser.mp4")
   # video = Video.last
@@ -71,5 +80,5 @@ ActiveRecord::Base.transaction do
   # video.video_url.attach(io: file, filename: "iz_one-violeta.mp4")
   # video.save!
   
-end
+
 
