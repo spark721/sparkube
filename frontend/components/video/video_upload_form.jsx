@@ -13,6 +13,7 @@ class VideoUploadForm extends React.Component {
       videoURL: null,
       posterFile: null,
       posterURL: null,
+      loading: false,
     };
 
     this.update = this.update.bind(this);
@@ -73,9 +74,19 @@ class VideoUploadForm extends React.Component {
     formData.append('video[description]', this.state.description);
     formData.append('video[video_url]', this.state.videoFile);
     formData.append('video[poster]', this.state.posterFile);
+
+    this.setState({ loading: true });
+
     this.props.createVideo(formData).then(
-      () => this.props.history.push('/')
+      () => {
+        this.setState({ loading: false });
+        this.props.history.push('/');
+      },
+      () => {
+        this.setState({ loading: false });
+      }
     );
+
   };
 
   componentDidMount() {
@@ -152,6 +163,18 @@ class VideoUploadForm extends React.Component {
       // </div>
       : <p>No thumbnail currently selected</p>;
 
+    const nowLoading = this.state.loading ?
+
+      <button className="upload-button"
+              onClick={this.handleSubmit}
+              disabled >
+          <img src={window.loadingURL} alt="" />
+      </button>
+      : 
+      <button className="upload-button"
+        onClick={this.handleSubmit} >
+        <p>Done</p>
+      </button>
     
     return(
       <div>
@@ -213,10 +236,7 @@ class VideoUploadForm extends React.Component {
                 {this.renderError()}
               </div>
 
-              <button className="upload-button"
-                      onClick={this.handleSubmit} >
-                Done
-              </button>
+              {nowLoading}
               
             </form>
 

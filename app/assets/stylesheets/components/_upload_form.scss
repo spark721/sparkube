@@ -50,8 +50,8 @@
   justify-content: space-between;
   align-items: center;
   border: 1px solid #dadce0;
-
 }
+
 
 .upload-img-div {
   // border: 1px solid slateblue;
@@ -97,6 +97,11 @@
   background-color: #3c82de;
 }
 
+.upload-button:disabled {
+  background-color: #777;
+  cursor: not-allowed;
+}
+
 .video-poster {
     // border: 1px solid red;
     font-size: 12px;
@@ -111,6 +116,11 @@
     outline: none;
 }
 
+.upload-title:focus {
+    border: 1px solid #2d73e8;
+}
+
+
 .upload-desc {
     position: relative;
     top: 20px;
@@ -120,4 +130,8 @@
     padding: 5px 10px 6px;
     border: 1px solid #dadce0;
     height: 210px;
+}
+
+.upload-desc:focus {
+    border: 1px solid #2d73e8;
 }
