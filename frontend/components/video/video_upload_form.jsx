@@ -19,13 +19,17 @@ class VideoUploadForm extends React.Component {
       const curVids = inputVid.files;
       let userVid = document.createElement('video');
       let vidSource = document.createElement('source');
-      userVid.width = "250";
+      userVid.width = "280";
       userVid.controls = true;
       vidSource.type = "video/mp4";
       vidSource.src = window.URL.createObjectURL(curVids[0]);
       userVid.appendChild(vidSource);
 
+      let paraV = document.createElement('p');
+      paraV.textContent = curVids[0].name;
+
       previewVid.appendChild(userVid);
+      previewVid.appendChild(paraV);
     }
 
     let inputImg = document.getElementById('upload-img');
@@ -41,7 +45,12 @@ class VideoUploadForm extends React.Component {
       const curImgs = inputImg.files;
       let userImg = document.createElement('img');
       userImg.src = window.URL.createObjectURL(curImgs[0]);
+      
+      let paraI = document.createElement('p');
+      paraI.textContent = curImgs[0].name;
+
       previewImg.appendChild(userImg);
+      previewImg.appendChild(paraI);
     }
 
   }
