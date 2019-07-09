@@ -3,6 +3,11 @@ class Api::VideosController < ApplicationController
 
   def create
     # debugger
+    if (params[:video][:video_url] === "null") || (params[:video][:poster] === "null")
+      render json: ["Please upload both video and thumbnail"], status: 422
+      return nil
+    end
+
     @video = Video.new(video_params)
     @video.author_id = current_user.id
     if @video.save

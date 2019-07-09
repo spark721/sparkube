@@ -7,7 +7,7 @@ const msp = (state) => {
   let currentUserId = state.session.id;
   return {
     currentUser: state.entities.users[currentUserId],
-    videoErrors: state.errors.videoErrors,
+    errors: state.errors.videoErrors,
   };
 };
 

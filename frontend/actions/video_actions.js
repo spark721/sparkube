@@ -13,6 +13,12 @@ const receiveErrors = (errors) => {
   };
 };
 
+export const clearErrors = () => {
+  return {
+    type: CLEAR_ERRORS,
+  };
+};
+
 export const getVideos = () => {
   return (dispatch) => {
     return VideoAPIUtil.getVideos().then(
