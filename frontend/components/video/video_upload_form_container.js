@@ -13,7 +13,7 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
   return {
-    createVideo: (video) => dispatch(createVideo(video)),
+    createVideo: (formData) => dispatch(createVideo(formData)),
   };
 };
 

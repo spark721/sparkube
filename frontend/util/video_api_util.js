@@ -8,11 +8,13 @@ export const getVideos = () => {
 };
 
 // upload a video
-export const createVideo = (video) => {
+export const createVideo = (formData) => {
   return $.ajax({
     type: `POST`,
     url: `/api/videos`,
-    data: { video },
+    data: formData,
+    contentType: false,
+    processData: false,
   });
 };
 

@@ -54,7 +54,11 @@ class VideoUploadForm extends React.Component {
     const formData = new FormData();
     formData.append('video[title]', this.state.title);
     formData.append('video[description]', this.state.description);
-    
+    formData.append('video[video_url]', this.state.videoFile);
+    formData.append('video[poster]', this.state.posterFile);
+    this.props.createVideo(formData).then(
+      () => this.props.history.push('/')
+    );
   };
 
 
@@ -111,21 +115,21 @@ class VideoUploadForm extends React.Component {
     // console.log(this.state);
 
     const previewVid = this.state.videoURL ?
-      <div>
+      // <div>
         <video width="100%" controls>
           <source
             src={this.state.videoURL}
             type="video/mp4" />
         </video>
-        <p>{this.state.videoFile.name}</p>
-      </div>
+        // {/* <p>{this.state.videoFile.name}</p> */}
+      // {/* </div> */}
       : <p>No File currently selected</p>;
 
     const previewImg = this.state.posterURL ?
-      <div>
+      // <div>
         <img src={this.state.posterURL} />
-        <p>{this.state.posterFile.name}</p>
-      </div>
+        // <p>{this.state.posterFile.name}</p>
+      // </div>
       : <p>No File currently selected</p>;
 
     
@@ -134,6 +138,7 @@ class VideoUploadForm extends React.Component {
         <NavTop />
         <div className='upload-form-page'>
           <div className='upload-form-div'>
+
             <form className='upload-form'
                   onSubmit={this.handleSubmit} >
               <div className="upload-mp4-div">
@@ -168,13 +173,22 @@ class VideoUploadForm extends React.Component {
                 </div>
               </div>
 
-              <div>
+              <div className="upload-title-div">
                 <input type="text"
+                       className="upload-title"
                        value={this.state.title}
+                       placeholder="Title"
                        onChange={this.update('title')} />
+              </div>
+
+              <div className="upload-desc-div">
+                <textarea className="upload-desc"
+                          rows="6"
+                          placeholder="Description" ></textarea>
               </div>
               
             </form>
+
           </div>
         </div>
       </div>

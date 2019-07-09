@@ -22,9 +22,9 @@ export const getVideos = () => {
   };
 };
 
-export const createVideo = (video) => {
+export const createVideo = (formData) => {
   return (dispatch) => {
-    return VideoAPIUtil.createVideo(video).then( 
+    return VideoAPIUtil.createVideo(formData).then( 
       (video) => dispatch({ type: RECEIVE_VIDEO, video }),
       (err) => dispatch(receiveErrors(err.responseJSON))
     );
