@@ -101,6 +101,10 @@ form.signin-form {
   border: none;
 }
 
+.next-button:hover {
+  background-color: #3c82de;
+}
+
 .demo-button-div {
   display: flex;
   justify-content: flex-end;
@@ -116,6 +120,10 @@ form.signin-form {
   cursor: pointer;
   margin-right: 4px;
   border: none;
+}
+
+.demo-button:hover {
+  background-color: #1d9d43;
 }
 
 .nav-top-left {
