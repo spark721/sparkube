@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux';
 import VideoUploadForm from './video_upload_form';
-import { createVideo } from '../../actions/video_actions';
+import { createVideo, clearErrors } from '../../actions/video_actions';
 
 const msp = (state) => {
   let currentUserId = state.session.id;
@@ -14,6 +14,7 @@ const msp = (state) => {
 const mdp = (dispatch) => {
   return {
     createVideo: (formData) => dispatch(createVideo(formData)),
+    clearErrors: () => dispatch(clearErrors()),
   };
 };
 

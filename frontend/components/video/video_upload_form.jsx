@@ -51,14 +51,14 @@ class VideoUploadForm extends React.Component {
 
   renderError() {
     return (
-      <ul className="auth-errors">
+      <ul className="upload-errors">
         {this.props.errors.map((error, i) => {
           return (
             <li
               key={`error-${i}`}
-              className="render-error" >
-              <i className="fas fa-exclamation-circle"></i>
-              {error}
+              className="render-upload-error" >
+              <i className="fas fa-exclamation-circle" id="upload-error-i"></i>
+                {error}
             </li>
           );
         })}
@@ -78,6 +78,9 @@ class VideoUploadForm extends React.Component {
     );
   };
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
 
   // componentDidMount() {
   //   let inputVid = document.getElementById('upload-mp4');

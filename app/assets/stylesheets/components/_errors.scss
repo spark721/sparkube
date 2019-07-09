@@ -10,3 +10,21 @@
 .auth-errors {
   margin-top: 15px;
 }
+
+.upload-errors {
+  list-style: none;
+  color: red;
+  padding: 2px 0;
+  
+  .render-upload-error {
+    margin-top: 25px;
+    font-size: 12px;
+    
+    #upload-error-i {
+      color: red;
+      transform: none;
+      margin: 0 10px 0 0;
+      top: 0;
+    }
+  }
+}
