@@ -139,8 +139,7 @@ class VideoUploadForm extends React.Component {
         <div className='upload-form-page'>
           <div className='upload-form-div'>
 
-            <form className='upload-form'
-                  onSubmit={this.handleSubmit} >
+            <form className='upload-form'>
               <div className="upload-mp4-div">
                 <label htmlFor="upload-mp4"
                        className="form-upload-icon">
@@ -176,16 +175,23 @@ class VideoUploadForm extends React.Component {
               <div className="upload-title-div">
                 <input type="text"
                        className="upload-title"
-                       value={this.state.title}
+                      //  value={this.state.title}
                        placeholder="Title"
                        onChange={this.update('title')} />
               </div>
 
               <div className="upload-desc-div">
                 <textarea className="upload-desc"
+                          // value={this.state.description}
+                          onChange={this.update('description')}
                           rows="6"
-                          placeholder="Description" ></textarea>
+                          placeholder="Description" />
               </div>
+
+              <button className="upload-button"
+                      onClick={this.handleSubmit} >
+                Done
+              </button>
               
             </form>
 
