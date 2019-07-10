@@ -73,11 +73,12 @@
 };
 
 .show-button-div {
+  
   button {
+    color: #ffffff;
     height: 36px;
     width: 107px;
     padding: 10px 16px;
-    color: #ffffff;
     background-color: #285fd4;
     font-family: 'Roboto', sans-serif;
     cursor: pointer;
@@ -86,6 +87,10 @@
     outline: none;
     font-weight: bold;
     border-radius: 2.5px;
+  }
+  
+  button:hover {
+    background-color: #3c82de;
   }
 
   button:disabled {
@@ -97,8 +102,9 @@
     margin-right: 3px;
   }
   
-  .show-delete-button:hover {
-    background-color: #3c82de;
+  a {
+    text-decoration: none;
+    color: #ffffff;
   }
 }
 

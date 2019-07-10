@@ -2,6 +2,7 @@
 import React from 'react';
 import NavTop from '../nav_top/nav_top';
 import SideIndexContainer from './side_index_container';
+import { Link, Redirect } from 'react-router-dom';
 
 class VideoShow extends React.Component {
 
@@ -28,6 +29,7 @@ class VideoShow extends React.Component {
 
   handleUpdate(e) {
     e.preventDefault();
+    () => <Redirect to={`/video/${this.props.video.id}/edit`} />
   }
 
   renderError() {
@@ -64,10 +66,10 @@ class VideoShow extends React.Component {
                   onClick={this.handleDelete.bind(this)} >
             <p>DELETE</p>
           </button>
-          <button className="show-edit-button"
-                  onClick={this.handleUpdate.bind(this)}
-                  disabled >
-            <p>EDIT VIDEO</p>
+          <button className="show-edit-button" >
+            <Link to={`/video/${this.props.video.id}/edit`}>
+              <p>EDIT VIDEO</p>
+            </Link>
           </button>
         </div>
         : <div></div>
@@ -110,7 +112,7 @@ class VideoShow extends React.Component {
           </div>
 
           <div className='video-show-index'>
-            <SideIndexContainer videoId={this.props.videoId}/>
+            <SideIndexContainer videoId={this.props.video.id}/>
           </div>
         </div>
       </div>
