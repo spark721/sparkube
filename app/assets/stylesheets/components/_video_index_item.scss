@@ -1,0 +1,40 @@
+
+.video-index-item-splash {
+    font-family: 'Roboto', sans-serif;
+    height: 204px;
+    img {
+      height: 118px;
+      width: 210px;
+    }
+};
+
+li.video-index-splash-li {
+    margin: 0 5px 5px 0;
+    a {
+      text-decoration: none;
+    }
+};
+
+.video-index-text-below {
+    height: 84px;
+    padding: 0 24px 0 0;
+    width: 210px;
+};
+
+.video-index-title-below {
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: #0D0D0D;
+    padding-top: 10px;
+};
+
+.video-index-bottom-container {
+    padding-top: 10px;
+};
+
+.video-index-author-below {
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    color: #606060;
+};
+

@@ -7,7 +7,16 @@ import Root from './components/root';
 import {
   signUp, 
   logIn, 
-  logOut } from './actions/session_actions';
+  logOut
+  } from './actions/session_actions';
+
+import {
+  getVideos,
+  getVideo,
+  createVideo,
+  updateVideo,
+  deleteVideo,
+  } from './actions/video_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -27,13 +36,20 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
 
-  // TESTING BELOW
+  // - = * TESTING BELOW *  = -
   window.signUp = signUp;
   window.logIn = logIn;
   window.logOut = logOut;
+
   window.getState  = store.getState;
   window.dispatch = store.dispatch;
-  // TESTING ABOVE
+
+  window.getVideos = getVideos;
+  window.getVideo = getVideo;
+  window.createVideo = createVideo;
+  window.updateVideo = updateVideo;
+  window.deleteVideo = deleteVideo;
+  // - = * TESTING ABOVE * = -
 
   ReactDOM.render(<Root store={store} />, root);
 })

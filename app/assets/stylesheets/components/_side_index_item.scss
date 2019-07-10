@@ -1,0 +1,39 @@
+
+.side-index-splash-li {
+  display: flex;
+  margin-bottom: 5px;
+};
+
+.side-index-text {
+  padding-right: 24px;
+  font-family: 'Roboto', sans-serif;
+  margin-left: 5px;
+};
+
+.side-index-title {
+  font-size: 14px;
+  color: #0D0D0D;
+  font-weight: 700;
+  margin-bottom: 4px;
+};
+
+.side-index-author {
+  font-size: 13px;
+  color: #606060;
+};
+
+.side-index-views {
+  font-size: 13px;
+  color: #606060;
+};
+
+.side-index-link {
+  text-decoration: none;
+}
+
+.side-index-item-splash {
+    img {
+      width: 168px;
+      height: 94px;
+    }
+}

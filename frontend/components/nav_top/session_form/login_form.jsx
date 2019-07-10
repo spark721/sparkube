@@ -30,13 +30,13 @@ class LogInForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state).then(
-      () => this.props.history.push('/')
+      () => this.props.history.goBack(),
     );
   }
 
   renderError() {
     return (
-      <ul>
+      <ul className='auth-errors'>
         {this.props.errors.map((error, i) => {
           return (
             <li 
@@ -60,7 +60,7 @@ class LogInForm extends React.Component {
 
     const demoUser = Object.assign({}, this.state);
     this.props.processForm(demoUser).then(
-      () => this.props.history.push('/')
+      () => this.props.history.goBack(),
     );
   }
 
@@ -99,7 +99,7 @@ class LogInForm extends React.Component {
               <input
                 type="text"
                 value={this.state.username}
-                placeholder='username'
+                placeholder='Username'
                 onChange={this.update('username')} />
             </div>
 
@@ -107,7 +107,7 @@ class LogInForm extends React.Component {
               <input
                 type="password"
                 value={this.state.password}
-                placeholder='password'
+                placeholder='Password'
                 onChange={this.update('password')} />
             </div>
 

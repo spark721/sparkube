@@ -1,8 +1,30 @@
 .render-error {
   color: red;
   list-style: none;
+  padding: 2px 0;
+  .fas {
+    margin-right: 10px;
+  }
 }
 
-.fas {
-  margin-right: 10px;
+.auth-errors {
+  margin-top: 15px;
+}
+
+.upload-errors {
+  list-style: none;
+  color: red;
+  padding: 2px 0;
+  
+  .render-upload-error {
+    margin-top: 25px;
+    font-size: 12px;
+    
+    #upload-error-i {
+      color: red;
+      transform: none;
+      margin: 0 10px 0 0;
+      top: 0;
+    }
+  }
 }

@@ -1,0 +1,138 @@
+
+.upload-form-page {
+    position: relative;
+    top: 56px;
+    padding-top: 50px;
+    height: 94vh;
+    // display: flex;
+    // justify-content: center;
+    background-color: #ddd;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.upload-form-div {
+    width: 800px;
+    min-height: 45%;
+    // border: 1px solid red;
+    margin: auto;
+    border: #777;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.upload-form {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  i {
+    position: relative;
+    top: 20px;
+    transform: scale(3);
+    color: #b8b8b8;
+    margin-bottom: 20px;
+  }
+  i:hover {
+    color: #616161;
+  }
+  input[type="file"] {
+    display: none;
+  }
+}
+
+.upload-mp4-div {
+  // border: 1px solid green;
+  width: 210px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #dadce0;
+}
+
+
+.upload-img-div {
+  // border: 1px solid slateblue;
+  // margin-top: 20px;
+  width: 210px;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #dadce0;
+  position: relative;
+  top: 20px;
+}
+
+#preview-vid {
+  position: relative;
+  padding-top: 15px;
+}
+
+#preview-img {
+  position: relative;
+  padding-top: 15px;
+}
+
+.title-desc {
+  // border: 1px solid red;
+  width: 400px;
+}
+
+.upload-button {
+    width: 120px;
+    height: 30px;
+    background-color: #267ac6;
+    color: white;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.upload-button:hover {
+  background-color: #3c82de;
+}
+
+.upload-button:disabled {
+  background-color: #777;
+  cursor: not-allowed;
+}
+
+.video-poster {
+    // border: 1px solid red;
+    font-size: 12px;
+}
+
+.upload-title {
+    width: 100%;
+    height: 30px;
+    padding: 5px 10px 6px;
+    font-size: 14px;
+    border: 1px solid #dadce0;
+    outline: none;
+}
+
+.upload-title:focus {
+    border: 1px solid #2d73e8;
+}
+
+
+.upload-desc {
+    position: relative;
+    top: 20px;
+    width: 100%;
+    font-size: 14px;
+    outline: none;
+    padding: 5px 10px 6px;
+    border: 1px solid #dadce0;
+    height: 210px;
+    resize: none;
+}
+
+.upload-desc:focus {
+    border: 1px solid #2d73e8;
+}

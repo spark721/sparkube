@@ -35,7 +35,7 @@ class SignUpForm extends React.Component {
 
   renderError() {
     return(
-      <ul>
+      <ul className="auth-errors">
         {this.props.errors.map( (error, i) => {
           return (
             <li 
@@ -84,7 +84,7 @@ class SignUpForm extends React.Component {
                 id='username'
                 type="text"
                 value={this.state.username}
-                placeholder='username'
+                placeholder='Username'
                 onChange={this.update('username')} />
             </div>
 
@@ -102,11 +102,12 @@ class SignUpForm extends React.Component {
                 id='password'
                 type="password"
                 value={this.state.password}
-                placeholder='password'
+                placeholder='Password'
                 onChange={this.update('password')} />
             </div>
             
             {this.renderError()}
+            
 
             <div className="link-and-button">
               <Link to='/login' className='link-text char-blue'>

@@ -24,14 +24,17 @@
 }
 
 .nav-sign-out {
-  border: solid 1px #065fd4;
+  // border: solid 1px #065fd4;
+  border: solid 1px #ff0500;
   padding: 10px 15px;
   display: flex;
   text-decoration: none;
-  color: #065fd4;
+  // color: #065fd4;
+  color: #ff0500;
   border-radius: 2px;
   align-items: center;
   cursor: pointer;
+  outline: none;
 }
 
 .sign-in-icon {
@@ -47,4 +50,28 @@
 .sign-out-text {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
+}
+
+.main-logo-text-link {
+    text-decoration: none;
+    color: #ff0500;
+}
+
+.nav-right {
+  display: flex;
+}
+
+.upload-icon {
+  display: flex;
+  align-items: center;
+  margin: 0 25px;
+  i {
+    color: #606060;
+  }
+}
+
+.menu-bars {
+  i {
+    color: #606060;
+  }
 }
