@@ -32,7 +32,7 @@ ActiveRecord::Base.transaction do
     # video_obj = Video.last
     video_obj.video_url.attach(io: video, filename: "test_video_0#{n}.mp4")
     video_obj.poster.attach(io: poster, filename: "test_video_0#{n}.png")
-    video_obj.save!
+    # video_obj.save!
   end
 
 end
