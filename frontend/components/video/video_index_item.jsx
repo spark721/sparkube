@@ -12,7 +12,7 @@ const VideoIndexItem = ({ video }) => {
               src={video.videoUrl}
               type="video/mp4" />
           </video> */}
-          <img src={video.poster} alt=""/>
+          <img src={video.poster} alt="" className="video-index-item-img"/>
           <div className='video-index-text-below'>
             <span className='video-index-title-below'>{video.title}</span>
             <div className='video-index-bottom-container'>

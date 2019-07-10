@@ -2,7 +2,10 @@
 .video-index-item-splash {
     font-family: 'Roboto', sans-serif;
     height: 204px;
-
+    img {
+      height: 118px;
+      width: 210px;
+    }
 };
 
 li.video-index-splash-li {
@@ -34,3 +37,4 @@ li.video-index-splash-li {
     font-family: 'Roboto', sans-serif;
     color: #606060;
 };
+
