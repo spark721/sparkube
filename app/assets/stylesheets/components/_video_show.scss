@@ -10,7 +10,17 @@
   position: relative;
   top: 56px;
   padding: 24px 24px 0 0;
+  transition: width 1s;
 };
+
+@media only screen and (max-width: 1024px) {
+  div.video-show-index {
+    display: none;
+  }
+  div.video-show-page {
+    width: 100%;
+  }
+}
 
 .video-show-index {
     width: 36%;
