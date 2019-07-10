@@ -3,7 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Greeting = (props) => {
+
   if (props.currentUser) {
+    console.log(props.history);
     return (
       <div>
         <button 

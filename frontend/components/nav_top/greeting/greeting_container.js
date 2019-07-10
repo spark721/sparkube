@@ -2,6 +2,7 @@
 import { connect } from 'react-redux';
 import Greeting from './greeting';
 import { logOut } from '../../../actions/session_actions';
+import { withRouter } from 'react-router-dom';
 
 const msp = (state) => {
   let currentUserId = state.session.id
@@ -12,8 +13,8 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
   return {
-    logout: () => dispatch(logOut()),
+    logout: () => dispatch(logOut())
   };
 };
 
-export default connect(msp, mdp)(Greeting);
+export default withRouter(connect(msp, mdp)(Greeting));

@@ -30,7 +30,7 @@ class LogInForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.processForm(this.state).then(
-      () => this.props.history.push('/')
+      () => this.props.history.goBack(),
     );
   }
 
@@ -60,7 +60,7 @@ class LogInForm extends React.Component {
 
     const demoUser = Object.assign({}, this.state);
     this.props.processForm(demoUser).then(
-      () => this.props.history.push('/')
+      () => this.props.history.goBack(),
     );
   }
 

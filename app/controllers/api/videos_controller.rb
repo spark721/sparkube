@@ -28,8 +28,12 @@ class Api::VideosController < ApplicationController
 
   def update
     @video = current_user.videos.find(params[:id])
+    # debugger
 
-    if @video.update_attributes(video_params)
+    if @video.update_attributes({
+      title: params[:video][:title],
+      description: params[:video][:description],
+    })
       render :show
     else
       render json: @video.errors.full_messages, status: 422

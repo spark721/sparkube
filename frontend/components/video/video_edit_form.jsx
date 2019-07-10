@@ -4,9 +4,10 @@ import NavTop from '../nav_top/nav_top';
 
 class VideoEditForm extends React.Component {
   constructor(props) {
+    
     super(props);
     this.state = this.props.video;
-    this.state['loading'] = false;
+    // debugger
 
     this.update = this.update.bind(this);
     this.updateVideo = this.updateVideo.bind(this);
@@ -15,6 +16,8 @@ class VideoEditForm extends React.Component {
   }
 
   componentDidMount() {
+    // debugger;
+    this.setState({ loading: false });
     this.props.getVideo(this.props.video.id);
     this.props.clearErrors();
   }
@@ -66,33 +69,37 @@ class VideoEditForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateVideo(this.state);
+    this.props.updateVideo(this.state).then(
+      () => this.props.history.replace(`/watch/${this.state.id}`)
+    );
   }
 
   render() {
+    // debugger
+
     if (!this.props.video) {
       return (
         <div>Loading</div>
       );
     };
 
-    const previewVid = this.state.videoURL ?
-      // <div>
-      <video width="100%" controls>
-        <source
-          src={this.state.videoURL}
-          type="video/mp4" />
-      </video>
-      // {/* <p>{this.state.videoFile.name}</p> */}
-      // {/* </div> */}
-      : <p>No video currently selected</p>;
+    // const previewVid = this.state.videoURL ?
+    //   // <div>
+    //   <video width="100%" controls>
+    //     <source
+    //       src={this.state.videoURL}
+    //       type="video/mp4" />
+    //   </video>
+    //   // {/* <p>{this.state.videoFile.name}</p> */}
+    //   // {/* </div> */}
+    //   : <p>No video currently selected</p>;
 
-    const previewImg = this.state.posterURL ?
-      // <div>
-      <img src={this.state.posterURL} />
-      // <p>{this.state.posterFile.name}</p>
-      // </div>
-      : <p>No thumbnail currently selected</p>;
+    // const previewImg = this.state.posterURL ?
+    //   // <div>
+    //   <img src={this.state.posterURL} />
+    //   // <p>{this.state.posterFile.name}</p>
+    //   // </div>
+    //   : <p>No thumbnail currently selected</p>;
 
     const nowLoading = this.state.loading ?
 
@@ -106,7 +113,7 @@ class VideoEditForm extends React.Component {
         onClick={this.handleSubmit} >
         <p>Done</p>
       </button>
-
+      
     return (
       <div>
 
@@ -121,13 +128,18 @@ class VideoEditForm extends React.Component {
                     className="form-upload-icon">
                     <i className="fas fa-play-circle"></i>
                   </label>
-                  <input type="file"
+                  {/* <input type="file"
                     id="upload-mp4"
                     accept="video/mp4"
-                    onChange={this.updateVideo} />
+                    onChange={this.updateVideo} /> */}
 
                   <div id="preview-vid">
-                    {previewVid}
+                    <video width="100%" controls>
+                      <source
+                        src={this.state.videoUrl}
+                        type="video/mp4" />
+                    </video>
+                    {/* {previewVid} */}
                     {/* <p>No File currently selected</p> */}
                   </div>
                 </div>
@@ -137,13 +149,14 @@ class VideoEditForm extends React.Component {
                     className="form-upload-icon">
                     <i className="fas fa-image"></i>
                   </label>
-                  <input type="file"
+                  {/* <input type="file"
                     id="upload-img"
                     accept="image/png, image/jpeg"
-                    onChange={this.updatePoster} />
+                    onChange={this.updatePoster} /> */}
 
                   <div id="preview-img">
-                    {previewImg}
+                    <img src={this.state.poster} />
+                    {/* {previewImg} */}
                     {/* <p>No File currently selected</p> */}
                   </div>
                 </div>
