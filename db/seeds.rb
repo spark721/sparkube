@@ -26,10 +26,10 @@ ActiveRecord::Base.transaction do
   Video.delete_all
   
   (1..6).each do |n|
-    Video.create(title: "test_video_0#{n}_title", description: "test_video_0#{n}_description", author_id: n)
+    video_obj = Video.create(title: "test_video_0#{n}_title", description: "test_video_0#{n}_description", author_id: n)
     video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/test_video/test_video_0#{n}.mp4")
     poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/test_video_0#{n}.png")
-    video_obj = Video.last
+    # video_obj = Video.last
     video_obj.video_url.attach(io: video, filename: "test_video_0#{n}.mp4")
     video_obj.poster.attach(io: poster, filename: "test_video_0#{n}.png")
     video_obj.save!
