@@ -12,7 +12,7 @@ const SideIndexItem = ({ video }) => {
               src={video.videoUrl}
               type="video/mp4" />
           </video> */}
-          <img src={video.poster} alt="" width="168" />
+          <img src={video.poster} alt="" />
         </div>
       </Link>
 
