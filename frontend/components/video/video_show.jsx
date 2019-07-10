@@ -11,11 +11,40 @@ class VideoShow extends React.Component {
   
   componentDidUpdate(prevProps) {
     // debugger;
-    if (prevProps.video) {
+    if (this.props.video && prevProps.video) {
       if (this.props.video.videoUrl !== prevProps.video.videoUrl) {
         window.location.reload();
       };
     };
+  };
+
+  handleDelete(e) {
+    e.preventDefault();
+    // debugger;
+    this.props.deleteVideo(this.props.video.id).then(
+      () => this.props.history.push('/'),
+    )
+  }
+
+  handleUpdate(e) {
+    e.preventDefault();
+  }
+
+  renderError() {
+    return (
+      <ul className='auth-errors'>
+        {this.props.errors.map((error, i) => {
+          return (
+            <li
+              key={`error-${i}`}
+              className="render-error" >
+              <i className="fas fa-exclamation-circle"></i>
+              {error}
+            </li>
+          );
+        })}
+      </ul>
+    );
   };
 
   render() {
@@ -25,6 +54,25 @@ class VideoShow extends React.Component {
         <div>Loading</div>
       );
     }
+
+    let currentUser = this.props.currentUser;
+
+    const deleteButton = currentUser ? 
+      currentUser.id === this.props.video.author_id ?
+        <div className='show-button-div'>
+          <button className="show-delete-button"
+                  onClick={this.handleDelete.bind(this)} >
+            <p>DELETE</p>
+          </button>
+          <button className="show-edit-button"
+                  onClick={this.handleUpdate.bind(this)}
+                  disabled >
+            <p>EDIT VIDEO</p>
+          </button>
+        </div>
+        : <div></div>
+      : <div></div>;
+
     return (
       <div>
         <NavTop />
@@ -46,9 +94,14 @@ class VideoShow extends React.Component {
 
             <div className='author-description-div'>
               <div className='author-div'>
-                <span className='author-text'>{this.props.video.username}</span>
-                <br />
-                <span className='date-text'>Published on Jul 7, 2019</span>
+                <div className='author-date-div'>
+                  <span className='author-text'>{this.props.video.username}</span>
+                  <br />
+                  <span className='date-text'>Published on Jul 7, 2019</span>
+                </div>
+                <div>
+                  {deleteButton}
+                </div>
               </div>
               <div className='description-div'>
                 <p>{this.props.video.description}</p>
@@ -57,7 +110,7 @@ class VideoShow extends React.Component {
           </div>
 
           <div className='video-show-index'>
-            <SideIndexContainer />
+            <SideIndexContainer videoId={this.props.videoId}/>
           </div>
         </div>
       </div>

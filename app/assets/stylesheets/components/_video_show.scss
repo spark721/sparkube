@@ -47,9 +47,11 @@
 };
 
 .author-div {
-  margin-bottom: 12px;
-  padding-top: 16px;
-  height: 50px;
+    margin-bottom: 12px;
+    padding-top: 16px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
 };
 
 .author-text {
@@ -70,5 +72,32 @@
   padding-bottom: 16px;
 };
 
+.show-button-div {
+  button {
+    height: 36px;
+    width: 107px;
+    padding: 10px 16px;
+    color: #ffffff;
+    background-color: #285fd4;
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    font-weight: bold;
+  }
 
+  button:disabled {
+    background-color: #777;
+    cursor: not-allowed;
+  }
+
+  .show-delete-button {
+    margin-right: 3px;
+  }
+  
+  .show-delete-button:hover {
+    background-color: #3c82de;
+  }
+}
 

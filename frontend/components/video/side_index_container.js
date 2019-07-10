@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import { getVideos } from '../../actions/video_actions';
 import SideIndex from './side_index';
 
-const msp = (state) => {
+const msp = (state, myProp) => {
   return {
     videos: Object.values(state.entities.videos),
+    videoId: myProp.videoId,
   };
 };
 

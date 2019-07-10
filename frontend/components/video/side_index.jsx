@@ -10,9 +10,9 @@ class SideIndex extends React.Component {
 
   render() {
     let videos = this.props.videos.map((video, i) => {
-      return <SideIndexItem
-        key={i}
-        video={video} />;
+        return <SideIndexItem
+          key={i}
+          video={video} />;
     });
 
     function shuffle(a) {
