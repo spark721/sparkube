@@ -11,7 +11,8 @@
 ActiveRecord::Base.transaction do
 
   # User seeding
-  User.delete_all
+  # User.delete_all
+  User.destory_all
 
   (1..6).each do |n|
     User.create(username: "test-author-#{n}", password: "author#{n}", email: "a#{n}@email")
@@ -23,7 +24,9 @@ ActiveRecord::Base.transaction do
   
   
   # Video seeding
-  Video.delete_all
+  # Video.delete_all
+  User.destory_all
+
   
   (1..6).each do |n|
     video_obj = Video.create(title: "test_video_0#{n}_title", description: "test_video_0#{n}_description", author_id: n)
