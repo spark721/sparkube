@@ -96,8 +96,8 @@ class VideoShow extends React.Component {
               </div>
 
               <div className="likes-dislikes">
-                <i class="fas fa-thumbs-up"></i>
-                <i class="fas fa-thumbs-down"></i>
+                <i className="fas fa-thumbs-up"></i>
+                <i className="fas fa-thumbs-down"></i>
               </div>
             </div>
 
