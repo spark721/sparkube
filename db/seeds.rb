@@ -37,19 +37,19 @@ ActiveRecord::Base.transaction do
   end
 
   video_obj = Video.create(title: "App Academy - Anyone Can Be A Software Engineer", description: "We want to inspire you to change your life through code. Four graduates talk about their experience at App Academy, from where they were before the program to where they are now.", author_id: 8)
-  file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/etc/aa-anyone.mp4")
+  video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/etc/aa-anyone.mp4")
   poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/aa-anyone.png")
   video_obj.video_url.attach(io: video, filename: "aa-anyone.mp4")
   video_obj.poster.attach(io: poster, filename: "aa-anyone.png")
   
   video_obj = Video.create(title: "App Academy - Who We Are", description: "Hear from App Academy teachers, students, grads and more about who App Academy is and what you'll learn through the 12-week immersive program.", author_id: 8)
-  file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/etc/aa-who_we_are.mp4")
+  video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/etc/aa-who_we_are.mp4")
   poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/aa-who_we_are.png")
   video_obj.video_url.attach(io: video, filename: "aa-who_we_are.mp4")
   video_obj.poster.attach(io: poster, filename: "aa-who_we_are.png")
 
   video_obj = Video.create(title: "Explore Coding", description: "Apply to App Academy now!", author_id: 8)
-  file = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/etc/aa-explore_coding.mp4")
+  video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/etc/aa-explore_coding.mp4")
   poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/aa-explore_coding.png")
   video_obj.video_url.attach(io: video, filename: "aa-explore_coding.mp4")
   video_obj.poster.attach(io: poster, filename: "aa-explore_coding.png")
