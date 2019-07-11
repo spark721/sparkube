@@ -10,6 +10,23 @@ class User < ApplicationRecord
   has_many :videos,
     foreign_key: :author_id,
     class_name: 'Video'
+
+  has_many :likes,
+    foreign_key: :user_id,
+    class_name: 'Like'
+
+  has_many :dislikes,
+    foreign_key: :user_id,
+    class_name: 'Dislike'
+
+  # has_many :liked_videos,
+  #   through: :likes,
+  #   source: :video
+
+  # has_many :disliked_videos,
+  #   through: :dislikes,
+  #   source: :video
+  
   
   # s p i r e
 
