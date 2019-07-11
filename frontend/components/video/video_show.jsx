@@ -88,9 +88,16 @@ class VideoShow extends React.Component {
             </video>
 
             <div className='video-show-title-div'>
-              <span className='video-show-title-text'>{this.props.video.title}</span>
-              <div className='video-show-stats-div'>
-                <span className='video-show-views-text'>40,588,087 views</span>
+              <div>
+                <span className='video-show-title-text'>{this.props.video.title}</span>
+                <div className='video-show-stats-div'>
+                  <span className='video-show-views-text'>40,588,087 views</span>
+                </div>
+              </div>
+
+              <div className="likes-dislikes">
+                <i class="fas fa-thumbs-up"></i>
+                <i class="fas fa-thumbs-down"></i>
               </div>
             </div>
 
