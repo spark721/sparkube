@@ -20,9 +20,17 @@ ActiveRecord::Base.transaction do
   # demo user
   User.create(username: 'Altoids', password: 'peppermint', email: 'strong@mints') # 7
   
-  # aa official
-  User.create(username: 'App Academy Official', password: 'b!gEye76', email: 'aa@aa.io') # 8
   
+  User.create(username: 'App Academy Official', password: 'b!gEye76', email: 'aa@aa.io') # 8
+  User.create(username: "K/DA OFFICIAL", password: "K/DApass", email: "K/DA@email") # 9
+  User.create(username: "BlackPink OFFICIAL", password: "BlackPink", email: "BlackPink@email") # 10
+  User.create(username: "Iz*One OFFICIAL", password: "IzOnepass", email: "IzOne@email") # 11
+  User.create(username: "StarCraft", password: "starcraft", email: "sc2@blizzard.com") # 12
+  User.create(username: "BTS OFFICIAL", password: "BTSpass", email: "BTS@email") # 13
+
+
+  
+
   # - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = - = -
   ### Video seeding
   Video.destroy_all
@@ -54,7 +62,49 @@ ActiveRecord::Base.transaction do
   video_obj.video_url.attach(io: video, filename: "aa-explore_coding.mp4")
   video_obj.poster.attach(io: poster, filename: "aa-explore_coding.png")
 
+  video_obj = Video.create(title: "K/DA - POP/STARS (ft Madison Beer, (G)I-DLE, Jaira Burns) | Official Music Video - League of Legends", description: "K/DA Ahri, K/DA Evelynn, K/DA Kai’Sa, and K/DA Akali take the world stage with their debut single. Keep the show going on the Rift with these new Epic skins.", author_id: 9)
+  video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/music/kda-popstars.mp4")
+  poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/kda-popstars.png")
+  video_obj.video_url.attach(io: video, filename: "kda-popstars.mp4")
+  video_obj.poster.attach(io: poster, filename: "kda-popstars.png")
+
+  video_obj = Video.create(title: "BLACKPINK - '붐바야'(BOOMBAYAH) M/V", description: "Available @ https://BLACKPINK.lnk.to/SQUAREONEFA", author_id: 10)
+  video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/music/blackpink-boombaya.mp4")
+  poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/blackpink-boombaya.png")
+  video_obj.video_url.attach(io: video, filename: "blackpink-boombaya.mp4.mp4")
+  video_obj.poster.attach(io: poster, filename: "blackpink-boombaya.png")
+
+  video_obj = Video.create(title: "IZ*ONE (아이즈원) - 비올레타 (Violeta) MV", description: "♬ Available on iTunes, Apple Music : https://apple.co/2VMVM0t", author_id: 11)
+  video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/music/iz_one-violeta.mp4")
+  poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/iz_one-violeta.png")
+  video_obj.video_url.attach(io: video, filename: "iz_one-violeta.mp4")
+  video_obj.poster.attach(io: poster, filename: "iz_one-violeta.png")
+
+  video_obj = Video.create(title: "StarCraft II: Heart of the Swarm Opening Cinematic", description: "We're pleased to present the opening cinematic for StarCraft II: Heart of the Swarm in full HD glory!", author_id: 12)
+  video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/game/sc2-hots.mp4")
+  poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/sc2-hots.png")
+  video_obj.video_url.attach(io: video, filename: "sc2-hots.mp4")
+  video_obj.poster.attach(io: poster, filename: "sc2-hots.png")
+
+  video_obj = Video.create(title: "StarCraft II: Legacy of the Void Opening Cinematic", description: "The time of reclamation is upon us! Blizzard Entertainment is pleased to present the StarCraft II: Legacy of the Void opening cinematic. On November 10, 2015, players will join the fight to reclaim Aiur and vanquish the universe’s most ancient evil.", author_id: 12)
+  video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/game/sc2-lotv.mp4")
+  poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/sc2-lotv.png")
+  video_obj.video_url.attach(io: video, filename: "sc2-lotv.mp4")
+  video_obj.poster.attach(io: poster, filename: "sc2-lotv.png")
+
+  video_obj = Video.create(title: "BTS (방탄소년단) 'Not Today' Official MV", description: "BTS (방탄소년단) 'Not Today' Official MV", author_id: 13)
+  video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/music/bts-not_today.mp4")
+  poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/bts-not_today.png")
+  video_obj.video_url.attach(io: video, filename: "bts-not_today.mp4")
+  video_obj.poster.attach(io: poster, filename: "bts-not_today.png")
+  
 end
+  # video_obj = Video.create(title: "", description: "", author_id: )
+  # video = EzDownload.open("")
+  # poster = EzDownload.open("")
+  # video_obj.video_url.attach(io: video, filename: ".mp4")
+  # video_obj.poster.attach(io: poster, filename: ".png")
+
 
 
 
@@ -67,7 +117,7 @@ end
   # User.create(username: "EXID OFFICIAL", password: "EXIDpass", email: "EXID@email") # 11
   # User.create(username: "IU OFFICIAL", password: "IUpass", email: "IU@email") # 12
   # User.create(username: "Iz*One OFFICIAL", password: "IzOnepass", email: "IzOne@email") # 13
-  # User.create(username: "K/DA OFFICIAL", password: "K/DApass", email: "K/DA@email") # 14
+ 
   
 
   # video_obj = Video.create(title: "BIGBANG - LOSER M/V", description: "#빅뱅 #loser", author_id: 8)
