@@ -3,9 +3,6 @@ import React from 'react';
 import NavTop from '../nav_top/nav_top';
 import SideIndexContainer from './side_index_container';
 import { Link } from 'react-router-dom';
-// import LikeVideoComponent from './video_like';
-// import DislikeVideoComponent from './video_dislike';
-
 
 
 class VideoShow extends React.Component {
