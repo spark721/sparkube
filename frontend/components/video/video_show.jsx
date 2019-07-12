@@ -37,12 +37,12 @@ class VideoShow extends React.Component {
   // }
 
 
-  handleDislike(e) {
-    e.preventDefault();
-    let currentUser = this.props.currentUser;
+  // handleDislike(e) {
+  //   e.preventDefault();
+  //   let currentUser = this.props.currentUser;
 
-    return currentUser ? console.log(currentUser) : console.log("seriously?")
-  }
+  //   return currentUser ? console.log(currentUser) : console.log("seriously?")
+  // }
 
   renderError() {
     return (

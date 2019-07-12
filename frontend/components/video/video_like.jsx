@@ -12,9 +12,9 @@ class LikeVideoComponent extends React.Component {
     let currentUser = this.props.currentUser;
     let videoId = this.state.id;
 
-    if (!currentUser) {
-      return console.log("no user logged in")
-    }
+    // if (!currentUser) {
+    //   return console.log("no user logged in")
+    // }
 
     // debugger
     if (this.state.curUserLikes) {
