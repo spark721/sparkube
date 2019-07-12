@@ -27,6 +27,8 @@ ActiveRecord::Base.transaction do
   User.create(username: "Iz*One OFFICIAL", password: "IzOnepass", email: "IzOne@email") # 11
   User.create(username: "StarCraft", password: "starcraft", email: "sc2@blizzard.com") # 12
   User.create(username: "BTS OFFICIAL", password: "BTSpass", email: "BTS@email") # 13
+  User.create(username: "EXID OFFICIAL", password: "EXIDpass", email: "EXID@email") # 14
+
 
 
   
@@ -36,13 +38,13 @@ ActiveRecord::Base.transaction do
   Video.destroy_all
 
   
-  (1..6).each do |n|
-    video_obj = Video.create(title: "test_video_0#{n}", description: "test_video_0#{n}_description", author_id: n)
-    video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/test_video/test_video_0#{n}.mp4")
-    poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/test_video_0#{n}.png")
-    video_obj.video_url.attach(io: video, filename: "test_video_0#{n}.mp4")
-    video_obj.poster.attach(io: poster, filename: "test_video_0#{n}.png")
-  end
+  # (1..6).each do |n|
+  #   video_obj = Video.create(title: "test_video_0#{n}", description: "test_video_0#{n}_description", author_id: n)
+  #   video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/test_video/test_video_0#{n}.mp4")
+  #   poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/test_video_0#{n}.png")
+  #   video_obj.video_url.attach(io: video, filename: "test_video_0#{n}.mp4")
+  #   video_obj.poster.attach(io: poster, filename: "test_video_0#{n}.png")
+  # end
 
   video_obj = Video.create(title: "App Academy - Anyone Can Be A Software Engineer", description: "We want to inspire you to change your life through code. Four graduates talk about their experience at App Academy, from where they were before the program to where they are now.", author_id: 8)
   video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/etc/aa-anyone.mp4")
@@ -98,6 +100,11 @@ ActiveRecord::Base.transaction do
   video_obj.video_url.attach(io: video, filename: "bts-not_today.mp4")
   video_obj.poster.attach(io: poster, filename: "bts-not_today.png")
   
+  video_obj = Video.create(title: "[EXID(이엑스아이디)] 덜덜덜(DDD) 뮤직 비디오 (Official Music Video)", description: "EXID가 네 번째 미니앨범 [Full Moon]으로 돌아왔다.", author_id: 14)
+  video = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/music/exid-ddd.mp4")
+  poster = EzDownload.open("https://sparkube-seed.s3-us-west-1.amazonaws.com/poster/exid-ddd.png")
+  video_obj.video_url.attach(io: video, filename: "exid-ddd.mp4")
+  video_obj.poster.attach(io: poster, filename: "exid-ddd.png")
 end
   # video_obj = Video.create(title: "", description: "", author_id: )
   # video = EzDownload.open("")
