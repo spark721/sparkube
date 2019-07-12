@@ -18,6 +18,9 @@ import {
   deleteVideo,
   } from './actions/video_actions';
 
+import * as LikeAPIUtil from './util/like_api_util';
+
+
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   // const store = configureStore();
@@ -49,6 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createVideo = createVideo;
   window.updateVideo = updateVideo;
   window.deleteVideo = deleteVideo;
+
+  window.likeVideo = LikeAPIUtil.likeVideo;
+  window.unlikeVideo = LikeAPIUtil.unlikeVideo;
+  window.dislikeVideo = LikeAPIUtil.dislikeVideo;
+  window.undislikeVideo = LikeAPIUtil.undislikeVideo;
+
   // - = * TESTING ABOVE * = -
 
   ReactDOM.render(<Root store={store} />, root);

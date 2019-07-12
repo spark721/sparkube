@@ -4,6 +4,7 @@ import {
   DELETE_VIDEO,
 } from '../actions/video_actions';
 
+
 const videoReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState);

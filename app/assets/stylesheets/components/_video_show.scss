@@ -33,6 +33,9 @@
 .video-show-title-div {
   padding: 20px 0 8px;
   border-bottom: solid 1px #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 };
 
 .video-show-title-text {
@@ -118,3 +121,24 @@
   }
 }
 
+.likes-dislikes {
+  color: #909090;
+  margin-right: 20px;
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.likes-count {
+  cursor: pointer;
+  i {
+    margin-right: 10px;
+  }
+}
+
+.dislikes-count {
+  cursor: pointer;
+  i {
+    margin-right: 10px;
+  }
+}

@@ -33,3 +33,5 @@ bundle.js.map
 .DS_Store
 npm-debug.log
 /app/assets/videos/
+tmp/
+

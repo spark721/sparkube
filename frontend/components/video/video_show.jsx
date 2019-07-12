@@ -3,6 +3,10 @@ import React from 'react';
 import NavTop from '../nav_top/nav_top';
 import SideIndexContainer from './side_index_container';
 import { Link, Redirect } from 'react-router-dom';
+import LikeVideoComponent from './video_like';
+import DislikeVideoComponent from './video_dislike';
+
+
 
 class VideoShow extends React.Component {
 
@@ -10,14 +14,14 @@ class VideoShow extends React.Component {
     this.props.getVideo(this.props.match.params.videoId);
   };
   
-  componentDidUpdate(prevProps) {
+  // componentDidUpdate(prevProps) {
     // debugger;
-    if (this.props.video && prevProps.video) {
-      if (this.props.video.videoUrl !== prevProps.video.videoUrl) {
-        window.location.reload();
-      };
-    };
-  };
+    // if (this.props.video && prevProps.video) {
+      // if (this.props.video.likes !== prevProps.video.likes) {
+      //   window.location.reload();
+      // };
+    // };
+  // };
 
   handleDelete(e) {
     e.preventDefault();
@@ -27,9 +31,17 @@ class VideoShow extends React.Component {
     )
   }
 
-  handleUpdate(e) {
+  // handleUpdate(e) {
+  //   e.preventDefault();
+  //   () => <Redirect to={`/video/${this.props.video.id}/edit`} />
+  // }
+
+
+  handleDislike(e) {
     e.preventDefault();
-    () => <Redirect to={`/video/${this.props.video.id}/edit`} />
+    let currentUser = this.props.currentUser;
+
+    return currentUser ? console.log(currentUser) : console.log("seriously?")
   }
 
   renderError() {
@@ -81,16 +93,49 @@ class VideoShow extends React.Component {
         <div className='video-show-page-whole'>
 
           <div className='video-show-page'>
-            <video width='100%' className='video-show-player' controls>
+            <video width='100%'
+                   className='video-show-player'
+                   key={this.props.video.id}
+                   controls >
               <source
                 src={this.props.video.videoUrl}
                 type="video/mp4" />
             </video>
 
             <div className='video-show-title-div'>
-              <span className='video-show-title-text'>{this.props.video.title}</span>
-              <div className='video-show-stats-div'>
-                <span className='video-show-views-text'>40,588,087 views</span>
+              <div>
+                <span className='video-show-title-text'>{this.props.video.title}</span>
+                <div className='video-show-stats-div'>
+                  <span className='video-show-views-text'>40,588,087 views</span>
+                </div>
+              </div>
+
+              <div className="likes-dislikes">
+
+                {/* <div className="likes-count"
+                     onClick={this.handleLike.bind(this)} >
+                  <i className="fas fa-thumbs-up"></i>
+                  <span>{this.props.video.likes}</span>
+                </div> */}
+                <LikeVideoComponent
+                  video={this.props.video}
+                  currentUser={currentUser}
+                  likeVideo={this.props.likeVideo}
+                  unlikeVideo={this.props.unlikeVideo} />
+
+                
+                {/* <div className="dislikes-count"
+                     onClick={this.handleDislike.bind(this)} >
+                  <i className="fas fa-thumbs-down"></i>
+                  <span>{this.props.video.dislikes}</span>
+                </div> */}
+                <DislikeVideoComponent
+                  video={this.props.video}
+                  currentUser={currentUser}
+                  dislikeVideo={this.props.dislikeVideo}
+                  undislikeVideo={this.props.undislikeVideo} />
+                
+
               </div>
             </div>
 
