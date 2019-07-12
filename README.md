@@ -1,3 +1,4 @@
 # Sparkube
-
-* Sparkube is a YouTube clone for the full-stack project
+  [Sparkube Live](http://sparkube.herokuapp.com/#/)
+  
+* Sparkube is a YouTube clone
