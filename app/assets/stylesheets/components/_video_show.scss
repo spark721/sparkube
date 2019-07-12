@@ -128,3 +128,17 @@
   display: flex;
   justify-content: space-between;
 }
+
+.likes-count {
+  cursor: pointer;
+  i {
+    margin-right: 10px;
+  }
+}
+
+.dislikes-count {
+  cursor: pointer;
+  i {
+    margin-right: 10px;
+  }
+}

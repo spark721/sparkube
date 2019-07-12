@@ -19,9 +19,9 @@ class User < ApplicationRecord
     foreign_key: :user_id,
     class_name: 'Dislike'
 
-  # has_many :liked_videos,
-  #   through: :likes,
-  #   source: :video
+  has_many :liked_videos,
+    through: :likes,
+    source: :video
 
   # has_many :disliked_videos,
   #   through: :dislikes,

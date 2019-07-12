@@ -1,11 +1,15 @@
 class Api::DislikesController < ApplicationController
 
   def create
+    if !current_user
+      render json: ["please sign in first"], status: 401
+      return nil
+    end
+
     # debugger
-    @dislike = Dislike.new({
-      user_id: current_user.id
-      video_id: params[:video_id]
-    })
+    @dislike = Dislike.new()
+    @dislike.user_id = current_user.id
+    @dislike.video_id = params[:video_id]
 
     if @dislike.save
       render 'api/videos/show'
@@ -18,7 +22,7 @@ class Api::DislikesController < ApplicationController
     @dislike = current_user.dislikes.find(params[:id])
 
     if @dislike.destroy
-      render 'api/video/show'
+      render 'api/videos/show'
     else
       render json: ["Not found"], status: 422
     end

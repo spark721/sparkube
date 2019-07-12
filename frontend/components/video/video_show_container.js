@@ -1,6 +1,13 @@
 
 import { connect } from 'react-redux';
-import { getVideo, deleteVideo, updateVideo } from '../../actions/video_actions';
+import { 
+  getVideo, 
+  deleteVideo,
+  likeVideo,
+  unlikeVideo,
+  undislikeVideo,
+  dislikeVideo,
+  } from '../../actions/video_actions';
 import VideoShow from './video_show';
 
 const msp = (state, myProp) => {
@@ -16,7 +23,10 @@ const mdp = (dispatch) => {
   return {
     getVideo: (id) => dispatch(getVideo(id)),
     deleteVideo: (id) => dispatch(deleteVideo(id)),
-    // updateVideo: (video) => dispatch(updateVideo(video)),
+    dislikeVideo: (id) => dispatch(dislikeVideo(id)),
+    undislikeVideo: (id) => dislikeVideo(undislikeVideo(id)),
+    likeVideo: (id) => dispatch(likeVideo(id)),
+    unlikeVideo: (id) => dislikeVideo(unlikeVideo(id)),
   };
 };
 
