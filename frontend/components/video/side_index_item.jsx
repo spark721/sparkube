@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SideIndexItem = ({ video }) => {
+  // debugger
   return (
     <li className='side-index-splash-li'>
       <Link to={`/watch/${video.id}`}>
