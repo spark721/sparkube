@@ -1,6 +1,5 @@
 
 import * as VideoAPIUtil from '../util/video_api_util';
-import * as LikeAPIUtil from '../util/like_api_util';
 
 export const RECEIVE_ALL_VIDEOS = 'RECEIVE_ALL_VIDEOS';
 export const RECEIVE_VIDEO = 'RECEIVE_VIDEO';
@@ -67,34 +66,3 @@ export const deleteVideo = (id) => {
   };
 };
 
-export const likeVideo = (id) => {
-  return (dispatch) => {
-    return LikeAPIUtil.likeVideo(id).then(
-      (video) => dispatch({ type: RECEIVE_VIDEO, video }),
-    );
-  };
-};
-
-export const unlikeVideo = (id) => {
-  return (dispatch) => {
-    return LikeAPIUtil.unlikeVideo(id).then(
-      (video) => dispatch({ type: RECEIVE_VIDEO, video }),
-    );
-  };
-};
-
-export const undislikeVideo = (id) => {
-  return (dispatch) => {
-    return LikeAPIUtil.undislikeVideo(id).then(
-      (video) => dispatch({ type: RECEIVE_VIDEO, video }),
-    );
-  };
-};
-
-export const dislikeVideo = (id) => {
-  return (dispatch) => {
-    return LikeAPIUtil.dislikeVideo(id).then(
-      (video) => dispatch({ type: RECEIVE_VIDEO, video }),
-    );
-  };
-};

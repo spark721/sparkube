@@ -75,6 +75,10 @@
 #preview-img {
   position: relative;
   padding-top: 15px;
+  // width: 100%;
+  img {
+    width: 100%;
+  }
 }
 
 .title-desc {

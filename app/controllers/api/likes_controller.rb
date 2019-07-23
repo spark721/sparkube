@@ -12,18 +12,30 @@ class Api::LikesController < ApplicationController
     @like.video_id = params[:video_id]
 
     if @like.save
-      render 'api/videos/show'
+      # @video = @like.video
+      # render 'api/videos/show'
+      render :show
     else
-      render json: ["Please sign in first"], status: 401
+      render json: @like.errors.full_messages, status: 401
     end
   end
 
-  def destroy
+  def index
     # debugger
-    @like = current_user.likes.find(params[:id])
+    video = Video.find(params[:video_id])
+    @likes = video.likes
+  end
+
+  def destroy
+    @like = Like.find_by(
+      user_id: current_user.id,
+      video_id: params[:video_id]
+    )
 
     if @like.destroy
-      render '/api/videos/show'
+      # @video = @like.video
+      # render '/api/videos/show'
+      render :show
     else
       render json: ["Not found"], status: 422
     end

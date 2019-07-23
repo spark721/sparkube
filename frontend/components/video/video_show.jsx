@@ -2,27 +2,29 @@
 import React from 'react';
 import NavTop from '../nav_top/nav_top';
 import SideIndexContainer from './side_index_container';
+import LikeVideoComponent from './video_like';
+import DislikeVideoComponent from './video_dislike';
 import { Link } from 'react-router-dom';
 
 
 class VideoShow extends React.Component {
 
   constructor(props) {
-    // debugger
     super(props);
+    // debugger
     this.state = {
-      video: this.props.video || {}
+      video: this.props.video
     }
   }
 
   componentDidMount() {
     // debugger
-    this.props.getVideo(this.props.match.params.videoId);
+    this.props.getVideo(this.props.match.params.videoId)
   };
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps) {
     // debugger
-    if (this.props.match.params.videoId !== `${this.state.video.id}`) {
+    if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
       this.setState({ video: this.props.videos[this.props.match.params.videoId] })
     }
   }
@@ -51,70 +53,13 @@ class VideoShow extends React.Component {
     )
   }
 
-  handleLike(e) {
-    e.preventDefault();
-    let currentUser = this.props.currentUser;
-    let videoId = this.state.video.id;
-    // debugger
-    if (this.state.video.curUserLikes) {
-      unlikeVideo(this.state.video.likeId).then(
-        (res) => (
-          this.setState({
-            video: {
-              likes: res.likes,
-              curUserLikes: false
-          }})
-        )
-      )
-      // debugger
-    } else {
-      likeVideo(videoId).then(
-        (res) => (
-          this.setState({
-            video: {
-              likes: res.likes,
-              curUserLikes: true
-          }})
-        )
-      );
-      // debugger
-    }
-  }
-
-  handleDislike(e) {
-    e.preventDefault();
-    let currentUser = this.props.currentUser;
-    let videoId = this.state.video.id;
-
-    if (this.state.video.curUserDislikes) {
-      undislikeVideo(this.state.video.dislikeId).then(
-        (res) => (
-          this.setState({
-            dislikes: res.dislikes,
-            curUserDislikes: false
-          })
-        )
-      )
-    } else {
-      dislikeVideo(videoId).then(
-        (res) => (
-          this.setState({
-            dislikes: res.dislikes,
-            curUserDislikes: true
-          })
-        )
-      );
-    }
-  }
-
-
   render() {
     // debugger
     if (!this.state.video) {
       return (
         <div>Loading</div>
       );
-    }
+    };
 
     let currentUser = this.props.currentUser;
 
@@ -159,30 +104,34 @@ class VideoShow extends React.Component {
 
               <div className="likes-dislikes">
 
-                <div className="likes-count"
+                {/* <div className="likes-count"
                      onClick={this.handleLike.bind(this)} >
                   <i className="fas fa-thumbs-up"></i>
                   <span>{this.state.video.likes}</span>
-                </div>
+                </div> */}
 
-                {/* <LikeVideoComponent
-                  video={this.state.video}
+                <LikeVideoComponent
+                  videoId={this.props.match.params.videoId}
+                  likes={this.props.likes}
                   currentUser={currentUser}
+                  getLikes={this.props.getLikes}
                   likeVideo={this.props.likeVideo}
-                  unlikeVideo={this.props.unlikeVideo} /> */}
+                  unlikeVideo={this.props.unlikeVideo} />
 
                 
-                <div className="dislikes-count"
+                {/* <div className="dislikes-count"
                      onClick={this.handleDislike.bind(this)} >
                   <i className="fas fa-thumbs-down"></i>
                   <span>{this.state.video.dislikes}</span>
-                </div>
+                </div> */}
 
-                {/* <DislikeVideoComponent
-                  video={this.state.video}
+                <DislikeVideoComponent
+                  videoId={this.state.video.id}
+                  dislikes={this.props.dislikes}
                   currentUser={currentUser}
+                  getDislikes={this.props.getDislikes}
                   dislikeVideo={this.props.dislikeVideo}
-                  undislikeVideo={this.props.undislikeVideo} /> */}
+                  undislikeVideo={this.props.undislikeVideo} />
                 
 
               </div>

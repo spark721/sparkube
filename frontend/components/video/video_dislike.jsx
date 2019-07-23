@@ -4,38 +4,11 @@ import React from 'react';
 class DislikeVideoComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.video;
+    this.state = this.props.dislikes;
   }
 
-  handleDislike(e) {
-    e.preventDefault();
-    let currentUser = this.props.currentUser;
-    let videoId = this.state.id;
-
-    // if (!currentUser) {
-    //   return console.log("no user logged in")
-    // }
+  handleDislike() {
     
-    // debugger
-    if (this.state.curUserDislikes) {
-      undislikeVideo(this.state.dislikeId).then(
-        (res) => (
-          this.setState({
-            dislikes: res.dislikes, 
-            curUserDislikes: false
-          })
-        )
-      )
-    } else {
-      dislikeVideo(videoId).then(
-        (res) => (         
-          this.setState({
-            dislikes: res.dislikes,
-            curUserDislikes: true
-          })
-        )
-      );
-    }
   }
 
   render() {
@@ -44,7 +17,7 @@ class DislikeVideoComponent extends React.Component {
         <div className="dislikes-count"
              onClick={this.handleDislike.bind(this)} >
           <i className="fas fa-thumbs-down"></i>
-          <span>{this.state.dislikes}</span>
+          <span>{Object.keys(this.state).length}</span>
         </div>
       </div>
     );
