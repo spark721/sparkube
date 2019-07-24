@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 
 class VideoShow extends React.Component {
-
+  
   constructor(props) {
     super(props);
     // debugger
@@ -19,13 +19,16 @@ class VideoShow extends React.Component {
 
   componentDidMount() {
     // debugger
-    this.props.getVideo(this.props.match.params.videoId)
+    this.props.getVideo(this.props.match.params.videoId).then( result => {
+      this.setState({ video: result.video })
+    });
   };
 
   componentDidUpdate(prevProps) {
     // debugger
     if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
-      this.setState({ video: this.props.videos[this.props.match.params.videoId] })
+      // this.setState({ video: this.props.videos[this.props.match.params.videoId] })
+      this.setState({ video: this.props.video, });
     }
   }
 

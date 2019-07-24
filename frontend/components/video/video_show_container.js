@@ -21,7 +21,7 @@ const msp = (state, myProp) => {
   // debugger
   return {
     video: state.entities.videos[myProp.match.params.videoId],
-    videos: state.entities.videos,
+    // videos: state.entities.videos,
     likes: state.entities.likes,
     dislikes: state.entities.dislikes,
     currentUser: state.entities.users[currentUserId],
