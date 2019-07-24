@@ -1,6 +1,8 @@
 
 import React from 'react';
 
+
+
 class LikeVideoComponent extends React.Component {
   constructor(props) {
     super(props);
@@ -18,9 +20,13 @@ class LikeVideoComponent extends React.Component {
   // }
 
   handleLike(e) {
-    // debugger
+    debugger
     e.preventDefault();
     let currentUser = this.props.currentUser;
+    if (currentUser && this.props.curUserLikes) {
+      this.props.likeVideo(this.props.videoId);
+      console.log("liked");
+    }
   }
 
   render() {

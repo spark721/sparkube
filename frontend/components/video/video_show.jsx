@@ -11,10 +11,10 @@ class VideoShow extends React.Component {
   
   constructor(props) {
     super(props);
-    // debugger
     this.state = {
-      video: this.props.video
+      video: this.props.video,
     }
+    // debugger
   }
 
   componentDidMount() {
@@ -119,7 +119,9 @@ class VideoShow extends React.Component {
                   currentUser={currentUser}
                   getLikes={this.props.getLikes}
                   likeVideo={this.props.likeVideo}
-                  unlikeVideo={this.props.unlikeVideo} />
+                  unlikeVideo={this.props.unlikeVideo}
+                  curUserLikes={this.state.video.cur_user_likes}
+                  curUserDislikes={this.state.video.cur_user_dislikes} />
 
                 
                 {/* <div className="dislikes-count"

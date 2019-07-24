@@ -1,10 +1,10 @@
 class Api::LikesController < ApplicationController
 
   def create
-    if !current_user
-      render json: ["please sign in first"], status: 401
-      return nil
-    end
+    # if !current_user
+    #   render json: ["please sign in first"], status: 401
+    #   return nil
+    # end
 
     # debugger
     @like = Like.new()
