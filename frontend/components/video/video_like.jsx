@@ -2,11 +2,11 @@
 import React from 'react';
 
 
-
 class LikeVideoComponent extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
-    this.state = this.props.likes;
+    // this.state = this.props.likes;
   }
 
   componentDidMount() {
@@ -20,12 +20,11 @@ class LikeVideoComponent extends React.Component {
   // }
 
   handleLike(e) {
-    debugger
+    // debugger
     e.preventDefault();
     let currentUser = this.props.currentUser;
-    if (currentUser && this.props.curUserLikes) {
-      this.props.likeVideo(this.props.videoId);
-      console.log("liked");
+    if (currentUser) {
+      
     }
   }
 
@@ -35,7 +34,7 @@ class LikeVideoComponent extends React.Component {
         <div className="likes-count"
           onClick={this.handleLike.bind(this)} >
           <i className="fas fa-thumbs-up"></i>
-          <span>{Object.keys(this.state).length}</span>
+          <span>{Object.keys(this.props.likes).length}</span>
         </div>
       </div>
     );

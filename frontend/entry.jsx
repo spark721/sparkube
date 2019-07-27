@@ -57,6 +57,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.unlikeVideo = LikeAPIUtil.unlikeVideo;
   window.dislikeVideo = LikeAPIUtil.dislikeVideo;
   window.undislikeVideo = LikeAPIUtil.undislikeVideo;
+  window.getLikes = LikeAPIUtil.getLikes;
+  window.getDislikes = LikeAPIUtil.getDislikes;
 
   // - = * TESTING ABOVE * = -
 
