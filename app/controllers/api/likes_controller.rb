@@ -1,11 +1,6 @@
 class Api::LikesController < ApplicationController
 
   def create
-    # if !current_user
-    #   render json: ["please sign in first"], status: 401
-    #   return nil
-    # end
-
     # debugger
     @like = Like.new()
     @like.user_id = current_user.id
@@ -27,6 +22,7 @@ class Api::LikesController < ApplicationController
   end
 
   def destroy
+    # debugger
     @like = Like.find_by(
       user_id: current_user.id,
       video_id: params[:video_id]

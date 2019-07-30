@@ -26,7 +26,7 @@ class SideIndex extends React.Component {
     return (
       <div className='side-index-splash-whole'>
         <div className='side-index-splash'>
-          <ul className='side-index-splash-ul'>{shuffle(videos)}</ul>
+          <ul className='side-index-splash-ul'>{videos}</ul>
         </div>
       </div>
     );
