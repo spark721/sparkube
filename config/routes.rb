@@ -7,11 +7,13 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :videos, only: [:index, :show, :create, :update, :destroy] do
-      resources :likes, only: [:create]    
-      resources :dislikes, only: [:create]
+      resources :likes, only: [:create, :index]
+      delete '/likes', to: 'likes#destroy'
+      resources :dislikes, only: [:create, :index]
+      delete '/dislikes', to: 'dislikes#destroy'
     end
-    resources :likes, only: [:destroy]
-    resources :dislikes, only: [:destroy]
+    # resources :likes, only: [:destroy]
+    # resources :dislikes, only: [:destroy]
   end
   
 end

@@ -12,17 +12,29 @@ class Api::DislikesController < ApplicationController
     @dislike.video_id = params[:video_id]
 
     if @dislike.save
-      render 'api/videos/show'
+      # @video = @dislike.video
+      # render 'api/videos/show'
+      render :show
     else
-      render json: ["Please sign in first"], status: 401
+      render json: @dislike.errors.full_messages, status: 401
     end
   end
 
+  def index
+    video = Video.find(params[:video_id])
+    @dislikes = video.dislikes
+  end
+
   def destroy
-    @dislike = current_user.dislikes.find(params[:id])
+    @dislike = Dislike.find_by(
+      user_id: current_user.id,
+      video_id: params[:video_id]
+    )
 
     if @dislike.destroy
-      render 'api/videos/show'
+      # @video = @dislike.video
+      # render 'api/videos/show'
+      render :show
     else
       render json: ["Not found"], status: 422
     end

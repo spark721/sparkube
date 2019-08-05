@@ -10,7 +10,7 @@
   position: relative;
   top: 56px;
   padding: 24px 24px 0 0;
-  transition: width 1s;
+  transition: width 500ms;
 };
 
 @media only screen and (max-width: 1024px) {
@@ -123,13 +123,42 @@
 
 .likes-dislikes {
   color: #909090;
-  margin-right: 20px;
-  width: 100px;
+  // margin-right: 20px;
+  // width: 100px;
+  // display: flex;
+  // justify-content: space-between;
+  // border: 1px solid green;
+}
+
+.likes-dislikes-buttons {
+  color: #909090;
   display: flex;
   justify-content: space-between;
+  width: 100px;
+  margin-right: 20px;
 }
 
 .likes-count {
+  cursor: pointer;
+  // border: 1px solid red;
+
+  a:visited {
+    color: #909090;
+  }
+  a:link {
+    text-decoration: none;
+  }
+  i {
+    margin-right: 10px;
+  }
+}
+
+.likes-count-blue {
+  // color: #3ea6ff; dark mode color
+  color: #065fd4;
+  text-decoration: none;
+  // border: 1px solid #065fd4;
+
   cursor: pointer;
   i {
     margin-right: 10px;
@@ -137,6 +166,26 @@
 }
 
 .dislikes-count {
+  cursor: pointer;
+  // border: 1px solid red;
+
+  a:visited {
+    color: #909090;
+  }
+  a:link {
+    text-decoration: none;
+  }
+  i {
+    margin-right: 10px;
+  }
+}
+
+.dislikes-count-blue {
+  // color: #3ea6ff; dark mode color
+  color: #065fd4;
+  text-decoration: none;
+  // border: 1px solid #065fd4;
+
   cursor: pointer;
   i {
     margin-right: 10px;

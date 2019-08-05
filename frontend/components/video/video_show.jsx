@@ -2,47 +2,37 @@
 import React from 'react';
 import NavTop from '../nav_top/nav_top';
 import SideIndexContainer from './side_index_container';
-import { Link, Redirect } from 'react-router-dom';
-import LikeVideoComponent from './video_like';
-import DislikeVideoComponent from './video_dislike';
-
+import LikeDislike from './video_like_dislike';
+import { Link } from 'react-router-dom';
 
 
 class VideoShow extends React.Component {
-
-  componentDidMount() {
-    this.props.getVideo(this.props.match.params.videoId);
-  };
   
-  // componentDidUpdate(prevProps) {
-    // debugger;
-    // if (this.props.video && prevProps.video) {
-      // if (this.props.video.likes !== prevProps.video.likes) {
-      //   window.location.reload();
-      // };
-    // };
-  // };
-
-  handleDelete(e) {
-    e.preventDefault();
-    // debugger;
-    this.props.deleteVideo(this.props.video.id).then(
-      () => this.props.history.push('/'),
-    )
+  constructor(props) {
+    // debugger
+    super(props);
+    this.state = {
+      video: this.props.video,
+    }
   }
 
-  // handleUpdate(e) {
-  //   e.preventDefault();
-  //   () => <Redirect to={`/video/${this.props.video.id}/edit`} />
-  // }
+  componentDidMount() {
+    // debugger
+    if (this.state.video === undefined) {
+      this.props.getVideo(this.props.match.params.videoId).then( result => {
+        this.setState({ video: result.video });
+      });
+    };
+  };
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // debugger
 
-  // handleDislike(e) {
-  //   e.preventDefault();
-  //   let currentUser = this.props.currentUser;
-
-  //   return currentUser ? console.log(currentUser) : console.log("seriously?")
-  // }
+    if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
+      // this.setState({ video: this.props.video, });
+      location.reload();
+    }
+  }
 
   renderError() {
     return (
@@ -50,8 +40,8 @@ class VideoShow extends React.Component {
         {this.props.errors.map((error, i) => {
           return (
             <li
-              key={`error-${i}`}
-              className="render-error" >
+            key={`error-${i}`}
+            className="render-error" >
               <i className="fas fa-exclamation-circle"></i>
               {error}
             </li>
@@ -61,25 +51,33 @@ class VideoShow extends React.Component {
     );
   };
 
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteVideo(this.state.video.id).then(
+      () => this.props.history.push('/'),
+    )
+  }
+
   render() {
+    // video_show.jsx
     // debugger
-    if (!this.props.video) {
+    if (!this.state.video) {
       return (
         <div>Loading</div>
       );
-    }
+    };
 
     let currentUser = this.props.currentUser;
 
     const deleteButton = currentUser ? 
-      currentUser.id === this.props.video.author_id ?
+      currentUser.id === this.state.video.author_id ?
         <div className='show-button-div'>
           <button className="show-delete-button"
                   onClick={this.handleDelete.bind(this)} >
             <p>DELETE</p>
           </button>
           <button className="show-edit-button" >
-            <Link to={`/video/${this.props.video.id}/edit`}>
+            <Link to={`/video/${this.state.video.id}/edit`}>
               <p>EDIT VIDEO</p>
             </Link>
           </button>
@@ -95,16 +93,16 @@ class VideoShow extends React.Component {
           <div className='video-show-page'>
             <video width='100%'
                    className='video-show-player'
-                   key={this.props.video.id}
+                   key={this.state.video.id}
                    controls >
               <source
-                src={this.props.video.videoUrl}
+                src={this.state.video.videoUrl}
                 type="video/mp4" />
             </video>
 
             <div className='video-show-title-div'>
               <div>
-                <span className='video-show-title-text'>{this.props.video.title}</span>
+                <span className='video-show-title-text'>{this.state.video.title}</span>
                 <div className='video-show-stats-div'>
                   <span className='video-show-views-text'>40,588,087 views</span>
                 </div>
@@ -112,29 +110,18 @@ class VideoShow extends React.Component {
 
               <div className="likes-dislikes">
 
-                {/* <div className="likes-count"
-                     onClick={this.handleLike.bind(this)} >
-                  <i className="fas fa-thumbs-up"></i>
-                  <span>{this.props.video.likes}</span>
-                </div> */}
-                <LikeVideoComponent
-                  video={this.props.video}
+                <LikeDislike 
+                  videoId={this.props.video.id}
+                  likes={this.props.video.likes}  // likes count
+                  dislikes={this.props.video.dislikes}  // dislikes count
                   currentUser={currentUser}
-                  likeVideo={this.props.likeVideo}
-                  unlikeVideo={this.props.unlikeVideo} />
-
-                
-                {/* <div className="dislikes-count"
-                     onClick={this.handleDislike.bind(this)} >
-                  <i className="fas fa-thumbs-down"></i>
-                  <span>{this.props.video.dislikes}</span>
-                </div> */}
-                <DislikeVideoComponent
-                  video={this.props.video}
-                  currentUser={currentUser}
-                  dislikeVideo={this.props.dislikeVideo}
-                  undislikeVideo={this.props.undislikeVideo} />
-                
+                  likeVideo={this.props.likeVideo}  // func
+                  unlikeVideo={this.props.unlikeVideo}  // func
+                  dislikeVideo={this.props.dislikeVideo}  // func
+                  undislikeVideo={this.props.undislikeVideo}  // func
+                  curUserLikes={this.props.video.cur_user_likes}  // bool
+                  curUserDislikes={this.props.video.cur_user_dislikes}  // bool
+                />
 
               </div>
             </div>
@@ -142,7 +129,7 @@ class VideoShow extends React.Component {
             <div className='author-description-div'>
               <div className='author-div'>
                 <div className='author-date-div'>
-                  <span className='author-text'>{this.props.video.username}</span>
+                  <span className='author-text'>{this.state.video.username}</span>
                   <br />
                   <span className='date-text'>Published on Jul 7, 2019</span>
                 </div>
@@ -151,13 +138,13 @@ class VideoShow extends React.Component {
                 </div>
               </div>
               <div className='description-div'>
-                <p>{this.props.video.description}</p>
+                <p>{this.state.video.description}</p>
               </div>
             </div>
           </div>
 
           <div className='video-show-index'>
-            <SideIndexContainer videoId={this.props.video.id}/>
+            <SideIndexContainer />
           </div>
         </div>
       </div>

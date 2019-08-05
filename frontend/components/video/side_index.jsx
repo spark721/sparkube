@@ -5,10 +5,14 @@ import SideIndexItem from './side_index_item';
 class SideIndex extends React.Component {
 
   componentDidMount() {
+    // debugger
     this.props.getVideos();
   }
 
+
   render() {
+    // side_index.jsx
+    // debugger
     let videos = this.props.videos.map((video, i) => {
         return <SideIndexItem
           key={i}
@@ -26,7 +30,7 @@ class SideIndex extends React.Component {
     return (
       <div className='side-index-splash-whole'>
         <div className='side-index-splash'>
-          <ul className='side-index-splash-ul'>{shuffle(videos)}</ul>
+          <ul className='side-index-splash-ul'>{videos}</ul>
         </div>
       </div>
     );
