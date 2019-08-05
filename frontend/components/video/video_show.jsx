@@ -10,24 +10,25 @@ import { Link } from 'react-router-dom';
 class VideoShow extends React.Component {
   
   constructor(props) {
+    debugger
     super(props);
     this.state = {
       video: this.props.video,
     }
-    // debugger
   }
 
   componentDidMount() {
-    // debugger
-    this.props.getVideo(this.props.match.params.videoId).then( result => {
-      this.setState({ video: result.video })
-    });
+    debugger
+    if (this.state.video === undefined) {
+      this.props.getVideo(this.props.match.params.videoId).then( result => {
+        this.setState({ video: result.video });
+      });
+    };
   };
 
   componentDidUpdate(prevProps) {
     // debugger
     if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
-      // this.setState({ video: this.props.videos[this.props.match.params.videoId] })
       this.setState({ video: this.props.video, });
     }
   }
@@ -57,7 +58,7 @@ class VideoShow extends React.Component {
   }
 
   render() {
-    // debugger
+    debugger
     if (!this.state.video) {
       return (
         <div>Loading</div>
@@ -107,13 +108,7 @@ class VideoShow extends React.Component {
 
               <div className="likes-dislikes">
 
-                {/* <div className="likes-count"
-                     onClick={this.handleLike.bind(this)} >
-                  <i className="fas fa-thumbs-up"></i>
-                  <span>{this.state.video.likes}</span>
-                </div> */}
-
-                <LikeVideoComponent
+                {/* <LikeVideoComponent
                   videoId={this.props.match.params.videoId}
                   likes={this.props.likes}
                   currentUser={currentUser}
@@ -121,23 +116,15 @@ class VideoShow extends React.Component {
                   likeVideo={this.props.likeVideo}
                   unlikeVideo={this.props.unlikeVideo}
                   curUserLikes={this.state.video.cur_user_likes}
-                  curUserDislikes={this.state.video.cur_user_dislikes} />
+                  curUserDislikes={this.state.video.cur_user_dislikes} /> */}
 
-                
-                {/* <div className="dislikes-count"
-                     onClick={this.handleDislike.bind(this)} >
-                  <i className="fas fa-thumbs-down"></i>
-                  <span>{this.state.video.dislikes}</span>
-                </div> */}
-
-                <DislikeVideoComponent
+                {/* <DislikeVideoComponent
                   videoId={this.state.video.id}
                   dislikes={this.props.dislikes}
                   currentUser={currentUser}
                   getDislikes={this.props.getDislikes}
                   dislikeVideo={this.props.dislikeVideo}
-                  undislikeVideo={this.props.undislikeVideo} />
-                
+                  undislikeVideo={this.props.undislikeVideo} /> */}
 
               </div>
             </div>

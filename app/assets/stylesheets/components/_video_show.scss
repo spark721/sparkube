@@ -131,6 +131,27 @@
 
 .likes-count {
   cursor: pointer;
+  a:visited {
+    color: #909090;
+  }
+  a:link {
+    text-decoration: none;
+  }
+  i {
+    margin-right: 10px;
+  }
+}
+
+#like-counter {
+  text-decoration: none;
+}
+
+.likes-count-blue {
+  // color: #3ea6ff; dark mode color
+  color: #065fd4;
+  text-decoration: none;
+
+  cursor: pointer;
   i {
     margin-right: 10px;
   }

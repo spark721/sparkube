@@ -8,8 +8,8 @@ import dislikesReducer from './dislikes_reducer';
 const entitiesReducer = combineReducers({
   users: usersReducer,
   videos: videoReducer,
-  likes: likesReducer,
-  dislikes: dislikesReducer,
+  // likes: likesReducer,
+  // dislikes: dislikesReducer,
 });
 
 export default entitiesReducer;

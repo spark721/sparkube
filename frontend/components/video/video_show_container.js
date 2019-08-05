@@ -18,10 +18,8 @@ import VideoShow from './video_show';
 
 const msp = (state, myProp) => {
   let currentUserId = state.session.id;
-  // debugger
   return {
     video: state.entities.videos[myProp.match.params.videoId],
-    // videos: state.entities.videos,
     likes: state.entities.likes,
     dislikes: state.entities.dislikes,
     currentUser: state.entities.users[currentUserId],
