@@ -113,29 +113,25 @@ class VideoShow extends React.Component {
               <div className="likes-dislikes">
 
                 <LikeVideoComponent
-                  // videoId={this.state.video.id}
-                  // likes={this.state.video.likes}  // likes count
                   videoId={this.props.video.id}
                   likes={this.props.video.likes}  // likes count
                   currentUser={currentUser}
                   getLikes={this.props.getLikes}  // func
                   likeVideo={this.props.likeVideo}  // func
                   unlikeVideo={this.props.unlikeVideo}  // func
-                  // curUserLikes={this.state.video.cur_user_likes}  // bool
-                  // curUserDislikes={this.state.video.cur_user_dislikes}  // bool
                   curUserLikes={this.props.video.cur_user_likes}  // bool
                   curUserDislikes={this.props.video.cur_user_dislikes}  // bool
                   />
 
                 <DislikeVideoComponent
-                  videoId={this.state.video.id}
-                  dislikes={this.state.video.dislikes}  // dislikes count
+                  videoId={this.props.video.id}
+                  dislikes={this.props.video.dislikes}  // dislikes count
                   currentUser={currentUser}
                   getDislikes={this.props.getDislikes}  // func
                   dislikeVideo={this.props.dislikeVideo}  // func
                   undislikeVideo={this.props.undislikeVideo}  // func
-                  curUserLikes={this.state.video.cur_user_likes}  // bool
-                  curUserDislikes={this.state.video.cur_user_dislikes}  // bool
+                  curUserLikes={this.props.video.cur_user_likes}  // bool
+                  curUserDislikes={this.props.video.cur_user_dislikes}  // bool
                   />
 
               </div>

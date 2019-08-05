@@ -164,6 +164,24 @@
   cursor: pointer;
   border: 1px solid red;
 
+  a:visited {
+    color: #909090;
+  }
+  a:link {
+    text-decoration: none;
+  }
+  i {
+    margin-right: 10px;
+  }
+}
+
+.dislikes-count-blue {
+  // color: #3ea6ff; dark mode color
+  color: #065fd4;
+  text-decoration: none;
+  border: 1px solid #065fd4;
+
+  cursor: pointer;
   i {
     margin-right: 10px;
   }
