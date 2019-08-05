@@ -4,10 +4,14 @@ import React from 'react';
 class DislikeVideoComponent extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props.dislikes;
-  }
+    this.state = {
+      dislikes: this.props.dislikes,
+      curUserLikes: this.props.curUserLikes,
+      curUserDislikes: this.props.curUserDislikes,
+    };
+  };
 
-  handleDislike() {
+  handleDislike(e) {
     
   }
 
@@ -17,7 +21,7 @@ class DislikeVideoComponent extends React.Component {
         <div className="dislikes-count"
              onClick={this.handleDislike.bind(this)} >
           <i className="fas fa-thumbs-down"></i>
-          <span>{Object.keys(this.state).length}</span>
+          <span>{this.state.dislikes}</span>
         </div>
       </div>
     );

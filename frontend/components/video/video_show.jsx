@@ -108,24 +108,27 @@ class VideoShow extends React.Component {
 
               <div className="likes-dislikes">
 
-                {/* <LikeVideoComponent
-                  videoId={this.props.match.params.videoId}
-                  // likes={this.props.likes}
-                  currentUser={currentUser}
-                  getLikes={this.props.getLikes}  // f
-                  likeVideo={this.props.likeVideo}  // f
-                  unlikeVideo={this.props.unlikeVideo}  // f
-                  // curUserLikes={this.state.video.cur_user_likes}
-                  // curUserDislikes={this.state.video.cur_user_dislikes}
-                  /> */}
-
-                {/* <DislikeVideoComponent
+                <LikeVideoComponent
                   videoId={this.state.video.id}
-                  dislikes={this.props.dislikes}
+                  likes={this.state.video.likes}  // likes count
                   currentUser={currentUser}
-                  getDislikes={this.props.getDislikes}
-                  dislikeVideo={this.props.dislikeVideo}
-                  undislikeVideo={this.props.undislikeVideo} /> */}
+                  getLikes={this.props.getLikes}  // func
+                  likeVideo={this.props.likeVideo}  // func
+                  unlikeVideo={this.props.unlikeVideo}  // func
+                  curUserLikes={this.state.video.cur_user_likes}  // bool
+                  curUserDislikes={this.state.video.cur_user_dislikes}  // bool
+                  />
+
+                <DislikeVideoComponent
+                  videoId={this.state.video.id}
+                  dislikes={this.state.video.dislikes}  // dislikes count
+                  currentUser={currentUser}
+                  getDislikes={this.props.getDislikes}  // func
+                  dislikeVideo={this.props.dislikeVideo}  // func
+                  undislikeVideo={this.props.undislikeVideo}  // func
+                  curUserLikes={this.state.video.cur_user_likes}  // bool
+                  curUserDislikes={this.state.video.cur_user_dislikes}  // bool
+                  />
 
               </div>
             </div>

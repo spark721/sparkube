@@ -16,11 +16,11 @@ class LikeVideoComponent extends React.Component {
 
   componentDidMount() {
     // debugger
-    this.props.getLikes(this.props.videoId).then( result => {
-      this.setState({
-        likes: result,
-      });
-    });
+    // this.props.getLikes(this.props.videoId).then( result => {
+    //   this.setState({
+    //     likes: result,
+    //   });
+    // });
   }
 
 
@@ -62,20 +62,20 @@ class LikeVideoComponent extends React.Component {
         <div className="likes-count-blue"
           onClick={this.handleLike.bind(this)} >
           <i className="fas fa-thumbs-up"></i>
-          <span>{Object.keys(this.props.likes).length}</span>
+          <span>{this.state.likes}</span>
         </div>
         :
         <div className="likes-count"
           onClick={this.handleLike.bind(this)} >
           <i className="fas fa-thumbs-up"></i>
-          <span>{Object.keys(this.props.likes).length}</span>
+          <span>{this.state.likes}</span>
         </div>
       : 
         <div className="likes-count"
           onClick={this.handleLike.bind(this)} >
           <Link to={`/login`}>
             <i className="fas fa-thumbs-up"></i>
-            <span>{Object.keys(this.props.likes).length}</span>
+            <span>{this.state.likes}</span>
           </Link>
         </div>;
 
