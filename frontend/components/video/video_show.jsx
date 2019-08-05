@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 class VideoShow extends React.Component {
   
   constructor(props) {
-    debugger
+    // debugger
     super(props);
     this.state = {
       video: this.props.video,
@@ -18,7 +18,7 @@ class VideoShow extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    // debugger
     if (this.state.video === undefined) {
       this.props.getVideo(this.props.match.params.videoId).then( result => {
         this.setState({ video: result.video });
@@ -110,13 +110,14 @@ class VideoShow extends React.Component {
 
                 {/* <LikeVideoComponent
                   videoId={this.props.match.params.videoId}
-                  likes={this.props.likes}
+                  // likes={this.props.likes}
                   currentUser={currentUser}
-                  getLikes={this.props.getLikes}
-                  likeVideo={this.props.likeVideo}
-                  unlikeVideo={this.props.unlikeVideo}
-                  curUserLikes={this.state.video.cur_user_likes}
-                  curUserDislikes={this.state.video.cur_user_dislikes} /> */}
+                  getLikes={this.props.getLikes}  // f
+                  likeVideo={this.props.likeVideo}  // f
+                  unlikeVideo={this.props.unlikeVideo}  // f
+                  // curUserLikes={this.state.video.cur_user_likes}
+                  // curUserDislikes={this.state.video.cur_user_dislikes}
+                  /> */}
 
                 {/* <DislikeVideoComponent
                   videoId={this.state.video.id}
