@@ -8,14 +8,29 @@ class LikeVideoComponent extends React.Component {
     // debugger
     super(props);
     this.state = {
+      videoId: this.props.videoId,
       likes: this.props.likes,
       curUserLikes: this.props.curUserLikes,
       curUserDislikes: this.props.curUserDislikes,
     };
   }
 
-  componentDidMount() {
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // console.log("Video LIKE component did update");
+    // console.log("LIKE.state.videoId", this.state.videoId);
+    // console.log("LIKE.props.videoId", this.props.videoId);
+    // console.log("- - - - - - - - - - - - - - - - -");
+    
     // debugger
+    if (prevProps.videoId !== this.props.videoId) {
+      this.setState({
+        videoId: this.props.videoId,
+        likes: this.props.likes,
+        curUserLikes: this.props.curUserLikes,
+        curUserDislikes: this.props.curUserDislikes,
+      });
+    };
+
     // this.props.getLikes(this.props.videoId).then( result => {
     //   this.setState({
     //     likes: result,
@@ -33,27 +48,26 @@ class LikeVideoComponent extends React.Component {
       // debugger
       if (curUserLikes === false) {
         // like the video
-        this.props.likeVideo(this.props.videoId).then( result => {
+        this.props.likeVideo(this.state.videoId).then( result => {
           this.setState({
-            likes: result,
+            likes: this.state.likes + 1,
             curUserLikes: !curUserLikes,
           });
         });
       } else {
         // unlike the video
-        this.props.unlikeVideo(this.props.videoId).then( result => {
+        this.props.unlikeVideo(this.state.videoId).then( result => {
           this.setState({
-            likes: result,
+            likes: this.state.likes - 1,
             curUserLikes: !curUserLikes,
           });
         });
       }
-    } else {
-      // redirect user to login page
     }
   }
 
   render() {
+    // video_likes.jsx
     // debugger
     let currentUser = this.props.currentUser;
     let curUserLikes = this.state.curUserLikes;

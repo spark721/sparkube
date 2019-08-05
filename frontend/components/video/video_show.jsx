@@ -26,10 +26,13 @@ class VideoShow extends React.Component {
     };
   };
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps, prevState, snapshot) {
     // debugger
+    // console.log("Video SHOW component did update");
+
     if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
-      this.setState({ video: this.props.video, });
+      // this.setState({ video: this.props.video, });
+      location.reload();
     }
   }
 
@@ -58,7 +61,8 @@ class VideoShow extends React.Component {
   }
 
   render() {
-    debugger
+    // video_show.jsx
+    // debugger
     if (!this.state.video) {
       return (
         <div>Loading</div>
@@ -109,14 +113,18 @@ class VideoShow extends React.Component {
               <div className="likes-dislikes">
 
                 <LikeVideoComponent
-                  videoId={this.state.video.id}
-                  likes={this.state.video.likes}  // likes count
+                  // videoId={this.state.video.id}
+                  // likes={this.state.video.likes}  // likes count
+                  videoId={this.props.video.id}
+                  likes={this.props.video.likes}  // likes count
                   currentUser={currentUser}
                   getLikes={this.props.getLikes}  // func
                   likeVideo={this.props.likeVideo}  // func
                   unlikeVideo={this.props.unlikeVideo}  // func
-                  curUserLikes={this.state.video.cur_user_likes}  // bool
-                  curUserDislikes={this.state.video.cur_user_dislikes}  // bool
+                  // curUserLikes={this.state.video.cur_user_likes}  // bool
+                  // curUserDislikes={this.state.video.cur_user_dislikes}  // bool
+                  curUserLikes={this.props.video.cur_user_likes}  // bool
+                  curUserDislikes={this.props.video.cur_user_dislikes}  // bool
                   />
 
                 <DislikeVideoComponent
