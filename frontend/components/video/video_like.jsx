@@ -16,11 +16,6 @@ class LikeVideoComponent extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    // console.log("Video LIKE component did update");
-    // console.log("LIKE.state.videoId", this.state.videoId);
-    // console.log("LIKE.props.videoId", this.props.videoId);
-    // console.log("- - - - - - - - - - - - - - - - -");
-    
     // debugger
     if (prevProps.videoId !== this.props.videoId) {
       this.setState({
@@ -30,12 +25,6 @@ class LikeVideoComponent extends React.Component {
         curUserDislikes: this.props.curUserDislikes,
       });
     };
-
-    // this.props.getLikes(this.props.videoId).then( result => {
-    //   this.setState({
-    //     likes: result,
-    //   });
-    // });
   }
 
 
