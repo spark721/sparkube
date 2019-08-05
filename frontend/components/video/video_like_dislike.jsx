@@ -27,43 +27,42 @@ class LikeDislike extends React.Component {
   };
 
   handleLike(e) {
+    // debugger
     e.preventDefault();
     let currentUser = this.props.currentUser;
     let curUserLikes = this.state.curUserLikes;
     let curUserDislikes = this.state.curUserDislikes;
 
     if (currentUser) {
-      if (curUserLikes) {
-        if (curUserLikes === false && curUserDislikes === false) {
-          // like the video
-          this.props.likeVideo(this.state.videoId).then(result => {
-            this.setState({
-              likes: this.state.likes + 1,
-              curUserLikes: !curUserLikes,
-            });
+      if (curUserLikes === false && curUserDislikes === false) {
+        // like the video
+        this.props.likeVideo(this.state.videoId).then(result => {
+          this.setState({
+            likes: this.state.likes + 1,
+            curUserLikes: !curUserLikes,
           });
-        }
-        else if (curUserLikes === false && curUserDislikes) {
-          // undislike the video
-          this.props.undislikeVideo(this.state.videoId);
-          // like the video
-          this.props.likeVideo(this.state.videoId).then(result => {
-            this.setState({
-              likes: this.state.likes + 1,
-              dislikes: this.state.dislikes - 1,
-              curUserLikes: !curUserLikes,
-              curUserDislikes: !curUserDislikes,
-            });
+        });
+      }
+      else if (curUserLikes === false && curUserDislikes) {
+        // undislike the video
+        this.props.undislikeVideo(this.state.videoId);
+        // like the video
+        this.props.likeVideo(this.state.videoId).then(result => {
+          this.setState({
+            likes: this.state.likes + 1,
+            dislikes: this.state.dislikes - 1,
+            curUserLikes: !curUserLikes,
+            curUserDislikes: !curUserDislikes,
           });
-        } else if (curUserLikes) {
-          // unlike the video
-          this.props.unlikeVideo(this.state.videoId).then(result => {
-            this.setState({
-              likes: this.state.likes - 1,
-              curUserLikes: !curUserLikes,
-            });
+        });
+      } else if (curUserLikes) {
+        // unlike the video
+        this.props.unlikeVideo(this.state.videoId).then(result => {
+          this.setState({
+            likes: this.state.likes - 1,
+            curUserLikes: !curUserLikes,
           });
-        }
+        });
       }
     }
   }

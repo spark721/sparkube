@@ -126,28 +126,6 @@ class VideoShow extends React.Component {
                   curUserDislikes={this.props.video.cur_user_dislikes}  // bool
                 />
 
-                {/* <LikeVideoComponent
-                  videoId={this.props.video.id}
-                  likes={this.props.video.likes}  // likes count
-                  currentUser={currentUser}
-                  getLikes={this.props.getLikes}  // func
-                  likeVideo={this.props.likeVideo}  // func
-                  unlikeVideo={this.props.unlikeVideo}  // func
-                  curUserLikes={this.props.video.cur_user_likes}  // bool
-                  curUserDislikes={this.props.video.cur_user_dislikes}  // bool
-                  />
-
-                <DislikeVideoComponent
-                  videoId={this.props.video.id}
-                  dislikes={this.props.video.dislikes}  // dislikes count
-                  currentUser={currentUser}
-                  getDislikes={this.props.getDislikes}  // func
-                  dislikeVideo={this.props.dislikeVideo}  // func
-                  undislikeVideo={this.props.undislikeVideo}  // func
-                  curUserLikes={this.props.video.cur_user_likes}  // bool
-                  curUserDislikes={this.props.video.cur_user_dislikes}  // bool
-                  /> */}
-
               </div>
             </div>
 

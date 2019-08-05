@@ -44,7 +44,7 @@ export const getDislikes = (video_id) => {
 export const undislikeVideo = (video_id) => {
   return (dispatch) => {
     return LikeAPIUtil.undislikeVideo(video_id).then(
-      (dislike) => dispatch({ type: RECEIVE_DISLIKE, dislike }),
+      (dislike) => dispatch({ type: DELETE_DISLIKE, dislike }),
     );
   };
 };
@@ -52,7 +52,7 @@ export const undislikeVideo = (video_id) => {
 export const dislikeVideo = (video_id) => {
   return (dispatch) => {
     return LikeAPIUtil.dislikeVideo(video_id).then(
-      (dislike) => dispatch({ type: DELETE_DISLIKE, dislike }),
+      (dislike) => dispatch({ type: RECEIVE_DISLIKE, dislike }),
     );
   };
 };
