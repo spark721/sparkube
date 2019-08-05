@@ -4,6 +4,7 @@ import NavTop from '../nav_top/nav_top';
 import SideIndexContainer from './side_index_container';
 import LikeVideoComponent from './video_like';
 import DislikeVideoComponent from './video_dislike';
+import LikeDislike from './video_like_dislike';
 import { Link } from 'react-router-dom';
 
 
@@ -112,7 +113,20 @@ class VideoShow extends React.Component {
 
               <div className="likes-dislikes">
 
-                <LikeVideoComponent
+                <LikeDislike 
+                  videoId={this.props.video.id}
+                  likes={this.props.video.likes}  // likes count
+                  dislikes={this.props.video.dislikes}  // dislikes count
+                  currentUser={currentUser}
+                  likeVideo={this.props.likeVideo}  // func
+                  unlikeVideo={this.props.unlikeVideo}  // func
+                  dislikeVideo={this.props.dislikeVideo}  // func
+                  undislikeVideo={this.props.undislikeVideo}  // func
+                  curUserLikes={this.props.video.cur_user_likes}  // bool
+                  curUserDislikes={this.props.video.cur_user_dislikes}  // bool
+                />
+
+                {/* <LikeVideoComponent
                   videoId={this.props.video.id}
                   likes={this.props.video.likes}  // likes count
                   currentUser={currentUser}
@@ -132,7 +146,7 @@ class VideoShow extends React.Component {
                   undislikeVideo={this.props.undislikeVideo}  // func
                   curUserLikes={this.props.video.cur_user_likes}  // bool
                   curUserDislikes={this.props.video.cur_user_dislikes}  // bool
-                  />
+                  /> */}
 
               </div>
             </div>

@@ -123,15 +123,24 @@
 
 .likes-dislikes {
   color: #909090;
-  margin-right: 20px;
-  width: 100px;
+  // margin-right: 20px;
+  // width: 100px;
+  // display: flex;
+  // justify-content: space-between;
+  // border: 1px solid green;
+}
+
+.likes-dislikes-buttons {
+  color: #909090;
   display: flex;
   justify-content: space-between;
+  width: 100px;
+  margin-right: 20px;
 }
 
 .likes-count {
   cursor: pointer;
-  border: 1px solid red;
+  // border: 1px solid red;
 
   a:visited {
     color: #909090;
@@ -144,15 +153,11 @@
   }
 }
 
-#like-counter {
-  text-decoration: none;
-}
-
 .likes-count-blue {
   // color: #3ea6ff; dark mode color
   color: #065fd4;
   text-decoration: none;
-  border: 1px solid #065fd4;
+  // border: 1px solid #065fd4;
 
   cursor: pointer;
   i {
@@ -162,7 +167,7 @@
 
 .dislikes-count {
   cursor: pointer;
-  border: 1px solid red;
+  // border: 1px solid red;
 
   a:visited {
     color: #909090;
@@ -179,7 +184,7 @@
   // color: #3ea6ff; dark mode color
   color: #065fd4;
   text-decoration: none;
-  border: 1px solid #065fd4;
+  // border: 1px solid #065fd4;
 
   cursor: pointer;
   i {
