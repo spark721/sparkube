@@ -31,10 +31,10 @@ const mdp = (dispatch) => {
   return {
     getVideo: (id) => dispatch(getVideo(id)),
     deleteVideo: (id) => dispatch(deleteVideo(id)),
-    getLikes: (video_id) => dispatch(getLikes(video_id)),
+    // getLikes: (video_id) => dispatch(getLikes(video_id)),
     dislikeVideo: (video_id) => dispatch(dislikeVideo(video_id)),
     undislikeVideo: (video_id) => dispatch(undislikeVideo(video_id)),
-    getDislikes: (video_id) => dispatch(getDislikes(video_id)),
+    // getDislikes: (video_id) => dispatch(getDislikes(video_id)),
     likeVideo: (video_id) => dispatch(likeVideo(video_id)),
     unlikeVideo: (video_id) => dispatch(unlikeVideo(video_id)),
   };

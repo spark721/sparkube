@@ -2,8 +2,6 @@
 import React from 'react';
 import NavTop from '../nav_top/nav_top';
 import SideIndexContainer from './side_index_container';
-import LikeVideoComponent from './video_like';
-import DislikeVideoComponent from './video_dislike';
 import LikeDislike from './video_like_dislike';
 import { Link } from 'react-router-dom';
 
@@ -29,7 +27,6 @@ class VideoShow extends React.Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     // debugger
-    // console.log("Video SHOW component did update");
 
     if (this.props.match.params.videoId !== prevProps.match.params.videoId) {
       // this.setState({ video: this.props.video, });
