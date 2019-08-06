@@ -143,6 +143,20 @@ class VideoShow extends React.Component {
             </div>
 
             {/* Comments section */}
+            <div className='comment-form'>
+              <div className='comments-count'>
+                <p>{this.state.video.comments} Comments</p>
+              </div>
+              <div className='comment-input'>
+                <form>
+                  <input
+                    type="text"
+                    className="comment-input-text"
+                    placeholder="Add a public comment..."
+                  />
+                </form>
+              </div>
+            </div>
 
             
           </div>

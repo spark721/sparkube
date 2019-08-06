@@ -57,6 +57,7 @@
 .author-description-div {
   padding-left: 64px;
   border-bottom: solid 1px #e5e5e5;
+  margin: 0 0 24px;
 };
 
 .author-div {
@@ -190,4 +191,44 @@
   i {
     margin-right: 10px;
   }
+}
+
+.comment-form {
+  border: 1px solid #065fd4;
+  margin: 24px 0 32px;
+  height: 87px;
+}
+
+.comments-count {
+  // border-bottom: 1px solid green;
+  margin: 0 0 24px;
+  height: 23px;
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #0D0D0D;
+  }
+}
+
+.comment-input {
+  // border-top: 1px solid rgb(255, 94, 0);
+  // border-left: 1px solid rgb(255, 94, 0);
+  margin: 24px 0 0 64px;
+  height: 40px;
+}
+
+.comment-input-text {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #0D0D0D;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #eeeeee;
+  padding-bottom: 4px;
+}
+
+.comment-input-text:focus {
+  border: none;
+  border-bottom: 2px solid #696969;
 }

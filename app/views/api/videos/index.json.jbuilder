@@ -11,6 +11,8 @@
     json.dislikes cur_video.dislikes.length
     json.cur_user_dislikes cur_video.disliked_users.include?(current_user)
 
+    json.comments cur_video.comments.length
+
     if cur_video.video_url.attached?
       json.videoUrl url_for(cur_video.video_url)
     end
