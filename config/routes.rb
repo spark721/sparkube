@@ -11,7 +11,9 @@ Rails.application.routes.draw do
       delete '/likes', to: 'likes#destroy'
       resources :dislikes, only: [:create, :index]
       delete '/dislikes', to: 'dislikes#destroy'
+      resources :comments, only: [:create]
     end
+    resources :comments, only: [:destroy]
     # resources :likes, only: [:destroy]
     # resources :dislikes, only: [:destroy]
   end
