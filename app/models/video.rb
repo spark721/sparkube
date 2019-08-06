@@ -25,5 +25,9 @@ class Video < ApplicationRecord
   has_many :disliked_users,
     through: :dislikes,
     source: :user
+  
+  has_many :comments,
+    foreign_key: :video_id,
+    class_name: 'Comment'
 
 end
