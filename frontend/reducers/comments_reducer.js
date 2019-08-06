@@ -1,6 +1,6 @@
 
 import {
-  RECEIEVE_COMMENT,
+  RECEIVE_COMMENT,
   DELETE_COMMENT,
 } from '../actions/comment_action';
 
@@ -9,7 +9,7 @@ const commentsReducer = (oldState = {}, action) => {
   let newState = Object.assign({}, oldState);
 
   switch (action.type) {
-    case RECEIEVE_COMMENT:
+    case RECEIVE_COMMENT:
       newState[action.comment.id] = action.comment;
       return newState;
     case DELETE_COMMENT:

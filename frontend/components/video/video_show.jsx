@@ -141,6 +141,10 @@ class VideoShow extends React.Component {
                 <p>{this.state.video.description}</p>
               </div>
             </div>
+
+            {/* Comments section */}
+
+            
           </div>
 
           <div className='video-show-index'>
