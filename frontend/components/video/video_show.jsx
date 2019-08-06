@@ -156,6 +156,12 @@ class VideoShow extends React.Component {
                   />
                 </form>
               </div>
+              <div className='comment-form-buttons'>
+                <div className='comment-buttons-div'>
+                  <button className='comment-cancel-btn'>CANCEL</button>
+                  <button className='comment-comment-btn'>COMMENT</button>
+                </div>
+              </div>
             </div>
 
             

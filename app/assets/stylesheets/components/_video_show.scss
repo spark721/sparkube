@@ -194,9 +194,9 @@
 }
 
 .comment-form {
-  border: 1px solid #065fd4;
+  // border: 1px solid #065fd4;
   margin: 24px 0 32px;
-  height: 87px;
+  height: 116px;
 }
 
 .comments-count {
@@ -214,7 +214,8 @@
   // border-top: 1px solid rgb(255, 94, 0);
   // border-left: 1px solid rgb(255, 94, 0);
   margin: 24px 0 0 64px;
-  height: 40px;
+  padding: 0 0 8px;
+  height: 32px;
 }
 
 .comment-input-text {
@@ -231,4 +232,46 @@
 .comment-input-text:focus {
   border: none;
   border-bottom: 2px solid #696969;
+}
+
+.comment-form-buttons {
+  // border-top: 1px solid red;
+  height: 36px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-buttons-div {
+  width: 203px;
+  // border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-cancel-btn {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  width: 86px;
+  height: 36px;
+  color: #606060;
+  background-color: #ffffff;
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  // border: 1px solid red;
+}
+
+.comment-comment-btn {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  width: 101px;
+  height: 36px;
+  color: #ffffff;
+  background-color: #cccccc;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  padding: 10px 16px;
+
+  // border: 1px solid green;
 }
