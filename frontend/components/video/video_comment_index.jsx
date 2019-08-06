@@ -13,7 +13,12 @@ class CommentIndex extends React.Component {
   };
 
   update(e) {
-    this.setState({ newCommentBody: e.target.value })
+    this.setState({ newCommentBody: e.target.value });
+  }
+
+  handleCancel(e) {
+    e.preventDefault();
+    this.setState({ newCommentBody: '' });
   }
 
   render() {
@@ -40,7 +45,12 @@ class CommentIndex extends React.Component {
         </div>
         <div className='comment-form-buttons'>
           <div className='comment-buttons-div'>
-            <button className='comment-cancel-btn'>CANCEL</button>
+            <button
+              className='comment-cancel-btn'
+              onClick={this.handleCancel.bind(this)}
+            >
+              CANCEL
+            </button>
             {commentButton}
           </div>
         </div>
