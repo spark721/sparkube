@@ -3,6 +3,7 @@ import React from 'react';
 import NavTop from '../nav_top/nav_top';
 import SideIndexContainer from './side_index_container';
 import LikeDislike from './video_like_dislike';
+import CommentIndexContainer from './video_comment_container';
 import { Link } from 'react-router-dom';
 
 
@@ -143,27 +144,9 @@ class VideoShow extends React.Component {
             </div>
 
             {/* Comments section */}
-            <div className='comment-form'>
-              <div className='comments-count'>
-                <p>{this.state.video.comments} Comments</p>
-              </div>
-              <div className='comment-input'>
-                <form>
-                  <input
-                    type="text"
-                    className="comment-input-text"
-                    placeholder="Add a public comment..."
-                  />
-                </form>
-              </div>
-              <div className='comment-form-buttons'>
-                <div className='comment-buttons-div'>
-                  <button className='comment-cancel-btn'>CANCEL</button>
-                  <button className='comment-comment-btn'>COMMENT</button>
-                </div>
-              </div>
-            </div>
-
+            <CommentIndexContainer
+              videoId={this.props.video.id}
+            />
             
           </div>
 
