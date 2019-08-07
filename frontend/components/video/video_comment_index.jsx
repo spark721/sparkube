@@ -1,5 +1,6 @@
 
 import React from 'react';
+import CommentIndexItem from './video_comment_index_item';
 import { Link } from 'react-router-dom';
 
 class CommentIndex extends React.Component {
@@ -62,25 +63,36 @@ class CommentIndex extends React.Component {
         />
       </Link>
 
+    let comments = this.props.comments.map( (comment, i) => {
+      return <CommentIndexItem
+              key={i}
+              comment={comment}
+              />;
+    })
 
     return (
-      <div className='comment-form'>
-        <div className='comments-count'>
-          <p>{this.state.comments.length} Comments</p>
-        </div>
-        <div className='comment-input'>
-          {commentInput}
-        </div>
-        <div className='comment-form-buttons'>
-          <div className='comment-buttons-div'>
-            <button
-              className='comment-cancel-btn'
-              onClick={this.handleCancel.bind(this)}
-            >
-              CANCEL
-            </button>
-            {commentButton}
+      <div>
+        <div className='comment-form'>
+          <div className='comments-count'>
+            <p>{this.state.comments.length} Comments</p>
           </div>
+          <div className='comment-input'>
+            {commentInput}
+          </div>
+          <div className='comment-form-buttons'>
+            <div className='comment-buttons-div'>
+              <button
+                className='comment-cancel-btn'
+                onClick={this.handleCancel.bind(this)}
+              >
+                CANCEL
+              </button>
+              {commentButton}
+            </div>
+          </div>
+        </div>
+        <div>
+          <ul>{comments}</ul>
         </div>
       </div>
     );

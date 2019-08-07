@@ -7,6 +7,7 @@ import {
 import CommentIndex from './video_comment_index';
 
 const msp = (state) => {
+  // debugger
   return {
     comments: Object.values(state.entities.comments),
   };

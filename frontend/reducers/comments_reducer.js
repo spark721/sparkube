@@ -7,7 +7,7 @@ import {
 const commentsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState);
-
+  // debugger
   switch (action.type) {
     case RECEIVE_COMMENT:
       newState[action.comment.id] = action.comment;
