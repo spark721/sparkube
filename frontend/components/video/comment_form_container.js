@@ -1,10 +1,9 @@
 
 import { connect } from 'react-redux';
-import { deleteComment } from '../../actions/comment_action';
-import CommentIndex from './video_comment_index';
+import { postComment } from '../../actions/comment_action';
+import CommentForm from './comment_form';
 
 const msp = (state) => {
-  debugger
   return {
     comments: Object.values(state.entities.comments),
   };
@@ -13,8 +12,7 @@ const msp = (state) => {
 const mdp = (dispatch) => {
   return {
     postComment: (video_id, body) => dispatch(postComment(video_id, body)),
-    deleteComment: (id) => dispatch(deleteComment(id)),
-  }
-}
+  };
+};
 
-export default connect(msp, mdp)(CommentIndex);
+export default connect(msp, mdp)(CommentForm);

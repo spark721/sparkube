@@ -17,9 +17,14 @@ import {
 import VideoShow from './video_show';
 
 const msp = (state, myProp) => {
+  // debugger
   let currentUserId = state.session.id;
   return {
     video: state.entities.videos[myProp.match.params.videoId],
+    comments: Object.values(state.entities.comments).filter( comment => (
+      comment.video_id === +myProp.match.params.videoId
+    )),
+    
     // likes: state.entities.likes,
     // dislikes: state.entities.dislikes,
     currentUser: state.entities.users[currentUserId],

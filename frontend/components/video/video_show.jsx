@@ -3,6 +3,7 @@ import React from 'react';
 import NavTop from '../nav_top/nav_top';
 import SideIndexContainer from './side_index_container';
 import LikeDislike from './video_like_dislike';
+import CommentForm from './comment_form_container';
 import CommentIndexContainer from './video_comment_container';
 import { Link } from 'react-router-dom';
 
@@ -14,14 +15,20 @@ class VideoShow extends React.Component {
     super(props);
     this.state = {
       video: this.props.video,
+      comments: this.props.comments
     }
+    // console.log(this.props.comments);
   }
 
   componentDidMount() {
     // debugger
     if (this.state.video === undefined) {
       this.props.getVideo(this.props.match.params.videoId).then( result => {
-        this.setState({ video: result.video });
+        // console.log('result: ', result);
+        this.setState({
+          video: result.payload.video,
+          comments: result.payload.comments,
+        });
       });
     };
   };
@@ -144,7 +151,7 @@ class VideoShow extends React.Component {
             </div>
 
             {/* Comments section */}
-            <CommentIndexContainer
+            <CommentForm
               videoId={this.props.video.id}
               currentUser={currentUser}
             />

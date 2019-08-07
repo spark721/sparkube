@@ -8,12 +8,12 @@ import {
 const videoReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState);
-
+  // debugger
   switch (action.type) {
     case RECEIVE_ALL_VIDEOS:
-      return action.videos;
-    case RECEIVE_VIDEO:
-      newState[action.video.id] = action.video;
+      return action.payload.videos;
+    case RECEIVE_VIDEO: // only fires when user hard refresh the show page
+      newState[action.payload.video.id] = action.payload.video;
       return newState;
     case DELETE_VIDEO:
       delete newState[action.videoId];

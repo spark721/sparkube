@@ -24,7 +24,7 @@ export const clearErrors = () => {
 export const getVideos = () => {
   return (dispatch) => {
     return VideoAPIUtil.getVideos().then(
-      (videos) => dispatch({ type: RECEIVE_ALL_VIDEOS, videos}),
+      (payload) => dispatch({ type: RECEIVE_ALL_VIDEOS, payload }),
       (err) => dispatch(receiveErrors(err.responseJSON))
     );
   };
@@ -42,7 +42,7 @@ export const createVideo = (formData) => {
 export const getVideo = (id) => {
   return (dispatch) => {
     return VideoAPIUtil.getVideo(id).then( 
-      (video) => dispatch({ type: RECEIVE_VIDEO, video }),
+      (payload) => dispatch({ type: RECEIVE_VIDEO, payload }),
       (err) => dispatch(receiveErrors(err.responseJSON))
     );
   };
