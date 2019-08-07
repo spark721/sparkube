@@ -258,7 +258,21 @@
   border: none;
   outline: none;
   padding: 10px 16px;
-  // border: 1px solid red;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.comment-cancel-btn:active {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  width: 86px;
+  height: 36px;
+  color: #606060;
+  background-color: #e2e2e2;
+  border: none;
+  outline: none;
+  padding: 10px 16px;
+  border-radius: 2px;
+  cursor: pointer;
 }
 
 .comment-comment-btn {
@@ -272,8 +286,6 @@
   outline: none;
   border-radius: 2px;
   padding: 10px 16px;
-
-  // border: 1px solid green;
 }
 
 .comment-comment-btn-blue {
@@ -287,4 +299,5 @@
   outline: none;
   border-radius: 2px;
   padding: 10px 16px;
+  cursor: pointer;
 }

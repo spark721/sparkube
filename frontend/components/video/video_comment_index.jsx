@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class CommentIndex extends React.Component {
 
@@ -21,11 +22,46 @@ class CommentIndex extends React.Component {
     this.setState({ newCommentBody: '' });
   }
 
-  render() {
+  handleComment(e) {
     // debugger
+    e.preventDefault();
+    this.props.postComment(this.props.videoId, this.state.newCommentBody);
+  }
+
+  render() {
+    // video_comment_index.jsx
+    // debugger
+    let currentUser = this.props.currentUser;
+
     const commentButton = this.state.newCommentBody.length > 0 ?
-      <button className='comment-comment-btn-blue'>COMMENT</button>
+      <button
+        className='comment-comment-btn-blue'
+        onClick={this.handleComment.bind(this)}
+      >
+        COMMENT
+      </button>
       : <button className='comment-comment-btn'>COMMENT</button>;
+
+
+    const commentInput = currentUser ?
+      <input
+        type="text"
+        value={this.state.newCommentBody}
+        onChange={this.update.bind(this)}
+        className="comment-input-text"
+        placeholder="Add a public comment..."
+      />
+      : 
+      <Link to={`/login`}>
+        <input
+          type="text"
+          value={this.state.newCommentBody}
+          onChange={this.update.bind(this)}
+          className="comment-input-text"
+          placeholder="Add a public comment..."
+        />
+      </Link>
+
 
     return (
       <div className='comment-form'>
@@ -33,15 +69,7 @@ class CommentIndex extends React.Component {
           <p>{this.state.comments.length} Comments</p>
         </div>
         <div className='comment-input'>
-          {/* <form> */}
-            <input
-              type="text"
-              value={this.state.newCommentBody}
-              onChange={this.update.bind(this)}
-              className="comment-input-text"
-              placeholder="Add a public comment..."
-            />
-          {/* </form> */}
+          {commentInput}
         </div>
         <div className='comment-form-buttons'>
           <div className='comment-buttons-div'>

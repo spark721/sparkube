@@ -1,8 +1,9 @@
 class Api::CommentsController < ApplicationController
 
   def create
+    # debugger
     @comment = Comment.new(
-      params[:comment][:body]
+      body: params[:body],
     )
     @comment.author_id = current_user.id
     @comment.video_id = params[:video_id]
