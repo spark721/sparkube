@@ -154,6 +154,10 @@ class VideoShow extends React.Component {
               videoId={this.props.video.id}
               currentUser={currentUser}
             />
+
+            <CommentIndexContainer
+              videoId={this.props.video.id}
+            />
             
           </div>
 
