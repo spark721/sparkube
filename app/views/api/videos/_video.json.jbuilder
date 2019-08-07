@@ -23,6 +23,8 @@ json.video do
 
 end
 
+json.comments video.comments.to_h if video.comments.empty?
+
 video.comments.each do |comment|
   json.comments do
     json.set! comment.id do

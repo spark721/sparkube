@@ -4,7 +4,7 @@ import { deleteComment } from '../../actions/comment_action';
 import CommentIndex from './video_comment_index';
 
 const msp = (state) => {
-  debugger
+  // debugger
   return {
     comments: Object.values(state.entities.comments),
   };

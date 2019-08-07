@@ -3,7 +3,10 @@ import {
   RECEIVE_COMMENT,
   DELETE_COMMENT,
 } from '../actions/comment_action';
-import { RECEIVE_ALL_VIDEOS } from '../actions/video_actions';
+import {
+  RECEIVE_ALL_VIDEOS,
+  RECEIVE_VIDEO
+} from '../actions/video_actions';
 
 
 const commentsReducer = (oldState = {}, action) => {
@@ -12,6 +15,8 @@ const commentsReducer = (oldState = {}, action) => {
   // debugger
   switch (action.type) {
     case RECEIVE_ALL_VIDEOS:
+      return action.payload.comments;
+    case RECEIVE_VIDEO:
       return action.payload.comments;
     case RECEIVE_COMMENT:
       newState[action.comment.id] = action.comment;

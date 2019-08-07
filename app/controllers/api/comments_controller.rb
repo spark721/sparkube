@@ -9,8 +9,8 @@ class Api::CommentsController < ApplicationController
     @comment.video_id = params[:video_id]
 
     if @comment.save
-      # render :show
-      render 'api/videos/video'
+      render :show
+      # render 'api/videos/_video'
     else
       render json: @comment.errors.full_messages, status: 422
     end

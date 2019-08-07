@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 import { postComment } from '../../actions/comment_action';
 import CommentForm from './comment_form';
 
-const msp = (state) => {
+const msp = (state, myProp) => {
+  // debugger
   return {
-    comments: Object.values(state.entities.comments),
+    comments: Object.values(state.entities.comments).filter(comment => {
+      return comment.video_id === myProp.videoId
+    }),
   };
 };
 
