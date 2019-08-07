@@ -27,6 +27,7 @@ class CommentForm extends React.Component {
     // debugger
     e.preventDefault();
     this.props.postComment(this.props.videoId, this.state.newCommentBody);
+    this.setState({ newCommentBody: '', });
   }
 
   render() {
