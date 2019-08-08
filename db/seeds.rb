@@ -275,7 +275,7 @@ end
 
 
 
-
+# heroku restart && heroku pg:reset DATABASE --confirm sparkube && heroku run rails db:migrate && heroku run rails db:seed
 
 
 
