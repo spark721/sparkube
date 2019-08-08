@@ -27,6 +27,8 @@
   end
 
   # all comments slice
+  json.comments cur_video.comments.to_h if cur_video.comments.empty?
+
   cur_video.comments.each do |comment|
     json.comments do
       json.set! comment.id do
