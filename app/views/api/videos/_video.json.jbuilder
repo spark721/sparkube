@@ -28,7 +28,8 @@ json.comments video.comments.to_h if video.comments.empty?
 video.comments.each do |comment|
   json.comments do
     json.set! comment.id do
-      json.extract! comment, :id, :body, :author_id, :video_id
+      json.extract! comment, :id, :body, :video_id, :author_id
+      json.username comment.user.username
     end
   end
 end

@@ -1,20 +1,43 @@
 
 import React from 'react';
 
-const CommentIndexItem = ({ comment }) => {
+const CommentIndexItem = ({ comment, currentUser }) => {
   // comment is pojo like below
   // comment: {
   //   id: 2,
   //   body: 'this is comment body',
   //   author_id: 14,
   //   video_id: 9,
+  //   username: "test-author-2"
   // }
 
-  // debugger
+  const deleteButton = currentUser ?
+    currentUser.id === comment.author_id ?
+      <button className="comment-delete-btn">DELETE</button>
+      : <div></div>
+    : <div></div>;
 
+  
+  // debugger
   return (
-    <div>
-      {comment.body}
+    <div className="comment-item">
+      <div className="comment-item-icon">
+        {/* icon holder */}
+      </div>
+      <div className="comment-username-body">
+        <div className="comment-username">
+          {/* comment username */}
+          {comment.username}
+        </div>
+        <div className="comment-body">
+          {/* comment body */}
+          {comment.body}
+        </div>
+      </div>
+      <div className="comment-delete">
+        {/* delete button holder */}
+        {deleteButton}
+      </div>
     </div>
   );
 };
