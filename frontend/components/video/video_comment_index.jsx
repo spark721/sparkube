@@ -21,6 +21,7 @@ class CommentIndex extends React.Component {
               key={i}
               comment={comment}
               currentUser={currentUser}
+              deleteComment={this.props.deleteComment}
               />;
     })
 

@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-const CommentIndexItem = ({ comment, currentUser }) => {
+const CommentIndexItem = ({ comment, currentUser, deleteComment }) => {
   // comment is pojo like below
   // comment: {
   //   id: 2,
@@ -11,9 +11,15 @@ const CommentIndexItem = ({ comment, currentUser }) => {
   //   username: "test-author-2"
   // }
 
+
   const deleteButton = currentUser ?
     currentUser.id === comment.author_id ?
-      <button className="comment-delete-btn">DELETE</button>
+      <button
+        className="comment-delete-btn"
+        onClick={() => { deleteComment(comment.id)} }
+      >
+        DELETE
+      </button>
       : <div></div>
     : <div></div>;
 
