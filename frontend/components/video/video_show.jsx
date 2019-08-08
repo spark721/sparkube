@@ -3,6 +3,8 @@ import React from 'react';
 import NavTop from '../nav_top/nav_top';
 import SideIndexContainer from './side_index_container';
 import LikeDislike from './video_like_dislike';
+import CommentFormContainer from './comment_form_container';
+import CommentIndexContainer from './video_comment_container';
 import { Link } from 'react-router-dom';
 
 
@@ -14,15 +16,19 @@ class VideoShow extends React.Component {
     this.state = {
       video: this.props.video,
     }
+    // console.log(this.props.comments);
   }
 
   componentDidMount() {
     // debugger
-    if (this.state.video === undefined) {
+    // if (this.state.video === undefined) {
       this.props.getVideo(this.props.match.params.videoId).then( result => {
-        this.setState({ video: result.video });
+        // console.log('result: ', result);
+        this.setState({
+          video: result.payload.video,
+        });
       });
-    };
+    // };
   };
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -61,6 +67,7 @@ class VideoShow extends React.Component {
   render() {
     // video_show.jsx
     // debugger
+    
     if (!this.state.video) {
       return (
         <div>Loading</div>
@@ -141,6 +148,18 @@ class VideoShow extends React.Component {
                 <p>{this.state.video.description}</p>
               </div>
             </div>
+
+            {/* Comments section */}
+            <CommentFormContainer
+              videoId={this.props.video.id}
+              currentUser={currentUser}
+            />
+
+            <CommentIndexContainer
+              videoId={this.props.video.id}
+              currentUser={currentUser}
+            />
+            
           </div>
 
           <div className='video-show-index'>

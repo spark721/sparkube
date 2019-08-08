@@ -23,9 +23,9 @@ class User < ApplicationRecord
     through: :likes,
     source: :video
 
-  # has_many :disliked_videos,
-  #   through: :dislikes,
-  #   source: :video
+  has_many :comments,
+    foreign_key: :author_id,
+    class_name: 'Comment'
   
   
   # s p i r e

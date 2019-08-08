@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // - = * TESTING BELOW *  = -
+  
   window.signUp = signUp;
   window.logIn = logIn;
   window.logOut = logOut;

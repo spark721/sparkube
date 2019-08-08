@@ -1,0 +1,64 @@
+
+// font-family: 'Roboto', sans-serif;
+
+
+.comment-item {
+  padding: 3px 0 0 0;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  // border: 1px solid red;
+  // border-bottom: 1px solid #eeeeee;
+
+  .comment-item-icon {
+    width: 56px;
+    // border-right: 1px solid green;
+  }
+  .comment-username-body {
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    padding: 0 0 0 10px;
+    // border: 1px solid blue;
+
+    .comment-username {
+      font-size: 13px;
+      font-weight: 700;
+      color: #0d0d0d;
+      height: 20px;
+      margin-bottom: 2px;
+      // border-bottom: 1px solid darkslategray;
+    }
+    .comment-body {
+      font-size: 14px;
+      color: #111111;
+      height: 30px;
+    }
+  }
+  .comment-delete {
+    width: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding: 0 0 10px;
+    // border-left: 1px solid black;
+
+    button {
+      font-family: 'Roboto', sans-serif;
+      font-size: 12px;
+      letter-spacing: 0.2px;
+      color: #ffffff;
+      width: 90%;
+      height: 24px;
+      border: none;
+      outline: none;
+      border-radius: 2px;
+      background-color: #285fd4;
+    }
+
+    button:hover {
+      background-color: #3c82de;
+    }
+
+  }
+}

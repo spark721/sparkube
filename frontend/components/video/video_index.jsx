@@ -5,10 +5,12 @@ import VideoIndexItem from './video_index_item';
 class VideoIndex extends React.Component {
 
   componentDidMount() {
+    // debugger
     this.props.getVideos();
   }
 
   render() {
+    // debugger
     let videos = this.props.videos.map( (video, i) => {
       return <VideoIndexItem 
               key={i}
