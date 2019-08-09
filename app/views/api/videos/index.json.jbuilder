@@ -27,10 +27,10 @@
   end
 
   # all comments slice
-  json.comments cur_video.comments.to_h if cur_video.comments.empty?
+  # json.comments cur_video.comments.to_h if cur_video.comments.empty?
 
-  cur_video.comments.each do |comment|
-    json.comments do
+  json.comments do
+    cur_video.comments.each do |comment|
       json.set! comment.id do
         json.extract! comment, :id, :body, :video_id, :author_id
         json.username comment.user.username
