@@ -4,6 +4,10 @@ import {
   DELETE_VIDEO,
 } from '../actions/video_actions';
 
+import {
+  RECEIVE_SEARCH
+} from '../actions/search_actions';
+
 
 const videoReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
