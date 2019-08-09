@@ -14,6 +14,8 @@ const videoReducer = (oldState = {}, action) => {
   let newState = Object.assign({}, oldState);
   // debugger
   switch (action.type) {
+    case RECEIVE_SEARCH:
+      return action.payload.videos;
     case RECEIVE_ALL_VIDEOS:
       return action.payload.videos;
     case RECEIVE_VIDEO: // only fires when user hard refresh the show page

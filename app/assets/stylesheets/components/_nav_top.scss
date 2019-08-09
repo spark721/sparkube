@@ -53,6 +53,8 @@
 }
 
 .main-logo-text-link {
+    display: flex;
+    flex-wrap: nowrap;
     text-decoration: none;
     color: #ff0500;
 }
