@@ -1,6 +1,7 @@
 
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
+import SearchForm from './search/search_form';
 import { Link } from 'react-router-dom';
 
 const NavTop = () => {
@@ -20,6 +21,8 @@ const NavTop = () => {
           </Link>
         </div>
       </div>
+
+      <SearchForm />
 
       <div className='nav-right'>
         <div className="upload-icon">

@@ -20,6 +20,9 @@ import {
 
 import * as LikeAPIUtil from './util/like_api_util';
 
+import * as SearchAPI from './util/search_api_util';
+import { searchVideos } from './actions/search_actions';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -40,26 +43,28 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // - = * TESTING BELOW *  = -
+
+  // window.searchVideos = searchVideos;
   
-  window.signUp = signUp;
-  window.logIn = logIn;
-  window.logOut = logOut;
+  // window.signUp = signUp;
+  // window.logIn = logIn;
+  // window.logOut = logOut;
 
-  window.getState  = store.getState;
-  window.dispatch = store.dispatch;
+  // window.getState  = store.getState;
+  // window.dispatch = store.dispatch;
 
-  window.getVideos = getVideos;
-  window.getVideo = getVideo;
-  window.createVideo = createVideo;
-  window.updateVideo = updateVideo;
-  window.deleteVideo = deleteVideo;
+  // window.getVideos = getVideos;
+  // window.getVideo = getVideo;
+  // window.createVideo = createVideo;
+  // window.updateVideo = updateVideo;
+  // window.deleteVideo = deleteVideo;
 
-  window.likeVideo = LikeAPIUtil.likeVideo;
-  window.unlikeVideo = LikeAPIUtil.unlikeVideo;
-  window.dislikeVideo = LikeAPIUtil.dislikeVideo;
-  window.undislikeVideo = LikeAPIUtil.undislikeVideo;
-  window.getLikes = LikeAPIUtil.getLikes;
-  window.getDislikes = LikeAPIUtil.getDislikes;
+  // window.likeVideo = LikeAPIUtil.likeVideo;
+  // window.unlikeVideo = LikeAPIUtil.unlikeVideo;
+  // window.dislikeVideo = LikeAPIUtil.dislikeVideo;
+  // window.undislikeVideo = LikeAPIUtil.undislikeVideo;
+  // window.getLikes = LikeAPIUtil.getLikes;
+  // window.getDislikes = LikeAPIUtil.getDislikes;
 
   // - = * TESTING ABOVE * = -
 

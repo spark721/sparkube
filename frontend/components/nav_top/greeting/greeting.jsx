@@ -17,7 +17,7 @@ const Greeting = (props) => {
     );
   } else {
     return (
-      <div>
+      <div className="nav-sign-in-div">
         <Link className='nav-sign-in' to='/login'>
           <i className="fas fa-user-circle sign-in-icon"></i>
           <p className="sign-in-text">SIGN IN</p>

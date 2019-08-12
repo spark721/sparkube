@@ -14,8 +14,8 @@ Rails.application.routes.draw do
       resources :comments, only: [:create]
     end
     resources :comments, only: [:destroy]
-    # resources :likes, only: [:destroy]
-    # resources :dislikes, only: [:destroy]
+    get '/search', to: 'videos#search'
+
   end
   
 end

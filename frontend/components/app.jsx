@@ -9,6 +9,7 @@ import Splash from './splash';
 import VideoShowContainer from './video/video_show_container';
 import VideoUploadContainer from './video/video_upload_form_container';
 import VideoEditContainer from './video/video_edit_container';
+import SearchIndexContainer from './video/search_index_container';
 
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/watch/:videoId" component={VideoShowContainer} />
         <ProtectedRoute path="/upload" component={VideoUploadContainer} />
         <ProtectedRoute path="/video/:videoId/edit" component={VideoEditContainer} />
+        <Route path="/results/:searchQuery" component={SearchIndexContainer} />
         <Route exact path='/' component={Splash} />
         <Redirect to='/' component={Splash} />
       </Switch>
