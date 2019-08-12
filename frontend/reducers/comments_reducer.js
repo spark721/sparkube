@@ -17,7 +17,7 @@ const commentsReducer = (oldState = {}, action) => {
   // debugger
   switch (action.type) {
     case RECEIVE_SEARCH:
-      return action.payload.comments;
+      return action.payload.comments ? action.payload.comments : newState;
     case RECEIVE_ALL_VIDEOS:
       return action.payload.comments ? action.payload.comments : newState;
     case RECEIVE_VIDEO:

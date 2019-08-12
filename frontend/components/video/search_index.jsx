@@ -6,6 +6,7 @@ import SearchIndexItem from './search_index_item';
 class SearchIndex extends React.Component {
 
   constructor(props) {
+    // debugger
     super(props);
     this.state = {
       query: this.props.searchQuery,
@@ -17,12 +18,31 @@ class SearchIndex extends React.Component {
     // debugger
     let searchQuery = this.state.query;
     this.props.searchVideos(searchQuery).then( res => {
-      this.setState({ videos: Object.values(res.payload.videos) });
+      if (res.payload.videos) {
+        this.setState({
+          videos: Object.values(res.payload.videos),
+        });
+      } else {
+        this.setState({ videos: [] });
+      }
     });
   };
 
-  componentDidUpdate(prevProps, prevState) {
+  componentDidUpdate(prevProps) {
     // debugger
+
+    let query = this.props.searchQuery;
+    let videos = [];
+
+    if (prevProps.searchQuery !== this.props.searchQuery) {
+      this.props.searchVideos(query).then(res => {
+        if (res.payload.videos) videos = Object.values(res.payload.videos);
+        this.setState({
+          query,
+          videos,
+        });
+      });
+    }
   }
 
   render() {
@@ -40,7 +60,7 @@ class SearchIndex extends React.Component {
               key={i}
               video={video} />;
     });
-    
+
     return (
       <div>
         <NavTop />

@@ -26,7 +26,7 @@ class SearchForm extends React.Component {
 
 
   render() {
-    console.log('query: ', this.state.query);
+    // console.log('query: ', this.state.query);
 
     return (
       <div className="search-form-whole">
