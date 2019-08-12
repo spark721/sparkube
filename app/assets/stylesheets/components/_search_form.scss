@@ -1,6 +1,7 @@
 
 .search-form-whole {
   height: 34px;
+  min-width: 200px;
   width: 500px;
   margin: 0 40px;
   display: flex;
@@ -24,7 +25,7 @@
       }
       input.search-input:focus {
         border: 1px solid #2262b9;
-        border-radius: 2px;
+        // border-radius: 1px;
       }
     }
   }
@@ -52,4 +53,7 @@
     color: #333333;
   }
 
+  .search-icon:active {
+    background-color: #e9e9e9;
+  }
 }

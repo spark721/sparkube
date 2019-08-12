@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import { searchVideos } from '../../actions/search_actions';
 import SearchIndex from './search_index';
 
-const msp = (state) => {
+const msp = (state, myProp) => {
+  // debugger
   return {
-    videos: Object.values(state.entities.videos),
+    searchQuery: myProp.match.params.searchQuery,
   };
 };
 

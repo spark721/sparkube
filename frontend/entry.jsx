@@ -20,6 +20,9 @@ import {
 
 import * as LikeAPIUtil from './util/like_api_util';
 
+import * as SearchAPI from './util/search_api_util';
+import { searchVideos } from './actions/search_actions';
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -40,6 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // - = * TESTING BELOW *  = -
+
+  window.searchVideos = searchVideos;
   
   window.signUp = signUp;
   window.logIn = logIn;

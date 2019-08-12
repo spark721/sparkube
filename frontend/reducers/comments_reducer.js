@@ -5,15 +5,19 @@ import {
 } from '../actions/comment_action';
 import {
   RECEIVE_ALL_VIDEOS,
-  RECEIVE_VIDEO
+  RECEIVE_VIDEO,
 } from '../actions/video_actions';
-
+import {
+  RECEIVE_SEARCH
+} from '../actions/search_actions';
 
 const commentsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState);
   // debugger
   switch (action.type) {
+    case RECEIVE_SEARCH:
+      return action.payload.comments;
     case RECEIVE_ALL_VIDEOS:
       return action.payload.comments ? action.payload.comments : newState;
     case RECEIVE_VIDEO:
@@ -27,7 +31,6 @@ const commentsReducer = (oldState = {}, action) => {
     default:
       return oldState;
   }
-
 }
 
 export default commentsReducer;
