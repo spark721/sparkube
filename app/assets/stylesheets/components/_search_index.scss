@@ -1,10 +1,16 @@
 
-.search-results {
+.search-results-section {
     background-color: #fafafa;
     position: relative;
     top: 56px;
     padding: 16px 24px;
     height: 94vh;
+    display: flex;
+    justify-content: center;
+}
+
+.search-results {
+  width: 862px;
 }
 
 .search-results-text {
@@ -49,7 +55,7 @@
         font-family: 'Roboto', sans-serif;
         font-size: 18px;
         color: #0d0d0d;
-        height: 24px;
+        // height: 24px;
         padding: 3px 0;
       }
       .search-index-author {

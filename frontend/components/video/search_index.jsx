@@ -63,14 +63,16 @@ class SearchIndex extends React.Component {
     });
 
     return (
-      <div>
+      <div className="search-results-page">
         <NavTop />
-        <div className="search-results">
-          <div className="search-results-text">
-            {resultText}
-          </div>
-          <div className="search-index">
-            <ul className="search-index-ul">{videos}</ul>
+        <div className="search-results-section">
+          <div className="search-results">
+            <div className="search-results-text">
+              {resultText}
+            </div>
+            <div className="search-index">
+              <ul className="search-index-ul">{videos}</ul>
+            </div>
           </div>
         </div>
       </div>
