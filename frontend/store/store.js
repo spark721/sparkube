@@ -8,7 +8,8 @@ const configureStore = (preloadedState = {}) => {
   return createStore(
     rootReducer,
     preloadedState,
-    applyMiddleware(thunk, logger)
+    // applyMiddleware(thunk, logger) // enable for dev
+    applyMiddleware(thunk) // enable for prod
   );
 };
 

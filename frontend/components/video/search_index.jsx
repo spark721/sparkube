@@ -37,10 +37,7 @@ class SearchIndex extends React.Component {
     if (prevProps.searchQuery !== this.props.searchQuery) {
       this.props.searchVideos(query).then(res => {
         if (res.payload.videos) videos = Object.values(res.payload.videos);
-        this.setState({
-          query,
-          videos,
-        });
+        this.setState({ query, videos, });
       });
     }
   }
@@ -55,6 +52,10 @@ class SearchIndex extends React.Component {
       )
     }
 
+    const resultText = (this.state.videos.length) ?
+      <span>Result for "{this.state.query}"</span>
+      : <span>No result found for "{this.state.query}"</span>
+
     let videos = this.state.videos.map((video, i) => {
       return <SearchIndexItem
               key={i}
@@ -66,7 +67,7 @@ class SearchIndex extends React.Component {
         <NavTop />
         <div className="search-results">
           <div className="search-results-text">
-            <span>Result for "{this.state.query}"</span>
+            {resultText}
           </div>
           <div className="search-index">
             <ul className="search-index-ul">{videos}</ul>
