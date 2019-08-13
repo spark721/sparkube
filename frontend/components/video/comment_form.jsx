@@ -64,12 +64,21 @@ class CommentForm extends React.Component {
         />
       </Link>
 
+    const commentIcon = currentUser ?
+      <div className="comment-input-icon">
+        <p>{currentUser.username[0]}</p>
+      </div>
+      : <div className="comment-input-icon">
+        <i class="fas fa-user-circle"></i>
+      </div>;
+
     return (
         <div className='comment-form'>
           <div className='comments-count'>
             <p>{this.state.comments.length} Comments</p>
           </div>
           <div className='comment-input'>
+            {commentIcon}
             {commentInput}
           </div>
           <div className='comment-form-buttons'>

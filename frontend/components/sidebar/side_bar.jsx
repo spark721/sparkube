@@ -9,7 +9,7 @@ const SideBar = () => {
         <Link className="side-bar-links-wrap" to='/'>
           <div className="side-bar-link-box">
             <div className="side-bar-icon">
-              <i class="fas fa-home"></i>
+              <i className="fas fa-home"></i>
             </div>
             <div className="side-bar-text">
               <span>Home</span>
@@ -20,7 +20,7 @@ const SideBar = () => {
         <Link className="side-bar-links-wrap" to='/upload'>        
           <div className="side-bar-link-box">
             <div className="side-bar-icon">
-              <i class="fas fa-video"></i>
+              <i className="fas fa-video"></i>
             </div>
             <div className="side-bar-text">
               <span>Upload</span>
@@ -33,7 +33,7 @@ const SideBar = () => {
           target="_blank">
           <div className="side-bar-link-box">
             <div className="side-bar-icon">
-              <i class="fab fa-github"></i>
+              <i className="fab fa-github"></i>
             </div>
             <div className="side-bar-text">
               <span>Github</span>
@@ -46,7 +46,7 @@ const SideBar = () => {
           target="_blank">
           <div className="side-bar-link-box">
             <div className="side-bar-icon">
-              <i class="fab fa-linkedin"></i>
+              <i className="fab fa-linkedin"></i>
             </div>
             <div className="side-bar-text">
               <span>LinkedIn</span>
@@ -59,7 +59,7 @@ const SideBar = () => {
           target="_blank">
           <div className="side-bar-link-box">
             <div className="side-bar-icon">
-              <i class="fas fa-user-circle"></i>
+              <i className="fas fa-user-circle"></i>
             </div>
             <div className="side-bar-text">
               <span>Author's site</span>

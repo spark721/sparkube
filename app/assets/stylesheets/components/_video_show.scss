@@ -231,9 +231,36 @@
 .comment-input {
   // border-top: 1px solid rgb(255, 94, 0);
   // border-left: 1px solid rgb(255, 94, 0);
-  margin: 24px 0 0 64px;
+  // margin: 24px 0 0 64px;
   padding: 0 0 8px;
   height: 32px;
+  display: flex;
+
+  .comment-input-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #074c3f;
+    border-radius: 100%;
+    margin: 0 10px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      color: white;
+      transform: scale(2);
+    }
+
+    p {
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 24px;
+    }
+  }
+
+  a {
+    flex: 1;
+  }
 }
 
 .comment-input-text {
@@ -245,6 +272,7 @@
   border: none;
   border-bottom: 1px solid #eeeeee;
   padding-bottom: 4px;
+  flex: 1;
 }
 
 .comment-input-text:focus {

@@ -28,7 +28,7 @@ const CommentIndexItem = ({ comment, currentUser, deleteComment }) => {
   return (
     <div className="comment-item">
       <div className="comment-item-icon">
-        {/* icon holder */}
+          <p>{comment.username[0]}</p>
       </div>
       <div className="comment-username-body">
         <div className="comment-username">

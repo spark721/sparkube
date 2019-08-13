@@ -9,9 +9,7 @@ const NavTop = () => {
     <div className='nav-top'>
       <div className='nav-top-left'>
         <div className='menu-bars'>
-          {/* <Link> */}
-            <i className="fas fa-bars"></i>
-          {/* </Link> */}
+          <i className="fas fa-bars"></i>
         </div>
 
         <div className='nav-logo'>

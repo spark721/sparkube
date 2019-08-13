@@ -135,7 +135,7 @@ class VideoShow extends React.Component {
 
             <div className='author-description-div-whole'>
               <div className="author-icon-div">
-                <p>{currentUser.username[0]}</p>
+                <p>{this.props.video.username[0]}</p>
               </div>
               <div className="author-desc-div">
                 <div className='author-div'>
