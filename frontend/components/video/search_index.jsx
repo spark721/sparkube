@@ -9,7 +9,7 @@ class SearchIndex extends React.Component {
     // debugger
     super(props);
     this.state = {
-      query: this.props.searchQuery,
+      query: new URLSearchParams(this.props.searchQuery).get('search_query'),
       videos: null,
     }
   }
@@ -31,7 +31,7 @@ class SearchIndex extends React.Component {
   componentDidUpdate(prevProps) {
     // debugger
 
-    let query = this.props.searchQuery;
+    let query = new URLSearchParams(this.props.searchQuery).get('search_query');
     let videos = [];
 
     if (prevProps.searchQuery !== this.props.searchQuery) {

@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/watch/:videoId" component={VideoShowContainer} />
         <ProtectedRoute path="/upload" component={VideoUploadContainer} />
         <ProtectedRoute path="/video/:videoId/edit" component={VideoEditContainer} />
-        <Route path="/results/:searchQuery" component={SearchIndexContainer} />
+        <Route path="/results" component={SearchIndexContainer} />
         <Route exact path='/' component={Splash} />
         <Redirect to='/' component={Splash} />
       </Switch>
