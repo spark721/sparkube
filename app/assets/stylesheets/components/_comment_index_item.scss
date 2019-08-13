@@ -11,12 +11,24 @@
   // border-bottom: 1px solid #eeeeee;
 
   .comment-item-icon {
-    width: 56px;
-    // border-right: 1px solid green;
+    width: 40px;
+    height: 40px;
+    background-color: #074c3f;
+    border-radius: 100%;
+    margin: 0 10px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 24px;
+    }
   }
   .comment-username-body {
     font-family: 'Roboto', sans-serif;
-    width: 100%;
+    flex: 1;
     padding: 0 0 0 10px;
     // border: 1px solid blue;
 

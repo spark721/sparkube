@@ -7,7 +7,7 @@ const Greeting = (props) => {
   if (props.currentUser) {
     // console.log(props.history);
     return (
-      <div>
+      <div className="nav-sign-out-div">
         <button 
           className='nav-sign-out'
           onClick={props.logout} >

@@ -1,12 +1,11 @@
 
 .search-results-section {
     background-color: #fafafa;
-    position: relative;
-    top: 56px;
     padding: 16px 24px;
     height: 94vh;
     display: flex;
     justify-content: center;
+    flex: 1;
 }
 
 .search-results {

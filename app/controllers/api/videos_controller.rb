@@ -27,8 +27,8 @@ class Api::VideosController < ApplicationController
   end
 
   def update
-    @video = current_user.videos.find(params[:id])
     # debugger
+    @video = current_user.videos.find(params[:id])
 
     if @video.update_attributes({
       title: params[:video][:title],
