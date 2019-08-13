@@ -1,20 +1,14 @@
 
 .video-index-splash-whole {
     background-color: #fafafa;
-    position: relative;
-    top: 56px;
     padding: 50px 50px 0 50px;
-}
-
-// .video-index-splash {
-    // margin: auto;
-    // padding: 100px;
-// };
+    flex: 1;
+};
 
 .video-index-splash-ul {
     display: flex;
     list-style: none;
     flex-wrap: wrap;
-    justify-content: center;
+    // justify-content: center;
 };
 
