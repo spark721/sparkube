@@ -1,7 +1,6 @@
 
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import SearchIndexContainer from '../../video/search_index_container';
 
 class SearchForm extends React.Component {
 
@@ -9,8 +8,8 @@ class SearchForm extends React.Component {
     super(props);
     this.state = {
       query: '',
-    }
-  }
+    };
+  };
 
   update(e) {
     e.preventDefault();
@@ -20,13 +19,21 @@ class SearchForm extends React.Component {
   handleSubmit(e) {
     // debugger
     e.preventDefault();
-    let search = `?search_query=${this.state.query}`;
-    search = new URLSearchParams(search).toString();
-    this.props.history.push({
-      pathname: `/results`,
-      search,
+    let query = this.state.query;
+    let notEmptyQuery = query.split('').some( (char) => {
+      return char !== ' ';
     });
-  }
+
+
+    if (query.length && notEmptyQuery) {
+      let search = `?search_query=${this.state.query}`;
+      search = new URLSearchParams(search).toString();
+      this.props.history.push({
+        pathname: `/results`,
+        search,
+      });
+    };
+  };
 
 
   render() {
@@ -54,8 +61,8 @@ class SearchForm extends React.Component {
           <i className="fas fa-search"></i>
         </div>
       </div>
-    )
-  }
-}
+    );
+  };
+};
 
 export default withRouter(SearchForm);

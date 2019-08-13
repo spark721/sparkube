@@ -11,12 +11,23 @@ class SearchIndex extends React.Component {
     this.state = {
       query: new URLSearchParams(this.props.searchQuery).get('search_query'),
       videos: null,
-    }
-  }
+    };
+    this.handleQuery = this.handleQuery.bind(this);
+  };
+
+  handleQuery(query) {
+    for (let i = 0; i < query.length; i += 1) {
+      let char = query[i];
+      if (char !== ' ') {
+        return query = query.slice(i);
+      };
+    };
+    return query;
+  };
 
   componentDidMount() {
     // debugger
-    let searchQuery = this.state.query;
+    let searchQuery = this.handleQuery(this.state.query);
     this.props.searchVideos(searchQuery).then( res => {
       if (res.payload.videos) {
         this.setState({
@@ -30,8 +41,8 @@ class SearchIndex extends React.Component {
 
   componentDidUpdate(prevProps) {
     // debugger
-
     let query = new URLSearchParams(this.props.searchQuery).get('search_query');
+    query = this.handleQuery(query);
     let videos = [];
 
     if (prevProps.searchQuery !== this.props.searchQuery) {
@@ -52,9 +63,11 @@ class SearchIndex extends React.Component {
       )
     }
 
+    let query = this.handleQuery(this.state.query);
+
     const resultText = (this.state.videos.length) ?
-      <span>Result for "{this.state.query}"</span>
-      : <span>No result found for "{this.state.query}"</span>
+      <span>Result for "{query}"</span>
+      : <span>No result found for "{query}"</span>
 
     let videos = this.state.videos.map((video, i) => {
       return <SearchIndexItem
