@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link, Route, Redirect } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import SearchIndexContainer from '../../video/search_index_container';
 
 class SearchForm extends React.Component {
@@ -20,8 +20,12 @@ class SearchForm extends React.Component {
   handleSubmit(e) {
     // debugger
     e.preventDefault();
-    let searchQuery = this.state.query;
-    location.replace(`#/results/${searchQuery}`);
+    let search = `?search_query=${this.state.query}`;
+    search = new URLSearchParams(search).toString();
+    this.props.history.push({
+      pathname: `/results`,
+      search,
+    });
   }
 
 
@@ -54,4 +58,4 @@ class SearchForm extends React.Component {
   }
 }
 
-export default SearchForm;
+export default withRouter(SearchForm);

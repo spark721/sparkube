@@ -6,7 +6,7 @@ import SearchIndex from './search_index';
 const msp = (state, myProp) => {
   // debugger
   return {
-    searchQuery: myProp.match.params.searchQuery,
+    searchQuery: myProp.location.search
   };
 };
 
