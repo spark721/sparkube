@@ -13,7 +13,7 @@
   transition: width 500ms;
 };
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1000px) {
   div.video-show-index {
     display: none;
   }
@@ -54,11 +54,29 @@
   color: #606060;
 };
 
-.author-description-div {
-  padding-left: 64px;
+.author-description-div-whole {
+  // padding-left: 64px;
   border-bottom: solid 1px #e5e5e5;
   margin: 0 0 24px;
+  display: flex;
 };
+
+.author-icon-div {
+    width: 40px;
+    height: 40px;
+    background-color: #074c3f;
+    border-radius: 100%;
+    margin: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      color: white;
+      font-family: 'Roboto', sans-serif;
+      font-size: 24px;
+    }
+}
 
 .author-div {
     margin-bottom: 12px;

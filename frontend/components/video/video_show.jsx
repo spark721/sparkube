@@ -133,19 +133,24 @@ class VideoShow extends React.Component {
               </div>
             </div>
 
-            <div className='author-description-div'>
-              <div className='author-div'>
-                <div className='author-date-div'>
-                  <span className='author-text'>{this.state.video.username}</span>
-                  <br />
-                  <span className='date-text'>Published on Jul 7, 2019</span>
-                </div>
-                <div>
-                  {deleteButton}
-                </div>
+            <div className='author-description-div-whole'>
+              <div className="author-icon-div">
+                <p>{currentUser.username[0]}</p>
               </div>
-              <div className='description-div'>
-                <p>{this.state.video.description}</p>
+              <div className="author-desc-div">
+                <div className='author-div'>
+                  <div className='author-date-div'>
+                    <span className='author-text'>{this.state.video.username}</span>
+                    <br />
+                    <span className='date-text'>Published on Jul 7, 2019</span>
+                  </div>
+                  <div>
+                    {deleteButton}
+                  </div>
+                </div>
+                <div className='description-div'>
+                  <p>{this.state.video.description}</p>
+                </div>
               </div>
             </div>
 
