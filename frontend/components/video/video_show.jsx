@@ -1,6 +1,7 @@
 
 import React from 'react';
-import NavTop from '../nav_top/nav_top';
+// import NavTop from '../nav_top/nav_top';
+import NavTopContainer from '../nav_top/nav_top_conatiner';
 import SideIndexContainer from './side_index_container';
 import LikeDislike from './video_like_dislike';
 import CommentFormContainer from './comment_form_container';
@@ -94,7 +95,7 @@ class VideoShow extends React.Component {
 
     return (
       <div>
-        <NavTop />
+        <NavTopContainer />
         <div className='video-show-page-whole'>
 
           <div className='video-show-page'>

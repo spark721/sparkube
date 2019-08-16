@@ -1,6 +1,10 @@
 
 import React from 'react'
-import NavTop from '../nav_top/nav_top';
+// import NavTop from '../nav_top/nav_top';
+import NavTopContainer from '../nav_top/nav_top_conatiner';
+import SideBarContainer from '../sidebar/side_bar_container';
+
+
 
 class VideoEditForm extends React.Component {
   constructor(props) {
@@ -117,74 +121,77 @@ class VideoEditForm extends React.Component {
     return (
       <div>
 
-        <NavTop />
-        <div className='upload-form-page'>
-          <div className='upload-form-div'>
+        <NavTopContainer />
+        <div className="home-page">
+          <SideBarContainer />
+          <div className='upload-form-page'>
+            <div className='upload-form-div'>
 
-            <form className='upload-form'>
-              <div className='video-poster'>
-                <div className="upload-mp4-div">
-                  <label htmlFor="upload-mp4"
-                    className="form-upload-icon">
-                    <i className="fas fa-play-circle"></i>
-                  </label>
-                  {/* <input type="file"
-                    id="upload-mp4"
-                    accept="video/mp4"
-                    onChange={this.updateVideo} /> */}
+              <form className='upload-form'>
+                <div className='video-poster'>
+                  <div className="upload-mp4-div">
+                    <label htmlFor="upload-mp4"
+                      className="form-upload-icon">
+                      <i className="fas fa-play-circle"></i>
+                    </label>
+                    {/* <input type="file"
+                      id="upload-mp4"
+                      accept="video/mp4"
+                      onChange={this.updateVideo} /> */}
 
-                  <div id="preview-vid">
-                    <video width="100%" controls>
-                      <source
-                        src={this.state.videoUrl}
-                        type="video/mp4" />
-                    </video>
-                    {/* {previewVid} */}
-                    {/* <p>No File currently selected</p> */}
+                    <div id="preview-vid">
+                      <video width="100%" controls>
+                        <source
+                          src={this.state.videoUrl}
+                          type="video/mp4" />
+                      </video>
+                      {/* {previewVid} */}
+                      {/* <p>No File currently selected</p> */}
+                    </div>
+                  </div>
+
+                  <div className="upload-img-div">
+                    <label htmlFor="upload-img"
+                      className="form-upload-icon">
+                      <i className="fas fa-image"></i>
+                    </label>
+                    {/* <input type="file"
+                      id="upload-img"
+                      accept="image/png, image/jpeg"
+                      onChange={this.updatePoster} /> */}
+
+                    <div id="preview-img">
+                      <img src={this.state.poster} />
+                      {/* {previewImg} */}
+                      {/* <p>No File currently selected</p> */}
+                    </div>
                   </div>
                 </div>
 
-                <div className="upload-img-div">
-                  <label htmlFor="upload-img"
-                    className="form-upload-icon">
-                    <i className="fas fa-image"></i>
-                  </label>
-                  {/* <input type="file"
-                    id="upload-img"
-                    accept="image/png, image/jpeg"
-                    onChange={this.updatePoster} /> */}
-
-                  <div id="preview-img">
-                    <img src={this.state.poster} />
-                    {/* {previewImg} */}
-                    {/* <p>No File currently selected</p> */}
+                <div className="title-desc">
+                  <div className="upload-title-div">
+                    <input type="text"
+                      className="upload-title"
+                      value={this.state.title}
+                      // placeholder="Title"
+                      onChange={this.update('title')} />
                   </div>
-                </div>
-              </div>
 
-              <div className="title-desc">
-                <div className="upload-title-div">
-                  <input type="text"
-                    className="upload-title"
-                     value={this.state.title}
-                    // placeholder="Title"
-                    onChange={this.update('title')} />
-                </div>
+                  <div className="upload-desc-div">
+                    <textarea className="upload-desc"
+                      value={this.state.description}
+                      // placeholder="Description"
+                      onChange={this.update('description')} />
+                  </div>
 
-                <div className="upload-desc-div">
-                  <textarea className="upload-desc"
-                    value={this.state.description}
-                    // placeholder="Description"
-                    onChange={this.update('description')} />
+                  {this.renderError()}
                 </div>
 
-                {this.renderError()}
-              </div>
+                {nowLoading}
 
-              {nowLoading}
+              </form>
 
-            </form>
-
+            </div>
           </div>
         </div>
         

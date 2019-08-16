@@ -2,9 +2,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SideBar = () => {
+const SideBar = (props) => {
+  // debugger
+  let currentUser = props.currentUser;
+
+  const expand = props.expand ? "" : "collapse";
+
+  const loginSection = props.expand ?
+    currentUser ?
+      <div></div>
+      :
+      <div className="side-bar-login-box">
+        <div className="side-bar-login-text">
+          <span>Sign in to like videos, comment, and subscribe.</span>
+        </div>
+        <div className="nav-sign-in-div">
+          <Link className='nav-sign-in' to='/login'>
+            <i className="fas fa-user-circle sign-in-icon"></i>
+            <p className="sign-in-text">SIGN IN</p>
+          </Link>
+        </div>
+      </div>
+    : <div></div>;
+
+  
+
   return (
-    <aside className="side-bar-whole">
+    <aside className={`side-bar-whole ${expand}`}>
       <div className="side-bar-links">
         <Link className="side-bar-links-wrap" to='/'>
           <div className="side-bar-link-box">
@@ -28,7 +52,7 @@ const SideBar = () => {
           </div>
         </Link>
 
-        <a href="https://github.com/spark721/"
+        <a href="https://github.com/spark721/sparkube"
           className="side-bar-links-wrap"
           target="_blank">
           <div className="side-bar-link-box">
@@ -68,17 +92,7 @@ const SideBar = () => {
         </a>
       </div>
 
-      <div className="side-bar-login-box">
-        <div className="side-bar-login-text">
-          <span>Sign in to like videos, comment, and subscribe.</span>
-        </div>
-        <div className="nav-sign-in-div">
-          <Link className='nav-sign-in' to='/login'>
-            <i className="fas fa-user-circle sign-in-icon"></i>
-            <p className="sign-in-text">SIGN IN</p>
-          </Link>
-        </div>
-      </div>
+      {loginSection}
     </aside>
   );
 };

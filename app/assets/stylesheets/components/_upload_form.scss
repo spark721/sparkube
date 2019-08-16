@@ -1,14 +1,14 @@
 
 .upload-form-page {
     position: relative;
-    top: 56px;
+    // top: 56px;
     padding-top: 50px;
     height: 94vh;
     // display: flex;
     // justify-content: center;
     background-color: #ddd;
     font-family: 'Roboto', sans-serif;
-
+    flex: 1;
 }
 
 .upload-form-div {
