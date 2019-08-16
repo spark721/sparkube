@@ -2,7 +2,8 @@
 import React from 'react';
 import NavTop from '../nav_top/nav_top';
 import SearchIndexItem from './search_index_item';
-import SideBar from '../sidebar/side_bar';
+import SideBarContainer from '../sidebar/side_bar_container';
+// import SideBar from '../sidebar/side_bar';
 
 
 class SearchIndex extends React.Component {
@@ -81,7 +82,7 @@ class SearchIndex extends React.Component {
       <div className="search-results-page">
         <NavTop />
         <div className="home-page">
-          <SideBar />
+          <SideBarContainer />
           <div className="search-results-section">
             <div className="search-results">
               <div className="search-results-text">

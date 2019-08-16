@@ -4,6 +4,23 @@ import { Link } from 'react-router-dom';
 
 const SideBar = (props) => {
   // debugger
+  let currentUser = props.currentUser;
+
+  const loginSection = currentUser ?
+    <div></div>
+    :
+    <div className="side-bar-login-box">
+      <div className="side-bar-login-text">
+        <span>Sign in to like videos, comment, and subscribe.</span>
+      </div>
+      <div className="nav-sign-in-div">
+        <Link className='nav-sign-in' to='/login'>
+          <i className="fas fa-user-circle sign-in-icon"></i>
+          <p className="sign-in-text">SIGN IN</p>
+        </Link>
+      </div>
+    </div>;
+
   return (
     <aside className="side-bar-whole">
       <div className="side-bar-links">
@@ -69,17 +86,7 @@ const SideBar = (props) => {
         </a>
       </div>
 
-      <div className="side-bar-login-box">
-        <div className="side-bar-login-text">
-          <span>Sign in to like videos, comment, and subscribe.</span>
-        </div>
-        <div className="nav-sign-in-div">
-          <Link className='nav-sign-in' to='/login'>
-            <i className="fas fa-user-circle sign-in-icon"></i>
-            <p className="sign-in-text">SIGN IN</p>
-          </Link>
-        </div>
-      </div>
+      {loginSection}
     </aside>
   );
 };
