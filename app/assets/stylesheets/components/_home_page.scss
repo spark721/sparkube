@@ -129,3 +129,41 @@
     }
   }
 }
+
+.modal-background.modal-hide {
+  display: none;
+}
+
+.modal-background.modal-show {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  .side-bar-whole {
+    height: 100vh;
+    padding: 0;
+
+    .nav-top-left {
+      display: flex;
+      padding-left: 16px;
+      border-bottom: 1px solid #dcdcdc;
+      height: 57px;
+      align-items: center;
+
+      .menu-bars {
+        background-color: #dfdfdf;
+        border-radius: 50%;
+      }
+
+      .menu-bars:active {
+        background-color: #c2c2c2;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+

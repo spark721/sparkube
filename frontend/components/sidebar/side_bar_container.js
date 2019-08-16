@@ -7,6 +7,7 @@ const msp = (state) => {
   return {
     currentUser: state.entities.users[currentUserId],
     expand: state.ui.expand,
+    modal: state.ui.modal,
   };
 };
 
