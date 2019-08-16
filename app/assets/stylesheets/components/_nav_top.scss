@@ -85,11 +85,14 @@
 
 .menu-bars {
   cursor: pointer;
-
-  
   i {
     color: #606060;
   }
+}
+
+.menu-bars:hover {
+  background-color: #dfdfdf;
+  border-radius: 50%;
 }
 
 .menu-bars:active {
