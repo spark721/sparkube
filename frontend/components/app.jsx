@@ -13,6 +13,7 @@ import SearchIndexContainer from './video/search_index_container';
 
 
 const App = () => {
+  // debugger
   return (
     <div>
 

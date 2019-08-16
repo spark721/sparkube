@@ -69,7 +69,7 @@ class CommentForm extends React.Component {
         <p>{currentUser.username[0]}</p>
       </div>
       : <div className="comment-input-icon">
-        <i class="fas fa-user-circle"></i>
+        <i className="fas fa-user-circle"></i>
       </div>;
 
     return (

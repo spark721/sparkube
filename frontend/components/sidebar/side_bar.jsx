@@ -2,7 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SideBar = () => {
+const SideBar = (props) => {
+  // debugger
   return (
     <aside className="side-bar-whole">
       <div className="side-bar-links">
@@ -28,7 +29,7 @@ const SideBar = () => {
           </div>
         </Link>
 
-        <a href="https://github.com/spark721/"
+        <a href="https://github.com/spark721/sparkube"
           className="side-bar-links-wrap"
           target="_blank">
           <div className="side-bar-link-box">

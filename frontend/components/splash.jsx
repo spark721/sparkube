@@ -6,7 +6,8 @@ import VideoIndexContainer from './video/video_index_container';
 import SideBar from './sidebar/side_bar';
 
 
-const Splash = () => {
+const Splash = (props) => {
+  // debugger
   return (
     <div>
       <NavTop />
