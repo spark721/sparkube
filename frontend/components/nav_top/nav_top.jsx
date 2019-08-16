@@ -5,12 +5,13 @@ import SearchForm from './search/search_form';
 import { Link } from 'react-router-dom';
 
 const NavTop = (props) => {
-  // debugger
   let sideFunc = props.expand ?
-    props.collapseSidebar
-    :
-    props.expandSidebar;
-
+  props.collapseSidebar : props.expandSidebar;
+  
+  if (props.useModal) sideFunc = props.modal ?
+    props.closeModal : props.openModal;
+  
+  // debugger
   return (
     <div className='nav-top'>
       <div className='nav-top-left'>

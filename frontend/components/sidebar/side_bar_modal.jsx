@@ -1,14 +1,12 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { closeModal } from '../../actions/ui_action';
 
-const SideBar = (props) => {
+const SideBarModal = (props) => {
   // debugger
   let currentUser = props.currentUser;
 
-  const expand = props.expand ? "" : "collapse";
-  // const modalStatus = props.modal ? "modal-show" : "modal-hide"
+  const modalStatus = props.modal ? "modal-show" : "modal-hide"
 
   const loginSection = props.expand ?
     currentUser ?
@@ -27,8 +25,22 @@ const SideBar = (props) => {
       </div>
     : <div></div>;
 
-  const sideBarWhole = 
-    <aside className={`side-bar-whole ${expand}`}>
+  const sideBarWhole =
+    <aside className={`side-bar-whole`}>
+      <div className='nav-top-left'>
+        <div
+          className='menu-bars'
+          onClick={props.closeModal}>
+          <i className="fas fa-bars"></i>
+        </div>
+
+        <div className='nav-logo'>
+          <Link to='/' className='main-logo-text-link'>
+            <i className="fab fa-youtube"></i>
+            <span className='nav-logo-text'>SparKube</span>
+          </Link>
+        </div>
+      </div>
       <div className="side-bar-links">
         <Link className="side-bar-links-wrap" to='/'>
           <div className="side-bar-link-box">
@@ -95,7 +107,20 @@ const SideBar = (props) => {
       {loginSection}
     </aside>;
 
-  return sideBarWhole;
+  // const closeModalFunc = props.closeModal;
+  // debugger
+  return (
+    <div className={`modal-background ${modalStatus}`}>
+      <div
+        className="modal-child"
+        onClick={e => {
+          e.stopPropagation();
+          props.closeModal();
+        }}>
+        {sideBarWhole}
+      </div>
+    </div>
+  )
 };
 
-export default SideBar;
+export default SideBarModal;

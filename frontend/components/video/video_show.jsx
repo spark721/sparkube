@@ -2,6 +2,7 @@
 import React from 'react';
 // import NavTop from '../nav_top/nav_top';
 import NavTopContainer from '../nav_top/nav_top_conatiner';
+import SideBarModalContainer from '../sidebar/side_bar_modal_container';
 import SideIndexContainer from './side_index_container';
 import LikeDislike from './video_like_dislike';
 import CommentFormContainer from './comment_form_container';
@@ -95,7 +96,7 @@ class VideoShow extends React.Component {
 
     return (
       <div>
-        <NavTopContainer />
+        <NavTopContainer useModal={true} />
         <div className='video-show-page-whole'>
 
           <div className='video-show-page'>
@@ -172,6 +173,8 @@ class VideoShow extends React.Component {
             <SideIndexContainer />
           </div>
         </div>
+
+        <SideBarModalContainer />
       </div>
     );
   };
