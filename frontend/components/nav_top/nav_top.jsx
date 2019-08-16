@@ -4,11 +4,19 @@ import GreetingContainer from './greeting/greeting_container';
 import SearchForm from './search/search_form';
 import { Link } from 'react-router-dom';
 
-const NavTop = () => {
+const NavTop = (props) => {
+  // debugger
+  let sideFunc = props.expand ?
+    props.collapseSidebar
+    :
+    props.expandSidebar;
+
   return (
     <div className='nav-top'>
       <div className='nav-top-left'>
-        <div className='menu-bars'>
+        <div
+          className='menu-bars'
+          onClick={sideFunc}>
           <i className="fas fa-bars"></i>
         </div>
 

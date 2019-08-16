@@ -46,7 +46,7 @@
           font-family: 'Roboto', sans-serif;
           color: #0d0d0d;
           margin-right: 24px;
-          width: 120px;
+          // width: 120px;
           height: 21px;
           // height: 18px; // selected;
 
@@ -81,9 +81,50 @@
     .side-bar-login-text {
       font-family: 'Roboto', sans-serif;
       color: #0d0d0d;
+      line-height: 1.35;
+      margin-bottom: 15px;
 
       span {
         font-size: 14px;
+      }
+    }
+  }
+}
+
+.side-bar-whole.collapse {
+  width: 72px;
+
+  .side-bar-links {
+    padding: 0;
+    border: none;
+
+    .side-bar-links-wrap {
+      .side-bar-link-box {
+        height: 74px;
+        padding: 16px 0 14px;
+        display: block;
+
+        .side-bar-icon {
+          margin: auto;
+        }
+
+        .side-bar-text {
+          width: 100%;
+          justify-content: center;
+
+          span {
+            font-size: 10px;
+          }
+        }
+      }
+
+      .side-bar-link-box:active {
+        .side-bar-icon {
+          color: #ff0000;
+        }
+        .side-bar-text {
+          color: #ff0000;
+        }
       }
     }
   }
