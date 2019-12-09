@@ -103,7 +103,8 @@ class VideoShow extends React.Component {
             <video width='100%'
                    className='video-show-player'
                    key={this.state.video.id}
-                   controls >
+                   controls
+                   autoPlay >
               <source
                 src={this.state.video.videoUrl}
                 type="video/mp4" />
