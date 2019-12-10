@@ -23,7 +23,12 @@ class Api::VideosController < ApplicationController
   end
 
   def show
-    @video = Video.find(params[:id])
+    @video = Video.includes(
+      :user,
+      :liked_users,
+      :disliked_users,
+      :comments => [:user]
+    ).find(params[:id])
   end
 
   def update
