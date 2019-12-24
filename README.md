@@ -33,7 +33,6 @@ Sparkube is a YouTube clone where users can freely watch and share vidoes.
     ![alt text](./app/assets/images/video_show.png)
 
 * Comments are enabled
-    ![alt text](./app/assets/images/)
 
 
 * A sample of code for querying a video using ActiveRecord
