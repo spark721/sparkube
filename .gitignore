@@ -34,4 +34,5 @@ bundle.js.map
 npm-debug.log
 /app/assets/videos/
 tmp/
+/tmp/
 
