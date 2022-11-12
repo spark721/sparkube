@@ -50,6 +50,6 @@
   "homepage": "https://github.com/spark721/sparkube#readme",
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.9.0",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.12"
   }
 }
